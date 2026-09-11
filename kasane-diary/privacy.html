@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>かさね日記 プライバシーポリシー</title>
+<style>
+  body { margin: 0; background: #FFF7EA; color: #3A2E24; font-family: "Hiragino Maru Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif; line-height: 1.8; }
+  main { max-width: 640px; margin: 0 auto; padding: 48px 24px; }
+  h1 { font-size: 24px; }
+  h2 { font-size: 17px; margin-top: 32px; border-bottom: 1px solid #EAD5BF; padding-bottom: 6px; }
+  a { color: #D96C3D; }
+  ul { padding-left: 20px; }
+  footer { margin-top: 40px; font-size: 13px; color: #9A7E65; }
+</style>
+</head>
+<body>
+<main>
+  <h1>かさね日記 プライバシーポリシー</h1>
+  <p>「かさね日記」(以下「本アプリ」)は、写真と記録を端末の中だけに保存することを基本に設計しています。本ポリシーは、本アプリが扱う情報とその取り扱いを説明します。</p>
+
+  <h2>1. 端末内に保存する情報</h2>
+  <ul>
+    <li>写真(縮小版とサムネイル)、ひとこと(メモ)、撮影日時</li>
+    <li>その日の天気と最高・最低気温</li>
+    <li>撮影地の位置情報(緯度経度を小数第 2 位に丸めた、約 1km の精度)と市区町村名</li>
+    <li>設定(ホーム地点、リマインド時刻)</li>
+  </ul>
+  <p>これらは端末内のデータベースとファイルにのみ保存され、開発者を含む外部のサーバーには送信・保存されません。</p>
+
+  <h2>2. 外部に送信する情報</h2>
+  <p>気温と天気を取得するため、<a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> の API に次の情報だけを送信します。</p>
+  <ul>
+    <li>緯度経度(小数第 1 位に丸めた、約 10km の精度)</li>
+    <li>日付(または期間)</li>
+  </ul>
+  <p>写真、メモ、氏名、メールアドレスなど個人を特定できる情報は送信しません。Open-Meteo の取り扱いは同サービスのポリシーに従います。</p>
+  <p>ホーム地点を地名で検索する場合、入力した地名を Open-Meteo の地名検索 API に送信します。</p>
+
+  <h2>3. 利用する端末の機能と権限</h2>
+  <ul>
+    <li><strong>カメラ</strong>: きょうの 1 枚を撮影するため</li>
+    <li><strong>写真ライブラリ</strong>: 写真を選ぶため、および過去の写真を取り込むため。取り込み時は写真の撮影日時と位置情報(EXIF)を読み取り、当時の気温を付けるために使います</li>
+    <li><strong>位置情報</strong>: 現在地の気温を取得するため。取得した位置は丸めてから保存・送信します</li>
+    <li><strong>通知</strong>: 設定した時刻に「きょうの 1 枚」をお知らせするため(端末内で予約するローカル通知です)</li>
+  </ul>
+  <p>市区町村名の取得には、端末の OS が提供する逆ジオコーディング機能(Apple または Google)を使います。</p>
+
+  <h2>4. 解析・広告</h2>
+  <p>本アプリは、利用状況の解析ツールや広告 SDK を使用していません。</p>
+
+  <h2>5. お子さまの写真について</h2>
+  <p>本アプリは保護者などの大人が利用することを想定しています。記録した写真は端末の外に出ないため、お子さまの写真が第三者に送信されることはありません。</p>
+
+  <h2>6. データの削除</h2>
+  <p>アプリ内の設定から記録を削除できるほか、アプリをアンインストールすると保存されたすべての情報が端末から削除されます。</p>
+
+  <h2>7. 変更</h2>
+  <p>本ポリシーを変更する場合は、このページで公開します。</p>
+
+  <h2>8. お問い合わせ</h2>
+  <p><a href="mailto:[SUPPORT_EMAIL]">[SUPPORT_EMAIL]</a></p>
+
+  <footer>制定日: 2026 年 9 月 11 日<br>© 2026 nobuhiko</footer>
+</main>
+</body>
+</html>

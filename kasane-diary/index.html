@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>かさね日記 サポート</title>
+<style>
+  body { margin: 0; background: #FFF7EA; color: #3A2E24; font-family: "Hiragino Maru Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif; line-height: 1.8; }
+  main { max-width: 640px; margin: 0 auto; padding: 48px 24px; }
+  h1 { font-size: 24px; margin-bottom: 4px; }
+  h2 { font-size: 17px; margin-top: 32px; border-bottom: 1px solid #EAD5BF; padding-bottom: 6px; }
+  .lead { color: #6B5B4D; }
+  a { color: #D96C3D; }
+  .card { background: #fff; border-radius: 20px; padding: 18px; border-bottom: 3px solid #EAD5BF; }
+  dt { font-weight: 700; margin-top: 12px; }
+  dd { margin: 2px 0 0 0; color: #6B5B4D; }
+  footer { margin-top: 40px; font-size: 13px; color: #9A7E65; }
+</style>
+</head>
+<body>
+<main>
+  <h1>かさね日記</h1>
+  <p class="lead">去年の今日、なに着てた? なにしてた? を写真で答える 3 年日記。1 日 1 枚の写真に、その日の気温と天気が自動で付きます。</p>
+
+  <h2>お問い合わせ</h2>
+  <div class="card">
+    <p>不具合や要望は、メールでお知らせください。</p>
+    <p><a href="mailto:[SUPPORT_EMAIL]">[SUPPORT_EMAIL]</a></p>
+    <p>返信には数日いただくことがあります。</p>
+  </div>
+
+  <h2>よくある質問</h2>
+  <dl>
+    <dt>写真はどこに保存されますか?</dt>
+    <dd>すべて端末の中だけに保存されます。外部のサーバーには送られません。アプリを削除すると写真と記録も消えます。</dd>
+    <dt>気温はどこから取っていますか?</dt>
+    <dd>Open-Meteo の天気データを使っています。位置は市区町村より粗い精度(約 10km)に丸めてから問い合わせます。</dd>
+    <dt>過去の写真の気温が付きません</dt>
+    <dd>写真に位置情報がない場合は、設定の「ホーム地点」の気温を使います。ホーム地点を登録してから「未取得の気温を取る」を押してください。</dd>
+    <dt>去年の同じ日に写真がありません</dt>
+    <dd>前後 3 日以内でいちばん近い日の写真を「2 日前」のように表示します。それも無い場合は空の頁になります。</dd>
+    <dt>データを全部消したい</dt>
+    <dd>設定の「すべて削除」か、アプリの削除で消えます。</dd>
+  </dl>
+
+  <h2>関連ページ</h2>
+  <p><a href="./privacy.html">プライバシーポリシー</a></p>
+
+  <footer>© 2026 nobuhiko</footer>
+</main>
+</body>
+</html>
