@@ -3,51 +3,102 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>かさね日記 サポート</title>
+<title>かさね日記 - 気温つき写真日記・3年日記</title>
+<meta name="description" content="この気温の日、なに着てた? 1 日 1 枚の写真に気温と天気が自動で付き、去年・2 年前の同じ日と並べて見られる 3 年日記。気温で過去の写真をさがせます。">
+<meta property="og:title" content="かさね日記 - 気温つき写真日記・3年日記">
+<meta property="og:description" content="この気温の日、なに着てた? 1 日 1 枚の写真に気温と天気が自動で付き、去年・2 年前の同じ日と並べて見られる 3 年日記。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nobuhiko.github.io/kasane-diary/">
+<meta property="og:image" content="https://nobuhiko.github.io/kasane-diary/img/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="apple-itunes-app" content="app-id=6811230663">
+<link rel="icon" href="./img/icon.png">
 <style>
   body { margin: 0; background: #FFF7EA; color: #3A2E24; font-family: "Hiragino Maru Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif; line-height: 1.8; }
-  main { max-width: 640px; margin: 0 auto; padding: 48px 24px; }
-  h1 { font-size: 24px; margin-bottom: 4px; }
-  h2 { font-size: 17px; margin-top: 32px; border-bottom: 1px solid #EAD5BF; padding-bottom: 6px; }
-  .lead { color: #6B5B4D; }
+  main { max-width: 720px; margin: 0 auto; padding: 40px 16px 48px; }
+  header { text-align: center; }
+  header img { width: 88px; height: 88px; border-radius: 20px; }
+  h1 { font-size: 26px; margin: 12px 0 0; }
+  .catch { font-size: 20px; font-weight: 700; margin: 20px 0 4px; }
+  .lead { color: #6B5B4D; margin: 0 auto; max-width: 520px; }
+  h2 { font-size: 18px; margin-top: 40px; border-bottom: 1px solid #EAD5BF; padding-bottom: 6px; }
   a { color: #D96C3D; }
-  .card { background: #fff; border-radius: 20px; padding: 18px; border-bottom: 3px solid #EAD5BF; }
-  dt { font-weight: 700; margin-top: 12px; }
+  .cta { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 20px 0 4px; }
+  .btn { display: inline-block; background: #D96C3D; color: #fff; text-decoration: none; font-weight: 700; padding: 10px 22px; border-radius: 999px; }
+  .note { font-size: 13px; color: #9A7E65; text-align: center; margin: 0; }
+  .shots { display: flex; gap: 12px; overflow-x: auto; padding: 8px 0 12px; margin-top: 24px; scroll-snap-type: x mandatory; }
+  .shots img { width: 200px; flex: none; border-radius: 16px; scroll-snap-align: start; box-shadow: 0 2px 8px rgba(58,46,36,.12); }
+  .card { background: #fff; border-radius: 20px; padding: 16px 18px; border-bottom: 3px solid #EAD5BF; margin-top: 12px; }
+  .card h3 { margin: 0 0 4px; font-size: 16px; }
+  .card p { margin: 0; color: #6B5B4D; font-size: 14px; }
+  ul.for { padding-left: 1.2em; color: #6B5B4D; }
+  dt { font-weight: 700; margin-top: 14px; }
   dd { margin: 2px 0 0 0; color: #6B5B4D; }
-  footer { margin-top: 40px; font-size: 13px; color: #9A7E65; }
+  footer { margin-top: 48px; font-size: 13px; color: #9A7E65; }
 </style>
 </head>
 <body>
 <main>
-  <h1>かさね日記</h1>
-  <p class="lead">去年の今日、なに着てた? なにしてた? を写真で答える 3 年日記。1 日 1 枚の写真に、その日の気温と天気が自動で付きます。</p>
-  <p><a href="https://apps.apple.com/jp/app/id6811230663">App Store でダウンロード</a>(Android 版はクローズドテスト中)</p>
+  <header>
+    <img src="./img/icon.png" alt="">
+    <h1>かさね日記</h1>
+    <p class="catch">この気温の日、なに着てた?</p>
+    <p class="lead">1 日 1 枚の写真に、その日の気温と天気が自動で付く 3 年日記。去年・2 年前の同じ日と重ねて見られて、気温で過去の写真をさがせます。</p>
+    <div class="cta">
+      <a class="btn" href="https://apps.apple.com/jp/app/id6811230663">App Store でダウンロード</a>
+    </div>
+    <p class="note">無料(一部の機能は買い切りの Pro)。Android 版は近日公開</p>
+  </header>
 
-  <h2>お問い合わせ</h2>
-  <div class="card">
-    <p>不具合や要望は、メールでお知らせください。</p>
-    <p><a href="mailto:info@nob-log.info">info@nob-log.info</a></p>
-    <p>返信には数日いただくことがあります。</p>
+  <div class="shots">
+    <img src="./img/s1.png" alt="きょう・先週・先月・去年・2年前の同じ日が一枚の頁に並ぶ画面" loading="lazy">
+    <img src="./img/s2.png" alt="アプリの画面" loading="lazy">
+    <img src="./img/s3.png" alt="アプリの画面" loading="lazy">
+    <img src="./img/s4.png" alt="アプリの画面" loading="lazy">
+    <img src="./img/s5.png" alt="アプリの画面" loading="lazy">
   </div>
+
+  <h2>できること</h2>
+  <div class="card"><h3>気温でさがす</h3><p>今日と同じくらいの気温だった日の写真を、これまでの記録から並べて見られます。毎朝の服選びや衣替えの目安に。</p></div>
+  <div class="card"><h3>去年の今日と重ねて見る</h3><p>きょう・先週・先月・去年・2 年前の同じ日が一枚の頁に。その日に写真が無ければ、前後 3 日でいちばん近い日を出します。</p></div>
+  <div class="card"><h3>貼るだけで気温と天気が付く</h3><p>きょうの 1 枚を撮るか選ぶだけ。場所・気温・天気は自動で付きます。</p></div>
+  <div class="card"><h3>過去の写真から始められる</h3><p>カメラロールの過去の写真をまとめて取り込み、当時の気温を後から付けます(無料で 2 年分)。始めた日から 3 年日記になります。</p></div>
+  <div class="card"><h3>写真は端末の中だけ</h3><p>アカウント登録は不要。写真と記録は端末内にだけ保存され、外部のサーバーには送られません。</p></div>
+
+  <h2>こんな方に</h2>
+  <ul class="for">
+    <li>子どもの服装で毎朝迷う方、成長の記録も残したい方</li>
+    <li>家庭菜園やガーデニングで、季節ごとの育ち方を比べたい方</li>
+    <li>自分のコーデ記録・服装記録を気温と一緒に残したい方</li>
+    <li>日記は続かないけれど、写真 1 枚なら続けられそうな方</li>
+  </ul>
 
   <h2>よくある質問</h2>
   <dl>
     <dt>写真はどこに保存されますか?</dt>
     <dd>すべて端末の中だけに保存されます。外部のサーバーには送られません。アプリを削除すると写真と記録も消えます。</dd>
     <dt>気温はどこから取っていますか?</dt>
-    <dd>Open-Meteo の天気データを使っています。位置は市区町村より粗い精度(約 10km)に丸めてから問い合わせます。</dd>
+    <dd>Open-Meteo の天気データを使っています。位置は約 10km の精度に丸めてから問い合わせます。</dd>
     <dt>過去の写真の気温が付きません</dt>
-    <dd>写真に位置情報がない場合は、設定の「ホーム地点」の気温を使います。ホーム地点を登録してから「未取得の気温を取る」を押してください。</dd>
+    <dd>写真に位置情報がない場合、推測で気温を付けることはしません。頁の詳細で場所(ホーム地点か地名)を選ぶと、その日の気温が付きます。</dd>
+    <dt>昔の写真が取り込めません</dt>
+    <dd>機種変更などで、昔の写真が端末になく Google フォトなどのクラウドにしか無いことがあります。先に Google フォトや Amazon Photos のアプリで端末にダウンロードしてから取り込んでください。撮影日と位置はダウンロードしても残ります。</dd>
     <dt>去年の同じ日に写真がありません</dt>
     <dd>前後 3 日以内でいちばん近い日の写真を「2 日前」のように表示します。それも無い場合は空の頁になります。</dd>
     <dt>データを全部消したい</dt>
     <dd>設定の「すべて削除」か、アプリの削除で消えます。</dd>
   </dl>
 
-  <h2>関連ページ</h2>
-  <p><a href="./privacy.html">プライバシーポリシー</a> · <a href="./delete.html">データの削除について</a></p>
+  <h2>お問い合わせ</h2>
+  <div class="card">
+    <p>不具合や要望は、メールでお知らせください。返信には数日いただくことがあります。</p>
+    <p><a href="mailto:info@nob-log.info">info@nob-log.info</a></p>
+  </div>
 
-  <footer>© 2026 nobuhiko</footer>
+  <footer>
+    <a href="./privacy.html">プライバシーポリシー</a> · <a href="./delete.html">データの削除について</a> · <a href="../">ほかのサービス</a>
+    <p>© 2026 nobuhiko</p>
+  </footer>
 </main>
 </body>
 </html>
