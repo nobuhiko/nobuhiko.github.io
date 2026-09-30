@@ -4,19 +4,25 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>nobuhiko のプロダクト</title>
-<meta name="description" content="投稿型のウミウシ図鑑「世界のウミウシ」、気温つき写真日記「かさね日記」、消耗品の実質最安をさがす「きれるまえ」。">
+<meta name="description" content="投稿型のウミウシ図鑑「世界のウミウシ」、気温つき写真日記「かさね日記」、消耗品の実質最安をさがす「きれるまえ」、EC-CUBE プラグイン。">
 <style>
-  body { margin: 0; background: #FFF7EA; color: #3A2E24; font-family: "Hiragino Maru Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif; line-height: 1.8; }
+  /* 一覧は特定のプロダクトの色を借りない中立の配色。各プロダクトの色はカードの左の帯だけに出す */
+  :root { --bg: #F4F5F7; --card: #fff; --ink: #1F2328; --mute: #5B6570; --line: #E1E4E8; --link: #2F5F8F; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Hiragino Sans", "Noto Sans JP", -apple-system, sans-serif; line-height: 1.8; }
   main { max-width: 640px; margin: 0 auto; padding: 48px 16px; }
-  h1 { font-size: 22px; margin: 0; }
-  .lead { color: #6B5B4D; margin: 4px 0 0; }
-  a { color: #D96C3D; }
-  .app { background: #fff; border-radius: 20px; padding: 18px; border-bottom: 3px solid #EAD5BF; margin-top: 16px; }
+  h1 { font-size: 22px; margin: 0; letter-spacing: .02em; }
+  .lead { color: var(--mute); margin: 4px 0 0; }
+  a { color: var(--link); }
+  .app { background: var(--card); border: 1px solid var(--line); border-left: 5px solid var(--accent, var(--line)); border-radius: 12px; padding: 18px 20px; margin-top: 16px; }
+  .app.seaslug { --accent: #1E7FA8; }   /* 世界のウミウシ: 海の青 */
+  .app.kasane { --accent: #D96C3D; }    /* かさね日記: 橙 */
+  .app.kirerumae { --accent: #EF8A3C; } /* きれるまえ: 橙 (明るめ) */
   .app h2 { margin: 0 0 6px; font-size: 18px; }
   .app h2 a { color: inherit; text-decoration: none; }
-  .app p { margin: 0 0 10px; color: #6B5B4D; font-size: 14px; }
+  .app h2 a:hover { text-decoration: underline; }
+  .app p { margin: 0 0 10px; color: var(--mute); font-size: 14px; }
   .links { font-size: 14px; }
-  footer { margin-top: 40px; font-size: 13px; color: #9A7E65; }
+  footer { margin-top: 40px; font-size: 13px; color: var(--mute); }
 </style>
 </head>
 <body>
@@ -24,22 +30,28 @@
   <h1>nobuhiko のプロダクト</h1>
   <p class="lead">個人で運営しているサービスとアプリです。</p>
 
-  <section class="app">
+  <section class="app seaslug">
     <h2><a href="https://seaslug.world/">世界のウミウシ</a></h2>
     <p>みんなで作る、投稿型のウミウシ図鑑。世界中のダイバーが撮ったウミウシの写真を、種ごとにまとめています。投稿者はサイト内でマイ図鑑を作れます。</p>
     <div class="links">Web <a href="https://seaslug.world/">seaslug.world</a> · <a href="https://apps.apple.com/jp/app/id6785337563">App Store</a> · <a href="https://play.google.com/store/apps/details?id=world.seaslug.app">Google Play</a></div>
   </section>
 
-  <section class="app">
+  <section class="app kasane">
     <h2><a href="./kasane-diary/">かさね日記</a></h2>
     <p>この気温の日、なに着てた? 1 日 1 枚の写真に気温と天気が自動で付き、去年・2 年前の同じ日と重ねて見られる 3 年日記。</p>
     <div class="links"><a href="./kasane-diary/">紹介ページ</a> · <a href="https://apps.apple.com/jp/app/id6811230663">App Store</a> · <a href="./kasane-diary/privacy.html">プライバシーポリシー</a></div>
   </section>
 
-  <section class="app">
+  <section class="app kirerumae">
     <h2><a href="https://kirerumae.com/">きれるまえ</a></h2>
     <p>切れそうな消耗品を、いちばん安い所で。QR を洗濯機や棚に貼っておき、切れる前に読むと、楽天・Amazon・Yahoo! を横断して送料とポイントを引いた実質の最安が出ます。</p>
     <div class="links"><a href="https://kirerumae.com/">kirerumae.com</a></div>
+  </section>
+
+  <section class="app">
+    <h2><a href="https://www.ec-cube.net/products/list.php?mode=&amp;category_id=0&amp;maker_id=0&amp;keywords=&amp;ecversion_id=0&amp;partner_id=690&amp;orderby=dl&amp;ecversion=all&amp;protype=all&amp;disp_number=30&amp;price_type=&amp;product_type=&amp;price_max=&amp;price_min=&amp;pageno=1&amp;product_id=&amp;classcategory_id1=&amp;classcategory_id2=&amp;product_class_id=&amp;quantity=">EC-CUBE プラグイン</a></h2>
+    <p>EC-CUBE のオーナーズストアで、データ移行や一括更新、SEO などのプラグインを販売しています。</p>
+    <div class="links"><a href="https://www.ec-cube.net/products/list.php?mode=&amp;category_id=0&amp;maker_id=0&amp;keywords=&amp;ecversion_id=0&amp;partner_id=690&amp;orderby=dl&amp;ecversion=all&amp;protype=all&amp;disp_number=30&amp;price_type=&amp;product_type=&amp;price_max=&amp;price_min=&amp;pageno=1&amp;product_id=&amp;classcategory_id1=&amp;classcategory_id2=&amp;product_class_id=&amp;quantity=">オーナーズストアの一覧</a></div>
   </section>
 
   <footer>
