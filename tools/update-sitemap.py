@@ -3,6 +3,10 @@
 
 コミットに入るページは今日、それ以外は最後にコミットされた日。.githooks/pre-commit から呼ぶ
 (git config core.hooksPath .githooks を一度だけ設定)。
+
+あわせて、製品のフォルダ(kasane-diary/ など)ごとに <フォルダ>/sitemap.xml を切り出す。
+Search Console のプロパティが URL プレフィックス(https://nobuhiko.github.io/kasane-diary/)なので、
+ルートの sitemap.xml はプロパティの外になり送信できないため(2026-10-19)。
 """
 import datetime
 import re
@@ -41,6 +45,22 @@ def main() -> None:
     if new != s:
         SITEMAP.write_text(new)
         print("sitemap.xml を更新")
+    split(new)
+
+
+def split(sitemap: str) -> None:
+    urls = re.findall(r"<url><loc>[^<]+</loc><lastmod>[^<]*</lastmod></url>", sitemap)
+    dirs: dict[str, list[str]] = {}
+    for u in urls:
+        rel = re.search(r"<loc>([^<]+)</loc>", u).group(1)[len(BASE):]
+        if "/" in rel:
+            dirs.setdefault(rel.split("/", 1)[0], []).append(u)
+    for d, us in dirs.items():
+        body = '<?xml version="1.0" encoding="UTF-8"?>\n<!-- tools/update-sitemap.py がルートの sitemap.xml から作る。手で直さない -->\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "\n".join("  " + u for u in us) + "\n</urlset>\n"
+        out = ROOT / d / "sitemap.xml"
+        if not out.exists() or out.read_text() != body:
+            out.write_text(body)
+            print(f"{d}/sitemap.xml を更新")
 
 
 if __name__ == "__main__":
