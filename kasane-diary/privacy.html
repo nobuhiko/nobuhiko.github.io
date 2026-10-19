@@ -35,7 +35,7 @@
     <li>日付(または期間)</li>
   </ul>
   <p>写真、メモ、氏名、メールアドレスなど個人を特定できる情報は送信しません。Open-Meteo の取り扱いは同サービスのポリシーに従います。</p>
-  <p>ホーム地点や写真の場所を地名で検索する場合、入力した地名を Open-Meteo の地名検索 API に送信します。</p>
+  <p>ホーム地点や写真の場所を地名で検索する場合、入力した地名を、日本語の地名は<a href="https://www.gsi.go.jp/" target="_blank" rel="noopener">国土地理院</a>の地名検索 API に、それで見つからない地名や日本語以外の地名は Open-Meteo の地名検索 API に送信します。</p>
 
   <h2>3. 利用する端末の機能と権限</h2>
   <ul>
@@ -44,7 +44,7 @@
     <li><strong>位置情報</strong>: 現在地の気温を取得するため。取得した位置は丸めてから保存・送信します</li>
     <li><strong>通知</strong>: 設定した時刻に「きょうの 1 枚」をお知らせするため(端末内で予約するローカル通知です)</li>
   </ul>
-  <p>市区町村名の取得には、端末の OS が提供する逆ジオコーディング機能(Apple または Google)を使います。</p>
+  <p>市区町村名の取得には、端末の OS が提供する逆ジオコーディング機能(Apple または Google)を使います。それで取得できない場合(Android で位置情報を許可していない場合など)、日本国内の場所は、緯度経度(小数第 2 位に丸めた、約 1km の精度)を国土地理院の逆ジオコーダ API に送信して市区町村名を取得します。</p>
 
   <h2>4. 解析・広告</h2>
   <p>本アプリは、利用状況の解析ツールや広告 SDK を使用していません。</p>
@@ -62,7 +62,7 @@
   <h2>8. お問い合わせ</h2>
   <p><a href="mailto:info@nob-log.info">info@nob-log.info</a></p>
 
-  <footer>制定日: 2026 年 9 月 11 日 / 改定日: 2026 年 10 月 2 日<br>© 2026 nobuhiko</footer>
+  <footer>制定日: 2026 年 9 月 11 日 / 改定日: 2026 年 10 月 19 日<br>© 2026 nobuhiko</footer>
 </main>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8e368a03b62f48a98ec3d3205e06c11d"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
