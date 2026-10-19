@@ -52,107 +52,97 @@
 <link rel="alternate" hreflang="ja" href="https://nobuhiko.github.io/kasane-diary/">
 <link rel="alternate" hreflang="en" href="https://nobuhiko.github.io/kasane-diary/en/">
 <link rel="icon" href="../img/icon.png">
-<style>
-  body { margin: 0; background: #FFF7EA; color: #3A2E24; font-family: -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif; line-height: 1.7; }
-  main { max-width: 720px; margin: 0 auto; padding: 40px 16px 48px; }
-  .crumb { font-size: 13px; margin: 0 0 16px; display: flex; justify-content: space-between; }
-  .crumb a { text-decoration: none; }
-  header { text-align: center; }
-  header img { width: 88px; height: 88px; border-radius: 20px; }
-  h1 { font-size: 26px; margin: 12px 0 0; }
-  .catch { font-size: 20px; font-weight: 700; margin: 20px 0 4px; }
-  .lead { color: #6B5B4D; margin: 0 auto; max-width: 520px; }
-  h2 { font-size: 18px; margin-top: 40px; border-bottom: 1px solid #EAD5BF; padding-bottom: 6px; }
-  a { color: #D96C3D; }
-  .cta { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 20px 0 4px; }
-  .btn { display: inline-block; background: #D96C3D; color: #fff; text-decoration: none; font-weight: 700; padding: 10px 22px; border-radius: 999px; }
-  .note { font-size: 13px; color: #9A7E65; text-align: center; margin: 0; }
-  .shots { display: flex; gap: 12px; overflow-x: auto; padding: 8px 0 12px; margin-top: 24px; scroll-snap-type: x mandatory; }
-  .shots img { width: 200px; flex: none; border-radius: 16px; scroll-snap-align: start; box-shadow: 0 2px 8px rgba(58,46,36,.12); }
-  .card { background: #fff; border-radius: 20px; padding: 16px 18px; border-bottom: 3px solid #EAD5BF; margin-top: 12px; }
-  .card h3 { margin: 0 0 4px; font-size: 16px; }
-  .card p { margin: 0; color: #6B5B4D; font-size: 14px; }
-  ul.for { padding-left: 1.2em; color: #6B5B4D; }
-  dt { font-weight: 700; margin-top: 14px; }
-  dd { margin: 2px 0 0 0; color: #6B5B4D; }
-  footer { margin-top: 48px; font-size: 13px; color: #9A7E65; }
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;700;800&display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
 </head>
-<body>
-<main>
-  <p class="crumb"><a href="../../">← Products by nobuhiko</a><a href="../" hreflang="ja" lang="ja">日本語</a></p>
-  <header>
-    <img src="../img/icon.png" alt="">
-    <h1>Kasane Diary</h1>
-    <p class="catch">What did I wear the last time it was this warm?</p>
-    <p class="lead">A 3-year photo diary. Add one photo a day and the day's temperature and weather are attached automatically. Flip through today stacked with the same day in past years, and search your photos by temperature. Start by importing from your camera roll — in a few minutes, last year's today is already there.</p>
-    <div class="cta">
-      <a class="btn" href="https://apps.apple.com/app/id6811230663?pt=129098959&ct=lp-en&mt=8">Download on the App Store</a>
+<body class="light" style="--accent:#D96C3D">
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="./"><img src="../img/icon.png" alt="">Kasane Diary</a>
+    <nav class="pill"><a class="opt" href="#features">Features</a><a class="opt" href="#faq">FAQ</a><a href="../" hreflang="ja" lang="ja">日本語</a><a href="../../">More apps</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="reveal">
+      <p class="eyebrow">A 3-year photo diary · with the weather</p>
+      <h1 class="display" style="font-size:clamp(36px,5.6vw,72px)">What did I wear the last time it was this warm?</h1>
+      <p class="lead">A 3-year photo diary. Add one photo a day and the day's temperature and weather are attached automatically. Flip through today stacked with the same day in past years, and search your photos by temperature. Start by importing from your camera roll — in a few minutes, last year's today is already there.</p>
+      <div class="cta"><a class="btn" href="https://apps.apple.com/app/id6811230663?pt=129098959&amp;ct=lp-en&amp;mt=8">Download on the App Store</a></div>
+      <p class="note">Free, with a one-time Pro purchase for some features. iPhone and iPad. English, 日本語, 中文, 한국어.</p>
     </div>
-    <p class="note">Free, with a one-time Pro purchase for some features. iPhone and iPad. English, 日本語, 中文, 한국어.</p>
-  </header>
+    <div class="stage reveal">
+      <div class="phone back"><img src="./img/app-02.webp" alt="Flip through the same days across years"></div>
+      <div class="phone front"><img src="./img/app-07.webp" alt="This morning's temperature, with photos from days that were about as warm"></div>
+    </div>
+  </section>
 
-  <div class="shots">
-    <img src="./img/s1.png" alt="This morning's temperature, with photos from days that were about as warm" loading="lazy">
-    <img src="./img/s2.png" alt="Today stacked with last week, last month, last year and 2 years ago" loading="lazy">
-    <img src="./img/s3.png" alt="Flip through the same days across years" loading="lazy">
-    <img src="./img/s4.png" alt="Search past days by temperature" loading="lazy">
-    <img src="./img/s5.png" alt="A month of photos with each day's temperature" loading="lazy">
-    <img src="./img/s6.png" alt="Choose what the diary is about" loading="lazy">
-    <img src="./img/s7.png" alt="Choosing a theme color" loading="lazy">
+  <section class="feature" id="features">
+    <div class="text reveal"><span class="tag">Every morning</span><h2>Short sleeves<br>or long?</h2><p>The top of the home screen shows today's high, low and 8 am temperature, with photos from days that were about as warm. From the evening, it switches to tomorrow, so you can pick clothes the night before.</p></div>
+    <div class="visual reveal"><div class="phone"><img src="./img/app-07.webp" alt="Home screen with today's temperature and photos from days that were about as warm" loading="lazy"></div></div>
+  </section>
+  <section class="feature flip">
+    <div class="text reveal"><span class="tag">Flip through the years</span><h2>The same day,<br>every year.</h2><p>Flip day by day with today and the same days in past years side by side — a week, a month, three months or a year. Watch your kids grow or your garden change in a few seconds, and share it as a video.</p></div>
+    <div class="visual reveal"><div class="phone"><img src="./img/app-02.webp" alt="Flip through the same days across years" loading="lazy"></div></div>
+  </section>
+  <section class="feature">
+    <div class="text reveal"><span class="tag">Search by temperature</span><h2>What did they wear<br>when it was this warm?</h2><p>See photos from past days that were about as warm as today. Your own record becomes a guide for what to wear and when to switch seasons.</p></div>
+    <div class="visual reveal"><div class="phone"><img src="./img/app-04.webp" alt="Search past days by temperature" loading="lazy"></div></div>
+  </section>
+  <section class="feature flip">
+    <div class="text reveal"><span class="tag">Automatic</span><h2>Temperature and<br>weather, added for you.</h2><p>Just take or pick today's photo. Place, temperature and weather are added for you, in °C or °F. Today, last week, last month, last year and 2 years ago on one page. If there's no photo on that exact day, the closest day within 3 days is shown.</p></div>
+    <div class="visual reveal"><div class="phone"><img src="./img/app-05.webp" alt="A month of photos with each day's temperature" loading="lazy"></div></div>
+  </section>
+  <section class="feature">
+    <div class="text reveal"><span class="tag">Import</span><h2>Start from your<br>past photos.</h2><p>Import past photos from your camera roll and the temperature of each day is added afterwards (2 years free). Your 3-year diary starts on day one. Screenshots are skipped.</p></div>
+    <div class="visual reveal"><div class="phone"><img src="./img/app-01.webp" alt="Today's page" loading="lazy"></div></div>
+  </section>
+
+  <section class="statement reveal"><h2>And more.</h2></section>
+  <div class="grid">
+    <div class="glass reveal"><h3>Pick the right photo for each day (Pro)</h3><p>Choose kids, pets, sky, or "looks like this sample" (a garden bed, a houseplant, the view from your window), and the import picks the matching photo from each day. Photos are analyzed on your device only.</p></div>
+    <div class="glass reveal"><h3>Send it to your family as a video</h3><p>Turn a flip-through into a video, just as you see it on screen (stacked with past years, at your speed), and send it to family. Even a whole year fits in 5 minutes. You can also share a day's page as one image with the same day from past years.</p></div>
+    <div class="glass reveal"><h3>Last time you were here</h3><p>Pages from a trip show the pages from your earlier visits to the same place, so you can see how much the kids have grown since last time. Not shown for everyday places like home.</p></div>
+    <div class="glass reveal"><h3>Pick a theme color</h3><p>Choose your diary's color like picking a cover. Vermilion, Leaf and Sea are free; Mustard, Wisteria, Sakura, Chestnut, Ink and Night are Pro colors with gradients, also applied to shared images and videos.</p></div>
+    <div class="glass reveal"><h3>Your photos stay on your phone</h3><p>No account needed. Photos and records are stored only on your device and are never sent to a server.</p></div>
   </div>
 
-  <h2>What you can do</h2>
-  <div class="card"><h3>Short sleeves or long this morning?</h3><p>The top of the home screen shows today's high, low and 8 am temperature, with photos from days that were about as warm. From the evening, it switches to tomorrow, so you can pick clothes the night before.</p></div>
-  <div class="card"><h3>Search by temperature</h3><p>See photos from past days that were about as warm as today. Your own record becomes a guide for what to wear and when to switch seasons.</p></div>
-  <div class="card"><h3>Today, stacked with past years</h3><p>Today, last week, last month, last year and 2 years ago on one page. If there's no photo on that exact day, the closest day within 3 days is shown.</p></div>
-  <div class="card"><h3>Flip through the years</h3><p>Flip day by day with today and the same days in past years side by side — a week, a month, three months or a year. Watch your kids grow or your garden change in a few seconds, and share it as a video.</p></div>
-  <div class="card"><h3>Temperature and weather, automatically</h3><p>Just take or pick today's photo. Place, temperature and weather are added for you, in °C or °F.</p></div>
-  <div class="card"><h3>Start from your past photos</h3><p>Import past photos from your camera roll and the temperature of each day is added afterwards (2 years free). Your 3-year diary starts on day one. Screenshots are skipped.</p></div>
-  <div class="card"><h3>Pick the right photo for each day (Pro)</h3><p>Choose kids, pets, sky, or "looks like this sample" (a garden bed, a houseplant, the view from your window), and the import picks the matching photo from each day. Photos are analyzed on your device only.</p></div>
-  <div class="card"><h3>Send it to your family as a video</h3><p>Turn a flip-through into a video, just as you see it on screen (stacked with past years, at your speed), and send it to family. Even a whole year fits in 5 minutes. You can also share a day's page as one image with the same day from past years.</p></div>
-  <div class="card"><h3>Last time you were here</h3><p>Pages from a trip show the pages from your earlier visits to the same place, so you can see how much the kids have grown since last time. Not shown for everyday places like home.</p></div>
-  <div class="card"><h3>Pick a theme color</h3><p>Choose your diary's color like picking a cover. Vermilion, Leaf and Sea are free; Mustard, Wisteria, Sakura, Chestnut, Ink and Night are Pro colors with gradients, also applied to shared images and videos.</p></div>
-  <div class="card"><h3>Your photos stay on your phone</h3><p>No account needed. Photos and records are stored only on your device and are never sent to a server.</p></div>
+  <section class="statement reveal"><h2>Made for.</h2>
+    <div class="chips"><span>Parents who wonder what to dress the kids in each morning, and want a growth record too</span><span>Gardeners who want to compare how plants grow each season</span><span>Anyone keeping an outfit log together with the weather</span><span>Anyone who can't keep a diary, but could manage one photo a day</span></div>
+  </section>
 
-  <h2>Made for</h2>
-  <ul class="for">
-    <li>Parents who wonder what to dress the kids in each morning, and want a growth record too</li>
-    <li>Gardeners who want to compare how plants grow each season</li>
-    <li>Anyone keeping an outfit log together with the weather</li>
-    <li>Anyone who can't keep a diary, but could manage one photo a day</li>
-  </ul>
+  <section class="block faq" id="faq">
+    <h2 class="reveal">FAQ</h2>
+    <details><summary>Where are my photos stored?</summary><p>Only on your device. Nothing is sent to a server, including when the app looks at what's in a photo (faces, dogs, sky, etc.). Deleting the app deletes your photos and records.</p></details>
+    <details><summary>Where does the temperature come from?</summary><p>Open-Meteo weather data. Your location is rounded to about 10 km before asking.</p></details>
+    <details><summary>Some past photos have no temperature</summary><p>If a photo has no location, the app doesn't guess. Pick a place (your home or a place name) on that day's page and the temperature is added.</p></details>
+    <details><summary>There's no photo on the same day last year</summary><p>The closest day within 3 days is shown, labeled like "2 days later". If there's none, the page is empty.</p></details>
+  </section>
 
-  <h2>FAQ</h2>
-  <dl>
-    <dt>Where are my photos stored?</dt>
-    <dd>Only on your device. Nothing is sent to a server, including when the app looks at what's in a photo (faces, dogs, sky, etc.). Deleting the app deletes your photos and records.</dd>
-    <dt>Where does the temperature come from?</dt>
-    <dd>Open-Meteo weather data. Your location is rounded to about 10 km before asking.</dd>
-    <dt>Some past photos have no temperature</dt>
-    <dd>If a photo has no location, the app doesn't guess. Pick a place (your home or a place name) on that day's page and the temperature is added.</dd>
-    <dt>There's no photo on the same day last year</dt>
-    <dd>The closest day within 3 days is shown, labeled like "2 days later". If there's none, the page is empty.</dd>
-  </dl>
+  <section class="block">
+    <div class="grid">
+      <div class="glass reveal"><h3>Why I built it</h3>
+        <p>On the first cold morning of the season, I never knew whether to put my kid in long sleeves or short sleeves. I wanted last year's photos and that day's temperature in one place, so I built Kasane. I'm also improving it bit by bit, based on what parents and testers tell me.</p>
+        <p>I wrote about why I built it and what I fixed: <a href="https://umiushi1.substack.com/p/every-year-i-forget-what-my-kid-wore">Every year I forget what my kid wore last year, so I built an app</a>.</p>
+        <p>Nobuhiko Kimoto · <a href="https://umiushi1.substack.com/">Notes from Umiushi, a tiny app studio in Japan</a></p></div>
+      <div class="glass reveal"><h3>Contact</h3>
+        <p>Bug reports and requests are welcome by email (English or Japanese). Replies may take a few days.</p>
+        <p><a href="mailto:info@nob-log.info">info@nob-log.info</a></p></div>
+    </div>
+  </section>
 
-  <h2>Why I built it</h2>
-  <div class="card">
-    <p>On the first cold morning of the season, I never knew whether to put my kid in long sleeves or short sleeves. I wanted last year's photos and that day's temperature in one place, so I built Kasane. I'm also improving it bit by bit, based on what parents and testers tell me.</p>
-    <p>I wrote about why I built it and what I fixed: <a href="https://umiushi1.substack.com/p/every-year-i-forget-what-my-kid-wore">Every year I forget what my kid wore last year, so I built an app</a>.</p>
-    <p>Nobuhiko Kimoto · <a href="https://umiushi1.substack.com/">Notes from Umiushi, a tiny app studio in Japan</a></p>
-  </div>
-
-  <h2>Contact</h2>
-  <div class="card">
-    <p>Bug reports and requests are welcome by email (English or Japanese). Replies may take a few days.</p>
-    <p><a href="mailto:info@nob-log.info">info@nob-log.info</a></p>
-  </div>
-
-  <footer>
-    <a href="../privacy.html">Privacy policy (Japanese)</a> · <a href="../../">Products by nobuhiko</a>
-    <p>© 2026 nobuhiko</p>
-  </footer>
+  <section class="statement reveal">
+    <h2>Start by importing.</h2>
+    <p>In a few minutes, last year's today is already there.</p>
+    <div class="cta" style="justify-content:center"><a class="btn" href="https://apps.apple.com/app/id6811230663?pt=129098959&amp;ct=lp-en&amp;mt=8">Download on the App Store</a></div>
+  </section>
 </main>
+
+<footer class="site"><div class="wrap"><span>© 2026 nobuhiko</span><span><a href="../privacy.html">Privacy policy (Japanese)</a> · <a href="../../">Products by nobuhiko</a></span></div></footer>
+<script src="../../assets/site.js"></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8e368a03b62f48a98ec3d3205e06c11d"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

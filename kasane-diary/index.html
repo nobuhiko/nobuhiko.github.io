@@ -53,118 +53,114 @@
 <link rel="alternate" hreflang="ja" href="https://nobuhiko.github.io/kasane-diary/">
 <link rel="alternate" hreflang="en" href="https://nobuhiko.github.io/kasane-diary/en/">
 <link rel="icon" href="./img/icon.png">
-<style>
-  body { margin: 0; background: #FFF7EA; color: #3A2E24; font-family: "Hiragino Maru Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif; line-height: 1.8; }
-  main { max-width: 720px; margin: 0 auto; padding: 40px 16px 48px; }
-  .crumb { font-size: 13px; margin: 0 0 16px; }
-  .crumb a { text-decoration: none; }
-  header { text-align: center; }
-  header img { width: 88px; height: 88px; border-radius: 20px; }
-  h1 { font-size: 26px; margin: 12px 0 0; }
-  .catch { font-size: 20px; font-weight: 700; margin: 20px 0 4px; }
-  .lead { color: #6B5B4D; margin: 0 auto; max-width: 520px; }
-  h2 { font-size: 18px; margin-top: 40px; border-bottom: 1px solid #EAD5BF; padding-bottom: 6px; }
-  a { color: #D96C3D; }
-  .cta { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 20px 0 4px; }
-  .btn { display: inline-block; background: #D96C3D; color: #fff; text-decoration: none; font-weight: 700; padding: 10px 22px; border-radius: 999px; }
-  .note { font-size: 13px; color: #9A7E65; text-align: center; margin: 0; }
-  .shots { display: flex; gap: 12px; overflow-x: auto; padding: 8px 0 12px; margin-top: 24px; scroll-snap-type: x mandatory; }
-  .shots img { width: 200px; flex: none; border-radius: 16px; scroll-snap-align: start; box-shadow: 0 2px 8px rgba(58,46,36,.12); }
-  .card { background: #fff; border-radius: 20px; padding: 16px 18px; border-bottom: 3px solid #EAD5BF; margin-top: 12px; }
-  .card h3 { margin: 0 0 4px; font-size: 16px; }
-  .card p { margin: 0; color: #6B5B4D; font-size: 14px; }
-  ul.for { padding-left: 1.2em; color: #6B5B4D; }
-  dt { font-weight: 700; margin-top: 14px; }
-  dd { margin: 2px 0 0 0; color: #6B5B4D; }
-  footer { margin-top: 48px; font-size: 13px; color: #9A7E65; }
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;700;800&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
 </head>
-<body>
-<main>
-  <p class="crumb" style="display:flex;justify-content:space-between"><a href="../">← nobuhiko のプロダクト</a><a href="./en/" hreflang="en" lang="en">English</a></p>
-  <header>
-    <img src="./img/icon.png" alt="">
-    <h1>かさね日記</h1>
-    <p class="catch">この気温の日、なに着てた?</p>
-    <p class="lead">1 日 1 枚の写真に、その日の気温と天気が自動で付く 3 年日記。去年・2 年前の同じ日と重ねてぱらぱらめくれて、気温で過去の写真をさがせます。入れたら、まず取り込み。数分で去年の今日が並びます。</p>
-    <div class="cta">
-      <a class="btn" href="https://apps.apple.com/jp/app/id6811230663?pt=129098959&ct=lp&mt=8">App Store でダウンロード</a>
+<body class="light" style="--accent:#D96C3D">
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="./"><img src="./img/icon.png" alt="">かさね日記</a>
+    <nav class="pill"><a class="opt" href="#features">できること</a><a class="opt" href="#faq">よくある質問</a><a href="./en/" hreflang="en" lang="en">English</a><a href="../">ほかのプロダクト</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="reveal">
+      <p class="eyebrow">気温つき · 3 年の写真日記</p>
+      <h1 class="display">去年の今日、<br>この子<br>なに着てた?</h1>
+      <p class="lead">1 日 1 枚の写真に、その日の気温と天気が自動で付く 3 年日記。去年・2 年前の同じ日と重ねてぱらぱらめくれて、気温で過去の写真をさがせます。入れたら、まず取り込み。数分で去年の今日が並びます。</p>
+      <div class="cta"><a class="btn" href="https://apps.apple.com/jp/app/id6811230663?pt=129098959&amp;ct=lp&amp;mt=8">App Store でダウンロード</a><a class="btn ghost" href="./android/">Android 版(テスト参加)</a></div>
+      <p class="note">無料(一部の機能は買い切りの Pro)。日本語・英語・中国語・韓国語。</p>
     </div>
-    <p class="note">無料(一部の機能は買い切りの Pro)。日本語・英語・中国語・韓国語。Android 版は<a href="./android/">テスト参加で先行公開中</a></p>
-  </header>
+    <div class="stage reveal">
+      <div class="phone back"><img src="./img/app-02.webp" alt="去年・2年前と重ねてぱらぱら"></div>
+      <div class="phone front"><img src="./img/app-07.webp" alt="けさの気温と、同じくらいの気温だった日の写真"></div>
+    </div>
+  </section>
 
-  <div class="shots">
-    <img src="./img/s1.png" alt="けさの気温と、同じくらいの気温だった日の写真" loading="lazy">
-    <img src="./img/s2.png" alt="きょう・先週・先月・去年・2年前の同じ日が一枚の頁に並ぶ画面" loading="lazy">
-    <img src="./img/s3.png" alt="去年・2年前と重ねてぱらぱら" loading="lazy">
-    <img src="./img/s4.png" alt="気温で過去の日をさがす画面" loading="lazy">
-    <img src="./img/s5.png" alt="ひと月の写真とその日の気温が並ぶこよみ" loading="lazy">
-    <img src="./img/s6.png" alt="何の日記かを選ぶ画面" loading="lazy">
-    <img src="./img/s7.png" alt="テーマカラーを選ぶ画面" loading="lazy">
+  <section class="feature" id="features">
+    <div class="text reveal"><span class="tag">毎朝</span><h2>けさは半袖?<br>長袖?</h2><p>ホームのいちばん上に、きょうの最高・最低・朝 8 時の気温と、同じくらいの気温だった日の写真が並びます。夕方からは、あしたの気温に切り替わるので、前の晩のうちに服を決めておけます。</p></div>
+    <div class="visual reveal"><div class="phone"><img src="./img/app-07.webp" alt="きょうの気温と、同じくらいの気温だった日の写真が並ぶホーム" loading="lazy"></div></div>
+  </section>
+
+  <section class="feature flip">
+    <div class="text reveal"><span class="tag">重ねてぱらぱら</span><h2>0 歳、1 歳、2 歳、<br>3 歳の同じ日。</h2><p>きょうの写真と、去年・2 年前の同じ日の写真を並べたまま、1 日ずつ同時にめくります。好きな日から 1 週間 / 1 か月 / 3 か月 / 1 年ぶん。子どもの成長や庭の季節の移り変わりが、数秒で見比べられます。</p></div>
+    <div class="visual reveal"><div class="phone"><img src="./img/app-02.webp" alt="去年・2年前の同じ日と重ねてめくる画面" loading="lazy"></div></div>
+  </section>
+
+  <section class="feature">
+    <div class="text reveal"><span class="tag">気温でさがす</span><h2>この気温の日、<br>なに着てた?</h2><p>今日と同じくらいの気温だった日の写真を、これまでの記録から並べて見られます。毎朝の服選びや衣替えの目安に。</p></div>
+    <div class="visual reveal"><div class="phone"><img src="./img/app-04.webp" alt="気温で過去の日をさがす画面" loading="lazy"></div></div>
+  </section>
+
+  <section class="feature flip">
+    <div class="text reveal"><span class="tag">貼るだけ</span><h2>ひと月を、<br>ひと目に。</h2><p>きょうの 1 枚を撮るか選ぶだけ。場所・気温・天気は自動で付きます。きょう・先週・先月・去年・2 年前の同じ日が一枚の頁に。その日に写真が無ければ、前後 3 日でいちばん近い日を出します。</p></div>
+    <div class="visual reveal"><div class="phone"><img src="./img/app-05.webp" alt="ひと月の写真とその日の気温が並ぶこよみ" loading="lazy"></div></div>
+  </section>
+
+  <section class="feature">
+    <div class="text reveal"><span class="tag">取り込み</span><h2>過去の写真から、<br>始められる。</h2><p>カメラロールの過去の写真をまとめて取り込み、当時の気温を後から付けます(無料で 2 年分)。始めた日から 3 年日記になります。スクリーンショットは選びません。</p></div>
+    <div class="visual reveal"><div class="phone"><img src="./img/app-01.webp" alt="きょうの頁" loading="lazy"></div></div>
+  </section>
+
+  <section class="statement reveal"><h2>ほかにも。</h2></section>
+  <div class="grid">
+    <div class="glass reveal"><h3>「何の日記?」で 1 枚を選ぶ(Pro)</h3><p>子ども・ペット・空、または見本に似たもの(ビオトープや鉢植え、いつもの景色など)を選ぶと、取り込みのときにその日の写真の中からテーマに合う 1 枚を選びます。写真の中身の判定は端末の中だけで行います。</p></div>
+    <div class="glass reveal"><h3>動画や画像にして家族に送る</h3><p>ぱらぱらを、画面で見ているまま(前の年とかさねて・速さも)動画にして、LINE などで送れます。1 年ぶんでも 5 分に収めます。きょうや好きな日の頁を、去年・2 年前と並べた 1 枚の画像にもできます。</p></div>
+    <div class="glass reveal"><h3>前にここに来たとき</h3><p>旅行先の頁には、同じ場所に前に来たときの頁が並びます。「前に来たときは、こんなに小さかったね」がすぐに見られます。家の近くなど、いつもの場所では出しません。</p></div>
+    <div class="glass reveal"><h3>テーマカラーを選べる</h3><p>日記の表紙を選ぶように、9 色からアプリの色を選べます。朱・若葉・海は無料、山吹・藤・桜・栗・墨・夜はグラデーションの Pro の色で、共有する画像や動画もその色になります。</p></div>
+    <div class="glass reveal"><h3>写真は端末の中だけ</h3><p>アカウント登録は不要。写真と記録は端末内にだけ保存され、外部のサーバーには送られません。</p></div>
   </div>
 
-  <h2>できること</h2>
-  <div class="card"><h3>けさは半袖? 長袖? の答え</h3><p>ホームのいちばん上に、きょうの最高・最低・朝 8 時の気温と、同じくらいの気温だった日の写真が並びます。夕方からは、あしたの気温に切り替わるので、前の晩のうちに服を決めておけます。</p></div>
-  <div class="card"><h3>気温でさがす</h3><p>今日と同じくらいの気温だった日の写真を、これまでの記録から並べて見られます。毎朝の服選びや衣替えの目安に。</p></div>
-  <div class="card"><h3>去年の今日と重ねて見る</h3><p>きょう・先週・先月・去年・2 年前の同じ日が一枚の頁に。その日に写真が無ければ、前後 3 日でいちばん近い日を出します。</p></div>
-  <div class="card"><h3>重ねてぱらぱら</h3><p>きょうの写真と、去年・2 年前の同じ日の写真を並べたまま、1 日ずつ同時にめくります。好きな日から 1 週間 / 1 か月 / 3 か月 / 1 年ぶん。子どもの成長や庭の季節の移り変わりが、数秒で見比べられます。</p></div>
-  <div class="card"><h3>貼るだけで気温と天気が付く</h3><p>きょうの 1 枚を撮るか選ぶだけ。場所・気温・天気は自動で付きます。</p></div>
-  <div class="card"><h3>過去の写真から始められる</h3><p>カメラロールの過去の写真をまとめて取り込み、当時の気温を後から付けます(無料で 2 年分)。始めた日から 3 年日記になります。スクリーンショットは選びません。</p></div>
-  <div class="card"><h3>「何の日記?」で 1 枚を選ぶ(Pro)</h3><p>子ども・ペット・空、または見本に似たもの(ビオトープや鉢植え、いつもの景色など)を選ぶと、取り込みのときにその日の写真の中からテーマに合う 1 枚を選びます。写真の中身の判定は端末の中だけで行います。</p></div>
-  <div class="card"><h3>動画や画像にして家族に送る</h3><p>ぱらぱらを、画面で見ているまま(前の年とかさねて・速さも)動画にして、LINE などで送れます。1 年ぶんでも 5 分に収めます。きょうや好きな日の頁を、去年・2 年前と並べた 1 枚の画像にもできます。</p></div>
-  <div class="card"><h3>前にここに来たとき</h3><p>旅行先の頁には、同じ場所に前に来たときの頁が並びます。「前に来たときは、こんなに小さかったね」がすぐに見られます。家の近くなど、いつもの場所では出しません。</p></div>
-  <div class="card"><h3>テーマカラーを選べる</h3><p>日記の表紙を選ぶように、9 色からアプリの色を選べます。朱・若葉・海は無料、山吹・藤・桜・栗・墨・夜はグラデーションの Pro の色で、共有する画像や動画もその色になります。</p></div>
-  <div class="card"><h3>写真は端末の中だけ</h3><p>アカウント登録は不要。写真と記録は端末内にだけ保存され、外部のサーバーには送られません。</p></div>
+  <section class="statement reveal"><h2>こんな方に。</h2>
+    <div class="chips"><span>子どもの服装で毎朝迷う方、成長の記録も残したい方</span><span>家庭菜園やガーデニングで、季節ごとの育ち方を比べたい方</span><span>自分のコーデ記録・服装記録を気温と一緒に残したい方</span><span>日記は続かないけれど、写真 1 枚なら続けられそうな方</span></div>
+  </section>
 
-  <h2>こんな方に</h2>
-  <ul class="for">
-    <li>子どもの服装で毎朝迷う方、成長の記録も残したい方</li>
-    <li>家庭菜園やガーデニングで、季節ごとの育ち方を比べたい方</li>
-    <li>自分のコーデ記録・服装記録を気温と一緒に残したい方</li>
-    <li>日記は続かないけれど、写真 1 枚なら続けられそうな方</li>
-  </ul>
+  <section class="block" id="cloud">
+    <h2 class="reveal">写真をクラウドに置いている場合</h2>
+    <p class="reveal" style="color:var(--mute);max-width:46em;margin:-8px 0 24px">かさね日記が取り込めるのは、端末の写真ライブラリにある写真です。機種変更のあとや、容量を空けるために端末から消したあとは、昔の写真が Google フォトや Amazon Photos にしか無いことがあります。そのときは、先にそれぞれのアプリで端末にダウンロードしてから取り込んでください。全部でなくても、子どもや植物など残したい写真だけで大丈夫です。どちらのアプリも、人物や「花」などのキーワードで写真を絞り込めます。</p>
+    <div class="grid">
+      <div class="glass reveal"><h3>iCloud 写真(iPhone)</h3><p>そのままで大丈夫です。「iPhone のストレージを最適化」をオンにしていても、写真ライブラリに撮影日と場所が残っているので取り込めます。</p></div>
+      <div class="glass reveal"><h3>Google フォト</h3><p>人物やキーワードで検索してから、写真を長押しして選び、そのまま指でなぞるとまとめて選べます。メニューの「ダウンロード」で端末に保存してください。撮影日と場所はダウンロードしても残ります(iPad・Android で確認済み)。</p></div>
+      <div class="glass reveal"><h3>Amazon Photos</h3><p>人物やキーワードで絞ってから写真をまとめて選び、「ダウンロード」で端末に保存してください。Android では撮影日と場所が残ることを確認しています。</p></div>
+      <div class="glass reveal"><h3>ダウンロードしたら</h3><p>かさね日記の 設定 →「過去の頁を取り込む」の「取り込みを開く」から、「取り込みを開始」を押してください。すでに記録がある日はそのままで、空いている日だけが埋まります。2 年分なら無料で取り込めます。取り込んだあとは、ダウンロードした写真を端末から消してもかまいません(かさね日記には縮小版が残ります)。</p></div>
+    </div>
+  </section>
 
-  <h2 id="cloud">写真をクラウドに置いている場合</h2>
-  <p>かさね日記が取り込めるのは、端末の写真ライブラリにある写真です。機種変更のあとや、容量を空けるために端末から消したあとは、昔の写真が Google フォトや Amazon Photos にしか無いことがあります。そのときは、先にそれぞれのアプリで端末にダウンロードしてから取り込んでください。全部でなくても、子どもや植物など残したい写真だけで大丈夫です。どちらのアプリも、人物や「花」などのキーワードで写真を絞り込めます。</p>
-  <div class="card"><h3>iCloud 写真(iPhone)</h3><p>そのままで大丈夫です。「iPhone のストレージを最適化」をオンにしていても、写真ライブラリに撮影日と場所が残っているので取り込めます。</p></div>
-  <div class="card"><h3>Google フォト</h3><p>人物やキーワードで検索してから、写真を長押しして選び、そのまま指でなぞるとまとめて選べます。メニューの「ダウンロード」で端末に保存してください。撮影日と場所はダウンロードしても残ります(iPad・Android で確認済み)。</p></div>
-  <div class="card"><h3>Amazon Photos</h3><p>人物やキーワードで絞ってから写真をまとめて選び、「ダウンロード」で端末に保存してください。Android では撮影日と場所が残ることを確認しています。</p></div>
-  <div class="card"><h3>ダウンロードしたら</h3><p>かさね日記の 設定 →「過去の頁を取り込む」の「取り込みを開く」から、「取り込みを開始」を押してください。すでに記録がある日はそのままで、空いている日だけが埋まります。2 年分なら無料で取り込めます。取り込んだあとは、ダウンロードした写真を端末から消してもかまいません(かさね日記には縮小版が残ります)。</p></div>
+  <section class="block faq" id="faq">
+    <h2 class="reveal">よくある質問</h2>
+    <details><summary>写真はどこに保存されますか?</summary><p>すべて端末の中だけに保存されます。外部のサーバーには送られません。「何の日記?」で写真の中身(人の顔や犬・空など)を見るときも、判定は端末の中だけで行います。アプリを削除すると写真と記録も消えます。</p></details>
+    <details><summary>気温はどこから取っていますか?</summary><p>Open-Meteo の天気データを使っています。位置は約 10km の精度に丸めてから問い合わせます。</p></details>
+    <details><summary>過去の写真の気温が付きません</summary><p>写真に位置情報がない場合、推測で気温を付けることはしません。頁の詳細で場所(ホーム地点か地名)を選ぶと、その日の気温が付きます。</p></details>
+    <details><summary>昔の写真が取り込めません</summary><p>昔の写真が Google フォトや Amazon Photos にしか無いのかもしれません。<a href="#cloud">写真をクラウドに置いている場合</a>をご覧ください。</p></details>
+    <details><summary>去年の同じ日に写真がありません</summary><p>前後 3 日以内でいちばん近い日の写真を「2 日前」のように表示します。それも無い場合は空の頁になります。</p></details>
+    <details><summary>データを全部消したい</summary><p>設定の「すべて削除」か、アプリの削除で消えます。</p></details>
+  </section>
 
-  <h2>よくある質問</h2>
-  <dl>
-    <dt>写真はどこに保存されますか?</dt>
-    <dd>すべて端末の中だけに保存されます。外部のサーバーには送られません。「何の日記?」で写真の中身(人の顔や犬・空など)を見るときも、判定は端末の中だけで行います。アプリを削除すると写真と記録も消えます。</dd>
-    <dt>気温はどこから取っていますか?</dt>
-    <dd>Open-Meteo の天気データを使っています。位置は約 10km の精度に丸めてから問い合わせます。</dd>
-    <dt>過去の写真の気温が付きません</dt>
-    <dd>写真に位置情報がない場合、推測で気温を付けることはしません。頁の詳細で場所(ホーム地点か地名)を選ぶと、その日の気温が付きます。</dd>
-    <dt>昔の写真が取り込めません</dt>
-    <dd>昔の写真が Google フォトや Amazon Photos にしか無いのかもしれません。<a href="#cloud">写真をクラウドに置いている場合</a>をご覧ください。</dd>
-    <dt>去年の同じ日に写真がありません</dt>
-    <dd>前後 3 日以内でいちばん近い日の写真を「2 日前」のように表示します。それも無い場合は空の頁になります。</dd>
-    <dt>データを全部消したい</dt>
-    <dd>設定の「すべて削除」か、アプリの削除で消えます。</dd>
-  </dl>
+  <section class="block">
+    <div class="grid">
+      <div class="glass reveal"><h3>作った人</h3>
+        <p>急に寒くなった朝、子どもに長袖と半袖のどちらを着せるのか、毎年わからなくなっていました。去年の今ごろの写真と、その日の気温がひと目でわかればいいのに、と思って作ったのが かさね日記 です。Google フォトの「〇年前の今日」が、たまにではなく毎日見られたら、という思いもありました。</p>
+        <p>使ってくれた方やテストをしてくれた方の声で、少しずつ直しています。作った理由と、直したことは <a href="https://umiushi1.substack.com/p/every-year-i-forget-what-my-kid-wore">こちら(英語)</a>に書きました。</p>
+        <p>Nobuhiko Kimoto · <a href="../">ほかのプロダクト</a> · <a href="https://umiushi1.substack.com/">Substack</a></p></div>
+      <div class="glass reveal"><h3>お問い合わせ</h3>
+        <p>不具合や要望は、メールでお知らせください。返信には数日いただくことがあります。</p>
+        <p><a href="mailto:info@nob-log.info">info@nob-log.info</a></p></div>
+    </div>
+  </section>
 
-  <h2>作った人</h2>
-  <div class="card">
-    <p>急に寒くなった朝、子どもに長袖と半袖のどちらを着せるのか、毎年わからなくなっていました。去年の今ごろの写真と、その日の気温がひと目でわかればいいのに、と思って作ったのが かさね日記 です。Google フォトの「〇年前の今日」が、たまにではなく毎日見られたら、という思いもありました。</p>
-    <p>使ってくれた方やテストをしてくれた方の声で、少しずつ直しています。作った理由と、直したことは <a href="https://umiushi1.substack.com/p/every-year-i-forget-what-my-kid-wore">こちら(英語)</a>に書きました。</p>
-    <p>Nobuhiko Kimoto · <a href="../">ほかのプロダクト</a> · <a href="https://umiushi1.substack.com/">Substack</a></p>
-  </div>
-
-  <h2>お問い合わせ</h2>
-  <div class="card">
-    <p>不具合や要望は、メールでお知らせください。返信には数日いただくことがあります。</p>
-    <p><a href="mailto:info@nob-log.info">info@nob-log.info</a></p>
-  </div>
-
-  <footer>
-    <a href="./privacy.html">プライバシーポリシー</a> · <a href="./delete.html">データの削除について</a> · <a href="../">nobuhiko のプロダクト</a>
-    <p>© 2026 nobuhiko</p>
-  </footer>
+  <section class="statement reveal">
+    <h2>入れたら、まず取り込み。</h2>
+    <p>数分で去年の今日が並びます。</p>
+    <div class="cta" style="justify-content:center"><a class="btn" href="https://apps.apple.com/jp/app/id6811230663?pt=129098959&amp;ct=lp&amp;mt=8">App Store でダウンロード</a></div>
+  </section>
 </main>
+
+<footer class="site"><div class="wrap"><span>© 2026 nobuhiko</span><span><a href="./privacy.html">プライバシーポリシー</a> · <a href="./delete.html">データの削除について</a> · <a href="../">nobuhiko のプロダクト</a></span></div></footer>
+<script src="../assets/site.js"></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8e368a03b62f48a98ec3d3205e06c11d"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
