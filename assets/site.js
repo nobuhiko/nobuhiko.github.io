@@ -7,3 +7,8 @@
   }, { rootMargin: '0px 0px -10% 0px' });
   els.forEach((e) => io.observe(e));
 })();
+
+// 動きを減らす設定のときは、ぱらぱらの動画を止めておく(最初の 1 こまのまま)
+if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('video[autoplay]').forEach((v) => { v.removeAttribute('autoplay'); v.pause(); });
+}
