@@ -170,3 +170,11 @@ footer.site a:hover { color: var(--ink); }
   .stage { height: 440px; }
   .glass { padding: 22px; }
 }
+
+/* なにを、かさねる?(使い方のタイル) */
+.use-grid { grid-template-columns: repeat(3, 1fr); }
+.glass.use { padding: 12px; margin: 0; }
+.glass.use img { width: 100%; border-radius: 20px; aspect-ratio: 600 / 760; object-fit: cover; }
+.glass.use figcaption { padding: 14px 8px 6px; }
+@media (max-width: 900px) { .use-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .use-grid { grid-template-columns: 1fr 1fr; gap: 10px; } .glass.use { padding: 8px; } .glass.use p { font-size: 13px; } }
