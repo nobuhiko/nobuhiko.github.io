@@ -65,6 +65,8 @@ img { max-width: 100%; display: block; }
 .pill { display: flex; gap: 4px; padding: 4px; border: 1px solid var(--glass-line); border-radius: 999px; background: var(--glass); }
 .pill a { white-space: nowrap; text-decoration: none; font-size: 14px; padding: 6px 14px; border-radius: 999px; color: var(--mute); }
 .pill a:hover { color: var(--ink); background: var(--glass); }
+.pill .theme { font: inherit; font-size: 15px; line-height: 1; padding: 6px 12px; border: 0; border-radius: 999px; background: none; color: var(--mute); cursor: pointer; }
+.pill .theme:hover { color: var(--ink); background: var(--glass); }
 
 .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 

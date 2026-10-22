@@ -9,19 +9,27 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Nobuhiko Kimoto","url":"https://umiushi-lab.com/","sameAs":["https://umiushi1.substack.com/","https://zenn.dev/nobuhiko","https://seaslug.world/"],"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"SoftwareApplication","name":"かさね日記 (Kasane)","url":"https://umiushi-lab.com/kasane-diary/"}},{"@type":"Offer","itemOffered":{"@type":"WebSite","name":"世界のウミウシ (SEASLUG.WORLD)","url":"https://seaslug.world/"}},{"@type":"Offer","itemOffered":{"@type":"WebSite","name":"きれるまえ","url":"https://kirerumae.com/"}}]}
 </script>
+<script>
+// 明るい/暗い: 選んだことがあればそれ、なければ OS の設定に合わせる(描く前に決めてちらつかせない)
+(() => {
+  let t; try { t = localStorage.getItem('theme'); } catch (e) {}
+  if (!t) t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  if (t === 'light') document.documentElement.classList.add('light');
+})();
+</script>
 <link rel="icon" href="./favicon.ico" sizes="any">
 <link rel="icon" href="./favicon-32.png" type="image/png">
 <link rel="apple-touch-icon" href="./apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;700;800&display=swap">
-<link rel="stylesheet" href="./assets/site.css?v=20261020">
+<link rel="stylesheet" href="./assets/site.css?v=20261022">
 </head>
 <body>
 <header class="nav">
   <div class="nav-in">
     <a class="brand" href="./"><span class="dot"></span>うみうしラボ</a>
-    <nav class="pill"><a href="#products">プロダクト</a><a class="opt" href="#maker">作っている人</a><a href="mailto:info@umiushi-lab.com">連絡</a></nav>
+    <nav class="pill"><a href="#products">プロダクト</a><a class="opt" href="#maker">作っている人</a><a href="mailto:info@umiushi-lab.com">連絡</a><button class="theme" type="button" aria-label="明るい表示と暗い表示を切り替える">◐</button></nav>
   </div>
 </header>
 
@@ -81,7 +89,7 @@
 </main>
 
 <footer class="site"><div class="wrap"><span>© 2026 うみうしラボ</span><span><a href="./kasane-diary/">かさね日記</a> · <a href="https://seaslug.world/">世界のウミウシ</a> · <a href="https://kirerumae.com/">きれるまえ</a></span></div></footer>
-<script src="./assets/site.js?v=20261020"></script>
+<script src="./assets/site.js?v=20261022"></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8e368a03b62f48a98ec3d3205e06c11d"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

@@ -12,3 +12,9 @@
 if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.querySelectorAll('video[autoplay]').forEach((v) => { v.removeAttribute('autoplay'); v.pause(); });
 }
+
+// 明るい/暗いの切り替え(トップのナビの ◐)。選んだほうを覚えておく
+document.querySelectorAll('.theme').forEach((b) => b.addEventListener('click', () => {
+  const light = document.documentElement.classList.toggle('light');
+  try { localStorage.setItem('theme', light ? 'light' : 'dark'); } catch (e) {}
+}));
