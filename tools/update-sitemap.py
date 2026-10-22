@@ -5,7 +5,7 @@
 (git config core.hooksPath .githooks を一度だけ設定)。
 
 あわせて、製品のフォルダ(kasane-diary/ など)ごとに <フォルダ>/sitemap.xml を切り出す。
-Search Console のプロパティが URL プレフィックス(https://nobuhiko.github.io/kasane-diary/)なので、
+Search Console のプロパティが URL プレフィックス(https://umiushi-lab.com/kasane-diary/)なので、
 ルートの sitemap.xml はプロパティの外になり送信できないため(2026-10-19)。
 """
 import datetime
@@ -15,7 +15,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SITEMAP = ROOT / "sitemap.xml"
-BASE = "https://nobuhiko.github.io/"
+BASE = "https://umiushi-lab.com/"
 
 
 def git(*args: str) -> str:
