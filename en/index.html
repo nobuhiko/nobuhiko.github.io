@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Umiushi Lab: small apps from Japan</title>
+<meta name="description" content="A sea slug field guide built by divers around the world, and Kasane, a one-photo-a-day diary with the weather. Made by a small app studio in Japan.">
+<link rel="canonical" href="https://umiushi-lab.com/en/">
+<link rel="alternate" hreflang="ja" href="https://umiushi-lab.com/">
+<link rel="alternate" hreflang="en" href="https://umiushi-lab.com/en/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Nobuhiko Kimoto","url":"https://umiushi-lab.com/en/","sameAs":["https://umiushi1.substack.com/","https://zenn.dev/nobuhiko","https://en.seaslug.world/"],"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"SoftwareApplication","name":"Kasane: One Photo a Day Diary","url":"https://umiushi-lab.com/en/kasane-diary/"}},{"@type":"Offer","itemOffered":{"@type":"WebSite","name":"SEASLUG.WORLD","url":"https://en.seaslug.world/"}}]}
+</script>
+<script>
+// Light/dark: use the saved choice, or follow the OS (decide before drawing to avoid a flash)
+(() => {
+  let t; try { t = localStorage.getItem('theme'); } catch (e) {}
+  if (!t) t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  if (t === 'light') document.documentElement.classList.add('light');
+})();
+</script>
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" href="../favicon-32.png" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;700;800&display=swap">
+<link rel="stylesheet" href="../assets/site.css?v=20261022">
+</head>
+<body>
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="./"><span class="dot"></span>Umiushi Lab</a>
+    <nav class="pill"><a href="#products">Products</a><a class="opt" href="#maker">About</a><a href="../" hreflang="ja" lang="ja">日本語</a><button class="theme" type="button" aria-label="Switch between light and dark">◐</button></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero" style="grid-template-columns:1fr">
+    <div class="reveal">
+      <p class="eyebrow">Independent maker in Japan</p>
+      <h1 class="display">Less time spent<br><span class="soft">wondering.</span></h1>
+      <div class="cta"><a class="btn" href="#products">See the products</a><a class="btn ghost" href="https://umiushi1.substack.com/">Read the notes on Substack</a></div>
+    </div>
+  </section>
+
+  <section id="products" class="block">
+    <h2 class="reveal">Products</h2>
+    <div class="products">
+      <article class="glass product reveal" style="--accent:#1E7FA8">
+        <div class="shot"><img src="../assets/seaslug-zukan.webp" alt="The SEASLUG.WORLD field guide" loading="lazy"></div>
+        <div>
+          <span class="kind" style="color:#4FB3DD">Field guide</span>
+          <h3>SEASLUG.WORLD</h3>
+          <p>A sea slug field guide made by divers. Photos from divers around the world, sorted by species. Contributors can keep their own field guide on the site.</p>
+          <div class="row"><a class="btn" href="https://en.seaslug.world/">en.seaslug.world</a><a class="link" href="https://apps.apple.com/app/id6785337563">App Store</a><a class="link" href="https://play.google.com/store/apps/details?id=world.seaslug.app&amp;hl=en">Google Play</a></div>
+        </div>
+      </article>
+      <article class="glass product reveal" style="--accent:#D96C3D">
+        <div class="shot"><img src="../assets/kasane-07.webp" alt="Kasane showing today's temperature and photos from days that were about as warm" loading="lazy"></div>
+        <div>
+          <span class="kind" style="color:#F08A5D">Photo diary</span>
+          <h3>Kasane</h3>
+          <p>What did I wear the last time it was this warm? One photo a day, with the temperature and weather added for you. See it next to the same day last year and the year before.</p>
+          <div class="row"><a class="btn" href="./kasane-diary/">Learn more</a><a class="link" href="https://apps.apple.com/app/id6811230663">App Store</a><a class="link" href="https://play.google.com/store/apps/details?id=com.kasanediary.app&amp;hl=en">Google Play</a></div>
+        </div>
+      </article>
+      <article class="glass reveal">
+        <h3>Kirerumae <span style="font-weight:400;color:var(--mute)">(Japan only, in Japanese)</span></h3>
+        <p>Find the cheapest place to restock household items. Stick a QR code on your washing machine or shelf, scan it when you're about to run out, and it compares Rakuten, Amazon and Yahoo! Shopping, including shipping and points. <a href="https://kirerumae.com/" hreflang="ja">kirerumae.com</a></p>
+      </article>
+      <article class="glass reveal">
+        <h3>EC-CUBE plugins <span style="font-weight:400;color:var(--mute)">(in Japanese)</span></h3>
+        <p>Plugins for EC-CUBE, an open-source online store system popular in Japan: data import, bulk updates, SEO and more. <a href="https://www.ec-cube.net/products/list.php?mode=&amp;category_id=0&amp;maker_id=0&amp;keywords=&amp;ecversion_id=0&amp;partner_id=690&amp;orderby=dl&amp;ecversion=all&amp;protype=all&amp;disp_number=30&amp;price_type=&amp;product_type=&amp;price_max=&amp;price_min=&amp;pageno=1&amp;product_id=&amp;classcategory_id1=&amp;classcategory_id2=&amp;product_class_id=&amp;quantity=" hreflang="ja">See the list</a></p>
+      </article>
+    </div>
+  </section>
+
+  <section id="maker" class="block">
+    <div class="glass reveal">
+      <h3>About</h3>
+      <p>Umiushi Lab is a small app studio in Japan run by Nobuhiko Kimoto. "Umiushi" means sea slug in Japanese. I write about why I make things, what I tried and the numbers on <a href="https://umiushi1.substack.com/">Substack</a>.</p>
+      <p>Contact: <a href="mailto:info@umiushi-lab.com">info@umiushi-lab.com</a> (English or Japanese)</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site"><div class="wrap"><span>© 2026 Umiushi Lab</span><span><a href="./kasane-diary/">Kasane</a> · <a href="https://en.seaslug.world/">SEASLUG.WORLD</a> · <a href="../" hreflang="ja" lang="ja">日本語</a></span></div></footer>
+<script src="../assets/site.js?v=20261022"></script>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="b87e569a-d27c-4533-8df6-4b81421d913b"></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8e368a03b62f48a98ec3d3205e06c11d"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
