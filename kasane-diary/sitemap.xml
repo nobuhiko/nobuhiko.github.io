@@ -2,5 +2,5 @@
 <!-- tools/update-sitemap.py がルートの sitemap.xml から作る。手で直さない -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://umiushi-lab.com/kasane-diary/</loc><lastmod>2026-11-01</lastmod></url>
-  <url><loc>https://umiushi-lab.com/kasane-diary/privacy.html</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://umiushi-lab.com/kasane-diary/privacy.html</loc><lastmod>2026-11-02</lastmod></url>
 </urlset>
