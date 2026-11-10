@@ -74,6 +74,9 @@
 .plate::after { content: ""; flex-basis: 100%; order: 1; }
 .plate .again { order: 2; }
 .plate .again::before { content: "↻ "; color: var(--accent); }
+.plate .make::before { content: "+ "; }
+.plate .fake { color: var(--ink); font-family: var(--font); font-size: 14px; font-weight: 700; }
+.plate [hidden] { display: none; }
 @keyframes lab-spin { to { transform: rotate(360deg); } }
 
 /* 泡 */

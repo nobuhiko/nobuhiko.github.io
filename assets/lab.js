@@ -80,6 +80,30 @@
   const ORDER = ['festiva', 'orientalis', 'apolegma', 'babai', 'cruenta', 'glaucus', 'yugoikedai'];
   ORDER.forEach((k, i) => { const sp = SPECIES[k]; sp.key = k; sp.no = i + 1; sp.sway = sp.sway || 0.12; sp.waves = 0.9 + (i % 3) * 0.12; });
 
+  // 架空の個体(ラボで作る)。番号が同じなら同じ個体になる。色の組は (体, ふち, 模様, 触角, エラ)
+  const FAKE_D = [
+    ['#F2884B', '#FFE3C2', '#FFFFFF', '#D95F26', '#FFFFFF'], ['#22B3A4', '#FFEBB0', '#0C4A53', '#FFB23F', '#FFEBB0'],
+    ['#1B1F27', '#FF7A1A', '#37D6C9', '#FF7A1A', '#37D6C9'], ['#FFDF4A', '#FFFFFF', '#22242C', '#22242C', '#FFFFFF'],
+    ['#E5485D', '#FFFFFF', '#FFFFFF', '#FFE0E4', '#FFD0D6'], ['#7A5CE0', '#B8F2E6', '#FFE66D', '#FF8FA3', '#B8F2E6'],
+    ['#2E9E5B', '#F4F1DE', '#F2CC8F', '#E07A5F', '#F4F1DE'], ['#F4F1E8', '#E5485D', '#2B5FD9', '#2B5FD9', '#E5485D'],
+  ];
+  const FAKE_A = [['#EDE7F8', '#E23D6E', '#F4A6BD'], ['#E6DEFF', '#FF6A3D', '#FFB199'], ['#DDF1FF', '#1F6FEB', '#6FA8FF'], ['#FFE9CF', '#8A3F1B', '#FFD9A8'], ['#E4F7EC', '#22B3A4', '#B8F2E6']];
+  function makeFake(seed) {
+    const r = rng(seed * 7919 + 13), pick = (a) => a[Math.floor(r() * a.length)];
+    const sp = { fake: true, no: seed, mm: 12 + Math.floor(r() * 52), sway: 0.1 + r() * 0.1, waves: 0.8 + r() * 0.4 };
+    if (r() < 0.2) {
+      const [body, cer, rhino] = pick(FAKE_A);
+      return Object.assign(sp, { type: 'aeolid', slim: 0.07 + r() * 0.02, sway: sp.sway * 1.2, body, cer, sac: mix(cer, '#000000', 0.25), rhino, nCer: 8 + Math.floor(r() * 5) });
+    }
+    const [body, margin, mark, rhino, gill] = pick(FAKE_D), band = 0.1 + r() * 0.08, pat = pick(['spots', 'spots', 'stripes', 'dashes', 'plain']);
+    Object.assign(sp, { type: 'dorid', slim: 0.18 + r() * 0.05, frill: 0.04 + r() * 0.1, frillN: 5 + Math.floor(r() * 9), body, foot: mix(body, '#ffffff', 0.35),
+      bands: r() < 0.4 ? [[band, margin], [band * 1.7, mark]] : [[band, margin]], marks: [], stripes: [], rhino, stalk: rhino, gillAxis: gill, gillPin: gill, nGill: 5 + Math.floor(r() * 5), gillSize: 0.95 + r() * 0.3 });
+    if (pat === 'spots') sp.marks = scatter(seed, { n: 7 + Math.floor(r() * 10), t: [0.2, 0.9], s: [0, 0.62], both: 1, r: [0.05, 0.11], c: mark, gap: 0.3 });
+    if (pat === 'dashes') sp.marks = scatter(seed, { n: 6 + Math.floor(r() * 6), t: [0.22, 0.88], s: [0, 0.55], both: 1, r: [0.045, 0.06], e: 2.4, c: mark, gap: 0.34 });
+    if (pat === 'stripes') sp.stripes = pick([[0], [-0.4, 0.4], [-0.48, 0, 0.48]]).map((s) => [s, mark]);
+    return sp;
+  }
+
   const prof = (sp, t) => {
     t = Math.min(1, Math.max(0, t));
     if (sp.type === 'dorid') return Math.pow(Math.sin(Math.PI * t), 0.5) * (1 - 0.15 * t);
@@ -209,6 +233,8 @@
         const p = P(q.t, q.s); ctx.fillStyle = q.c;
         ctx.beginPath(); ctx.ellipse(p.x, p.y, W * q.r * q.e, W * q.r, p.a, 0, TAU); ctx.fill();
       }
+      ctx.lineWidth = W * 0.085;
+      for (const [s, c] of sp.stripes || []) { lineAlong(0.2, s ? 0.86 : 0.64, s); ctx.strokeStyle = c; ctx.stroke(); }
       ctx.restore();
       blob(ctx, O); edge();
       anchors.mantle = scr(P(0.44, fr(0)(0.44)));
@@ -368,14 +394,18 @@
       scale.appendChild(el('path', { d: `M${sx - px} ${sy - 5}v10M${sx - px} ${sy}H${sx}M${sx} ${sy - 5}v10` }));
       const st = el('text', { x: sx, y: sy - 11, 'text-anchor': 'end' }); st.textContent = '10 mm'; scale.appendChild(st);
       svg.appendChild(scale);
-      cv.setAttribute('aria-label', en ? `Stylized drawing of ${sp.sci}, a sea slug, seen from above with its parts labelled` : `${sp.ja}(${sp.sci})を背中から見た、図案化した絵。部位の名前を添えています`);
+      cv.setAttribute('aria-label', sp.fake ? (en ? 'Drawing of an imaginary sea slug seen from above, with its parts labelled' : '架空のウミウシを背中から見た絵。部位の名前を添えています') : en ? `Stylized drawing of ${sp.sci}, a sea slug, seen from above with its parts labelled` : `${sp.ja}(${sp.sci})を背中から見た、図案化した絵。部位の名前を添えています`);
       if (plate) {
         plate.hidden = false;
-        plate.querySelector('.n').textContent = String(sp.no).padStart(2, '0');
+        plate.querySelector('.n').textContent = sp.fake ? 'X-' + String(sp.no).padStart(4, '0') : String(sp.no).padStart(2, '0');
         plate.querySelector('.mm').textContent = sp.mm;
-        const a = plate.querySelector('.sp'); a.href = guide + sp.sci.toLowerCase().replace(/ /g, '_');
-        const ja = a.querySelector('.ja'); if (ja) ja.textContent = sp.ja;
-        a.querySelector('.sci').textContent = sp.sci;
+        const a = plate.querySelector('.sp'), fk = plate.querySelector('.fake');
+        a.hidden = !!sp.fake; if (fk) fk.hidden = !sp.fake;
+        if (!sp.fake) {
+          a.href = guide + sp.sci.toLowerCase().replace(/ /g, '_');
+          const ja = a.querySelector('.ja'); if (ja) ja.textContent = sp.ja;
+          a.querySelector('.sci').textContent = sp.sci;
+        }
         const note = stage.querySelector('.plate-note'); if (note) note.hidden = false;
       }
     };
@@ -397,15 +427,16 @@
         want = Math.max(-0.5, Math.min(0.5, ly / (r.width * 0.9)));
       }, { passive: true });
     }
-    const again = stage.querySelector('.again');
-    if (again) again.addEventListener('click', () => { // 次の種へ(一覧の順)
+    let real = 0; // いま(または最後に)出ていた実在の種
+    const swap = (next) => {
       stage.classList.add('swap');
-      setTimeout(() => {
-        it.spec = SPECIES[ORDER[it.spec.no % ORDER.length]];
-        it.layout(); if (reduce) paint(it, 0);
-        stage.classList.remove('swap');
-      }, reduce ? 0 : 200);
-    });
+      setTimeout(() => { it.spec = next(); it.layout(); if (reduce) paint(it, 0); stage.classList.remove('swap'); }, reduce ? 0 : 200);
+    };
+    const again = stage.querySelector('.again:not(.make)'), make = stage.querySelector('.make');
+    // 次の種へ(一覧の順)。架空の個体のあとは、続きの種に戻る
+    if (again) again.addEventListener('click', () => swap(() => { real = (real + 1) % ORDER.length; return SPECIES[ORDER[real]]; }));
+    // ラボで架空の個体を作る
+    if (make) { make.hidden = false; make.addEventListener('click', () => swap(() => makeFake(1 + Math.floor(Math.random() * 9999)))); }
     it.layout();
   }
 
