@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="lab">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,60 +35,75 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;700;800&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;700;800&display=swap"><style>.reveal{opacity:1;transform:none}</style></noscript>
 <link rel="stylesheet" href="../assets/site.css?v=20261110">
+<link rel="stylesheet" href="../assets/lab.css?v=20261110">
 </head>
 <body>
 <header class="nav">
   <div class="nav-in">
-    <a class="brand" href="./"><span class="dot"></span>Umiushi Lab</a>
+    <a class="brand" href="./"><img src="../apple-touch-icon.png" alt="" width="28" height="28">Umiushi Lab</a>
     <nav class="pill"><a href="#products">Products</a><a class="opt" href="#maker">About</a><a href="../" hreflang="ja" lang="ja">日本語</a><button class="theme" type="button" aria-label="Switch between light and dark">◐</button></nav>
   </div>
 </header>
 
 <main class="wrap">
-  <section class="hero" style="grid-template-columns:1fr">
+  <section class="hero">
+    <div class="bubbles" aria-hidden="true"><i style="--x:6%;--s:10px;--d:19s;--w:-3s"></i><i style="--x:18%;--s:6px;--d:15s;--w:-9s"></i><i style="--x:34%;--s:14px;--d:23s;--w:-14s"></i><i style="--x:52%;--s:7px;--d:17s;--w:-1s"></i><i style="--x:71%;--s:11px;--d:21s;--w:-11s"></i><i style="--x:88%;--s:8px;--d:16s;--w:-6s"></i><i style="--x:95%;--s:16px;--d:26s;--w:-18s"></i></div>
     <div>
       <p class="eyebrow">Independent maker in Japan</p>
       <h1 class="display">Less time spent<br><span class="soft">wondering.</span></h1>
+      <p class="lead">A small lab in Japan. We make a sea slug field guide and apps for everyday life.</p>
       <div class="cta"><a class="btn" href="#products">See the products</a><a class="btn ghost" href="https://umiushi1.substack.com/">Read the notes on Substack</a></div>
     </div>
+    <div class="specimen">
+      <div class="scope">
+        <svg class="ring" viewBox="0 0 200 200" aria-hidden="true"><circle class="lens" cx="100" cy="100" r="91"/><circle class="dash" cx="100" cy="100" r="68"/><g class="ticks"><circle cx="100" cy="100" r="95.5" stroke-width="3" stroke-dasharray="0.4 7.933" opacity=".7"/><circle cx="100" cy="100" r="94.5" stroke-width="5" stroke-dasharray="0.7 48.78"/></g></svg>
+        <canvas role="img" aria-label="Stylized drawing of a sea slug seen from above"></canvas>
+        <svg class="callouts" aria-hidden="true"></svg>
+      </div>
+      <p class="plate" hidden><span>Specimen No. <b class="n">01</b></span><a class="sp" href="https://en.seaslug.world/species/hypselodoris_festiva"><i class="sci">Hypselodoris festiva</i></a><span>Length <b class="mm">30</b> mm</span><button class="again" type="button">Show another species</button></p>
+      <p class="plate-note" hidden>Stylized drawings of real species. Tap a name to open it in the SEASLUG.WORLD field guide.</p>
+    </div>
   </section>
+  <hr class="ruler">
 
   <section id="products" class="block">
+    <p class="over reveal">No. 01 – 05</p>
     <h2 class="reveal">Products</h2>
     <div class="products">
-      <article class="glass product" style="--accent:#1E7FA8">
+      <article data-slug="festiva" class="glass product" style="--accent:#1E7FA8">
         <div class="shot"><img src="../assets/seaslug-zukan.webp" srcset="../assets/seaslug-zukan-440.webp 440w, ../assets/seaslug-zukan.webp 640w" sizes="(max-width: 560px) 240px, 200px" width="640" height="1422" alt="The SEASLUG.WORLD field guide" fetchpriority="high"></div>
         <div>
-          <span class="kind" style="color:#4FB3DD">Field guide</span>
+          <span class="no">No. 01</span><span class="kind" style="color:#4FB3DD">Field guide</span>
           <h3>SEASLUG.WORLD</h3>
           <p>A sea slug field guide made by divers. Photos from divers around the world, sorted by species. Contributors can keep their own field guide on the site.</p>
           <div class="row"><a class="btn" href="https://en.seaslug.world/">en.seaslug.world</a><a class="link" href="https://apps.apple.com/app/id6785337563">App Store</a><a class="link" href="https://play.google.com/store/apps/details?id=world.seaslug.app&amp;hl=en">Google Play</a></div>
         </div>
       </article>
-      <article class="glass product reveal" style="--accent:#D96C3D">
+      <article data-slug="babai" class="glass product reveal" style="--accent:#D96C3D">
         <div class="shot"><img src="../assets/kasane-07.webp" srcset="../assets/kasane-07-440.webp 440w, ../assets/kasane-07.webp 640w" sizes="(max-width: 560px) 240px, 200px" width="640" height="1390" alt="Kasane showing today's temperature and photos from days that were about as warm" loading="lazy"></div>
         <div>
-          <span class="kind" style="color:#F08A5D">Photo diary</span>
+          <span class="no">No. 02</span><span class="kind" style="color:#F08A5D">Photo diary</span>
           <h3>Kasane</h3>
           <p>What did I wear the last time it was this warm? One photo a day, with the temperature and weather added for you. See it next to the same day last year and the year before.</p>
           <div class="row"><a class="btn" href="./kasane-diary/">About Kasane</a><a class="link" href="https://apps.apple.com/app/id6811230663">App Store</a><a class="link" href="https://play.google.com/store/apps/details?id=com.kasanediary.app&amp;hl=en">Google Play</a></div>
         </div>
       </article>
-      <article class="glass reveal">
-        <h3>Kirerumae <span style="font-weight:400;color:var(--mute)">(Japan only, in Japanese)</span></h3>
+      <article data-slug="cruenta" class="glass tagged reveal" style="--accent:#EF8A3C">
+        <h3><span class="no">No. 03</span>Kirerumae <span style="font-weight:400;color:var(--mute)">(Japan only, in Japanese)</span></h3>
         <p>Find the cheapest place to restock household items. Stick a QR code on your washing machine or shelf, scan it when you're about to run out, and it compares Rakuten, Amazon and Yahoo! Shopping, including shipping and points. <a href="https://kirerumae.com/" hreflang="ja">kirerumae.com</a></p>
       </article>
-      <article class="glass reveal">
-        <h3>Shisa <span style="font-weight:400;color:var(--mute)">(coming soon)</span></h3>
+      <article data-slug="orientalis" class="glass tagged reveal" style="--accent:#2F8F83">
+        <h3><span class="no">No. 04</span>Shisa <span style="font-weight:400;color:var(--mute)">(coming soon)</span></h3>
         <p>A guardian for EC-CUBE online stores (EC-CUBE is an open-source store system popular in Japan). When a hosting company sends a security notice, paste its URL: Shisa checks whether it applies to this store, tests the fix in a sandbox, and protects the store without taking it offline. Built for Built with Claude: Japan 2026. <a href="https://youtu.be/O3VeJgtxqUY">Demo video (3 min, Japanese)</a> · <a href="https://ec-cube-demo43.umiushi-lab.com/admin/shisa/diagnosis" hreflang="ja">Try it on the demo store (Japanese)</a> · <a href="https://github.com/nobuhiko/shisa">GitHub (open source)</a></p>
       </article>
-      <article class="glass reveal">
-        <h3>Data migration plugin <span style="font-weight:400;color:var(--mute)">(in Japanese)</span></h3>
+      <article data-slug="apolegma" class="glass tagged reveal" style="--accent:#4A6FA5">
+        <h3><span class="no">No. 05</span>Data migration plugin <span style="font-weight:400;color:var(--mute)">(in Japanese)</span></h3>
         <p>Moves members, products, categories and orders from older EC-CUBE (2.x / 3.x / 4.0 / 4.1) to 4.2 / 4.3. <a href="https://www.ec-cube.net/products/detail.php?product_id=3189" hreflang="ja">Owners Store</a> · <a href="https://www.ec-cube.net/products/list.php?mode=&amp;category_id=0&amp;maker_id=0&amp;keywords=&amp;ecversion_id=0&amp;partner_id=690&amp;orderby=dl&amp;ecversion=all&amp;protype=all&amp;disp_number=30&amp;price_type=&amp;product_type=&amp;price_max=&amp;price_min=&amp;pageno=1&amp;product_id=&amp;classcategory_id1=&amp;classcategory_id2=&amp;product_class_id=&amp;quantity=" hreflang="ja">other plugins</a></p>
       </article>
     </div>
   </section>
 
+  <hr class="ruler">
   <section id="maker" class="block">
     <div class="glass reveal">
       <h3>About</h3>
@@ -98,8 +113,9 @@
   </section>
 </main>
 
-<footer class="site"><div class="wrap"><span>© 2026 Umiushi Lab</span><span><a href="./kasane-diary/">Kasane</a> · <a href="https://en.seaslug.world/">SEASLUG.WORLD</a> · <a href="../" hreflang="ja" lang="ja">日本語</a></span></div></footer>
+<footer class="site"><div class="crawl" aria-hidden="true"></div><div class="wrap"><span>© 2026 Umiushi Lab</span><span><a href="./kasane-diary/">Kasane</a> · <a href="https://en.seaslug.world/">SEASLUG.WORLD</a> · <a href="../" hreflang="ja" lang="ja">日本語</a></span></div></footer>
 <script src="../assets/site.js?v=20261110"></script>
+<script src="../assets/lab.js?v=20261110" defer></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YYZQDTEPR0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YYZQDTEPR0');</script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8e368a03b62f48a98ec3d3205e06c11d"}'></script><!-- End Cloudflare Web Analytics -->

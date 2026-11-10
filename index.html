@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ja">
+<html lang="ja" class="lab">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -39,65 +39,79 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;700;800&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;700;800&display=swap"><style>.reveal{opacity:1;transform:none}</style></noscript>
 <link rel="stylesheet" href="./assets/site.css?v=20261110">
+<link rel="stylesheet" href="./assets/lab.css?v=20261110">
 </head>
 <body>
 <header class="nav">
   <div class="nav-in">
-    <a class="brand" href="./"><span class="dot"></span>うみうしラボ</a>
+    <a class="brand" href="./"><img src="./apple-touch-icon.png" alt="" width="28" height="28">うみうしラボ</a>
     <nav class="pill"><a href="#products">プロダクト</a><a class="opt" href="#maker">作っている人</a><a href="mailto:info@umiushi-lab.com">連絡</a><a href="./en/" hreflang="en" lang="en">English</a><button class="theme" type="button" aria-label="明るい表示と暗い表示を切り替える">◐</button></nav>
   </div>
 </header>
 
 <main class="wrap">
-  <section class="hero" style="grid-template-columns:1fr">
+  <section class="hero">
+    <div class="bubbles" aria-hidden="true"><i style="--x:6%;--s:10px;--d:19s;--w:-3s"></i><i style="--x:18%;--s:6px;--d:15s;--w:-9s"></i><i style="--x:34%;--s:14px;--d:23s;--w:-14s"></i><i style="--x:52%;--s:7px;--d:17s;--w:-1s"></i><i style="--x:71%;--s:11px;--d:21s;--w:-11s"></i><i style="--x:88%;--s:8px;--d:16s;--w:-6s"></i><i style="--x:95%;--s:16px;--d:26s;--w:-18s"></i></div>
     <div>
       <p class="eyebrow">Independent maker</p>
       <h1 class="display">迷う時間を、<br><span class="soft">すこし短く。</span></h1>
+      <p class="lead">ウミウシの図鑑と、暮らしのアプリをつくる小さなラボです。</p>
       <div class="cta"><a class="btn" href="#products">プロダクトを見る</a><a class="btn ghost" href="https://umiushi1.substack.com/">Substack(英語)</a></div>
     </div>
+    <div class="specimen">
+      <div class="scope">
+        <svg class="ring" viewBox="0 0 200 200" aria-hidden="true"><circle class="lens" cx="100" cy="100" r="91"/><circle class="dash" cx="100" cy="100" r="68"/><g class="ticks"><circle cx="100" cy="100" r="95.5" stroke-width="3" stroke-dasharray="0.4 7.933" opacity=".7"/><circle cx="100" cy="100" r="94.5" stroke-width="5" stroke-dasharray="0.7 48.78"/></g></svg>
+        <canvas role="img" aria-label="アオウミウシを背中から見た、図案化した絵"></canvas>
+        <svg class="callouts" aria-hidden="true"></svg>
+      </div>
+      <p class="plate" hidden><span>標本 No. <b class="n">01</b></span><a class="sp" href="https://seaslug.world/species/hypselodoris_festiva"><b class="ja">アオウミウシ</b> <i class="sci">Hypselodoris festiva</i></a><span>体長 <b class="mm">30</b> mm</span><button class="again" type="button">べつの種を見る</button></p>
+      <p class="plate-note" hidden>絵は図案化しています。種名を押すと、世界のウミウシの図鑑が開きます。</p>
+    </div>
   </section>
+  <hr class="ruler">
 
   <section id="products" class="block">
+    <p class="over reveal">No. 01 – 05</p>
     <h2 class="reveal">プロダクト</h2>
     <div class="products">
-      <article class="glass product" style="--accent:#1E7FA8">
+      <article data-slug="festiva" class="glass product" style="--accent:#1E7FA8">
         <div class="shot"><img src="./assets/seaslug-zukan.webp" srcset="./assets/seaslug-zukan-440.webp 440w, ./assets/seaslug-zukan.webp 640w" sizes="(max-width: 560px) 240px, 200px" width="640" height="1422" alt="世界のウミウシの図鑑の画面" fetchpriority="high"></div>
         <div>
-          <span class="kind" style="color:#4FB3DD">Field guide</span>
+          <span class="no">No. 01</span><span class="kind" style="color:#4FB3DD">Field guide</span>
           <h3>世界のウミウシ</h3>
           <p>みんなで作る、投稿型のウミウシ図鑑。世界中のダイバーが撮ったウミウシの写真を、種ごとにまとめています。投稿者はサイト内でマイ図鑑を作れます。</p>
           <div class="row"><a class="btn" href="https://seaslug.world/">seaslug.world</a><a class="link" href="https://apps.apple.com/jp/app/id6785337563">App Store</a><a class="link" href="https://play.google.com/store/apps/details?id=world.seaslug.app">Google Play</a></div>
         </div>
       </article>
-      <article class="glass product reveal" style="--accent:#D96C3D">
+      <article data-slug="babai" class="glass product reveal" style="--accent:#D96C3D">
         <div class="shot"><img src="./assets/kasane-07.webp" srcset="./assets/kasane-07-440.webp 440w, ./assets/kasane-07.webp 640w" sizes="(max-width: 560px) 240px, 200px" width="640" height="1390" alt="かさね日記の、きょうの気温と似た日の写真が並ぶ画面" loading="lazy"></div>
         <div>
-          <span class="kind" style="color:#F08A5D">Photo diary</span>
+          <span class="no">No. 02</span><span class="kind" style="color:#F08A5D">Photo diary</span>
           <h3>かさね日記</h3>
           <p>この気温の日、なに着てた? 1 日 1 枚の写真に気温と天気が自動で付き、去年・2 年前の同じ日と重ねて見られる 3 年日記。</p>
           <div class="row"><a class="btn" href="./kasane-diary/">紹介ページ</a><a class="link" href="./en/kasane-diary/" hreflang="en" lang="en">English</a><a class="link" href="https://apps.apple.com/jp/app/id6811230663">App Store</a><a class="link" href="https://play.google.com/store/apps/details?id=com.kasanediary.app">Google Play</a><a class="link" href="./kasane-diary/privacy.html">プライバシーポリシー</a></div>
         </div>
       </article>
-      <article class="glass product wide reveal" style="--accent:#EF8A3C">
+      <article data-slug="cruenta" class="glass product wide reveal" style="--accent:#EF8A3C">
         <div class="shot wide" style="aspect-ratio:1200/630"><img src="./assets/kirerumae-og.webp" alt="きれるまえ: 洗剤が切れる前に、いちばん安い買い方を" loading="lazy" style="object-position:center"></div>
         <div>
-          <span class="kind" style="color:#F5A25E">Web service</span>
+          <span class="no">No. 03</span><span class="kind" style="color:#F5A25E">Web service</span>
           <h3>きれるまえ</h3>
           <p>切れそうな消耗品を、いちばん安い所で。QR を洗濯機や棚に貼っておき、切れる前に読むと、楽天・Amazon・Yahoo! を横断して送料とポイントを引いた実質の最安が出ます。</p>
           <div class="row"><a class="btn" href="https://kirerumae.com/">kirerumae.com</a></div>
         </div>
       </article>
-      <article class="glass product reveal" style="grid-template-columns:1fr;--accent:#2F8F83">
+      <article data-slug="orientalis" class="glass product reveal" style="grid-template-columns:1fr;--accent:#2F8F83">
         <div>
-        <span class="kind" style="color:#3FB5A5">EC-CUBE · 準備中</span>
+        <span class="no">No. 04</span><span class="kind" style="color:#3FB5A5">EC-CUBE · 準備中</span>
         <h3>Shisa(シーサー)お店の守り神</h3>
         <p>EC-CUBE のお店を守るプラグイン。サーバー会社からセキュリティのお知らせが届いても、お知らせの URL を貼るだけで、このお店に当てはまるかを自分で調べ、試験場で確かめてから、お店を止めずに守りを入れます。Built with Claude: Japan 2026 の応募作品で、オーナーズストアでの公開を準備しています。</p>
         <div class="row"><a class="btn" href="https://youtu.be/O3VeJgtxqUY">デモ動画(3 分)</a><a class="link" href="https://ec-cube-demo43.umiushi-lab.com/admin/shisa/diagnosis">デモのお店で試す</a><a class="link" href="https://github.com/nobuhiko/shisa">GitHub(オープンソース)</a></div>
         </div>
       </article>
-      <article class="glass product reveal" style="grid-template-columns:1fr;--accent:#4A6FA5">
+      <article data-slug="apolegma" class="glass product reveal" style="grid-template-columns:1fr;--accent:#4A6FA5">
         <div>
-        <span class="kind" style="color:#6F95CF">EC-CUBE plugin</span>
+        <span class="no">No. 05</span><span class="kind" style="color:#6F95CF">EC-CUBE plugin</span>
         <h3>データ移行プラグイン</h3>
         <p>古い EC-CUBE(2.x / 3.x / 4.0 / 4.1)から 4.2 / 4.3 へ、会員・商品・カテゴリ・受注のデータを移すプラグイン。2 系は標準のバックアップ(.tar.gz)をそのまま上げるだけです。</p>
         <div class="row"><a class="btn" href="https://www.ec-cube.net/products/detail.php?product_id=3189">オーナーズストア</a></div>
@@ -109,6 +123,7 @@
     </div>
   </section>
 
+  <hr class="ruler">
   <section id="maker" class="block">
     <div class="glass reveal">
       <h3>作っている人</h3>
@@ -118,8 +133,9 @@
   </section>
 </main>
 
-<footer class="site"><div class="wrap"><span>© 2026 うみうしラボ</span><span><a href="./kasane-diary/">かさね日記</a> · <a href="https://seaslug.world/">世界のウミウシ</a> · <a href="https://kirerumae.com/">きれるまえ</a></span></div></footer>
+<footer class="site"><div class="crawl" aria-hidden="true"></div><div class="wrap"><span>© 2026 うみうしラボ</span><span><a href="./kasane-diary/">かさね日記</a> · <a href="https://seaslug.world/">世界のウミウシ</a> · <a href="https://kirerumae.com/">きれるまえ</a></span></div></footer>
 <script src="./assets/site.js?v=20261110"></script>
+<script src="./assets/lab.js?v=20261110" defer></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YYZQDTEPR0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YYZQDTEPR0');</script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8e368a03b62f48a98ec3d3205e06c11d"}'></script><!-- End Cloudflare Web Analytics -->

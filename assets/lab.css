@@ -1,0 +1,131 @@
+/* うみうしラボのトップ(/ と /en/)だけの上乗せ。site.css のあとに読む。<html class="lab"> のときだけ効く。
+   ねらい: 深い海の色の上に、研究室の道具(方眼、目盛り、標本の札、等幅の小さい字)を重ねて「ウミウシ × ラボ」を見せる。
+   色はアイコンの候補(紺 #1E3A5C、オレンジ #F2884B、生成り #FFF7EA)に合わせる。 */
+
+.lab {
+  --bg: #06131F;
+  --bg-glow-1: rgba(242, 136, 75, .16);
+  --bg-glow-2: rgba(40, 150, 210, .16);
+  --ink: #EAF2F7;
+  --mute: #A3B6C5;
+  --faint: #63798B;
+  --glass: rgba(140, 190, 230, .055);
+  --glass-line: rgba(150, 200, 240, .16);
+  --nav: rgba(6, 19, 31, .72);
+  --accent: #F2884B;
+  --grid: rgba(120, 180, 230, .075);
+  --lens: rgba(70, 160, 220, .10);
+  --radius: 22px;
+  --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+}
+.lab.light {
+  --bg: #FFF7EA;
+  --bg-glow-1: rgba(242, 136, 75, .14);
+  --bg-glow-2: rgba(47, 111, 168, .10);
+  --ink: #17304D;
+  --mute: #4D6278;
+  --faint: #8494A4;
+  --glass: rgba(255, 255, 255, .7);
+  --glass-line: rgba(23, 48, 77, .16);
+  --nav: rgba(255, 247, 234, .82);
+  --grid: rgba(23, 48, 77, .07);
+  --lens: rgba(47, 111, 168, .07);
+}
+
+/* 最初の画面: 左に言葉、右に標本 */
+.lab .hero { position: relative; grid-template-columns: minmax(0, 1fr) minmax(0, 540px); gap: 40px; min-height: min(calc(100vh - 64px), 860px); padding: 48px 0 56px; }
+.lab .hero::before { /* 方眼(実験ノート)。端に向かって消える */
+  content: ""; position: absolute; inset: 0 -24px; z-index: -1; pointer-events: none;
+  background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 32px 32px;
+  -webkit-mask-image: radial-gradient(ellipse 75% 70% at 60% 45%, #000 20%, transparent 78%);
+  mask-image: radial-gradient(ellipse 75% 70% at 60% 45%, #000 20%, transparent 78%);
+}
+.lab .eyebrow { font-family: var(--mono); font-weight: 600; letter-spacing: .16em; display: flex; align-items: center; gap: 12px; }
+.lab .eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; }
+.lab .lead { margin-top: 28px; }
+
+/* 標本 */
+.specimen { width: 100%; max-width: 540px; margin: 0 auto; }
+.specimen .scope { position: relative; aspect-ratio: 1; }
+.specimen .scope > * { position: absolute; inset: 0; width: 100%; height: 100%; }
+.specimen .ring { overflow: visible; }
+.specimen .ring .lens { fill: var(--lens); stroke: var(--glass-line); stroke-width: .4; }
+.specimen .ring .ticks { fill: none; stroke: var(--faint); transform-origin: 100px 100px; animation: lab-spin 240s linear infinite; }
+.specimen .ring .dash { fill: none; stroke: var(--glass-line); stroke-width: .4; stroke-dasharray: 1 3; }
+.specimen canvas { transition: opacity .2s ease, transform .2s ease; }
+.specimen.swap canvas, .specimen.swap .callouts { opacity: 0; transform: scale(.96); }
+.specimen .callouts { overflow: visible; pointer-events: none; transition: opacity .2s ease; font-family: var(--mono); }
+.specimen .callouts path { fill: none; stroke: var(--mute); stroke-width: 1; }
+.specimen .callouts circle { fill: var(--bg); stroke: var(--accent); stroke-width: 1.5; }
+.specimen .callouts text { fill: var(--ink); font-size: 13px; font-weight: 700; font-family: var(--font); }
+.specimen .callouts .la { fill: var(--faint); font-size: 11px; font-weight: 400; font-family: var(--mono); }
+.specimen .callouts .scale text { fill: var(--faint); font-size: 11px; font-weight: 400; font-family: var(--mono); }
+.plate { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 16px; margin-top: 14px; font: 12px/1.4 var(--mono); color: var(--mute); }
+.plate b { color: var(--ink); font-weight: 600; }
+.plate .sp { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 1px; font-family: var(--font); font-size: 14px; }
+.plate .sp:hover { color: var(--accent); }
+.plate .sp .ja { font-weight: 700; }
+.plate .sp .sci { font-size: 12px; color: var(--mute); margin-left: 4px; }
+.plate-note { margin: 10px 0 0; text-align: center; font-size: 12px; color: var(--faint); }
+.plate .again { font: inherit; font-family: var(--font); font-weight: 700; color: var(--ink); cursor: pointer; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--glass-line); background: var(--glass); transition: border-color .2s, transform .2s; }
+.plate .again:hover { border-color: var(--accent); transform: translateY(-1px); }
+.plate .again { flex: 0 0 auto; }
+.plate::after { content: ""; flex-basis: 100%; order: 1; }
+.plate .again { order: 2; }
+.plate .again::before { content: "↻ "; color: var(--accent); }
+@keyframes lab-spin { to { transform: rotate(360deg); } }
+
+/* 泡 */
+.bubbles { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+.bubbles i { position: absolute; bottom: -24px; width: var(--s); height: var(--s); left: var(--x); border-radius: 50%; border: 1px solid var(--glass-line); background: radial-gradient(circle at 30% 30%, var(--lens), transparent 70%); animation: lab-rise var(--d) linear infinite; animation-delay: var(--w); opacity: 0; }
+@keyframes lab-rise { 0% { transform: translate(0, 0); opacity: 0; } 10% { opacity: .9; } 50% { transform: translate(14px, -45vh); } 90% { opacity: .6; } 100% { transform: translate(-8px, -90vh); opacity: 0; } }
+
+/* 目盛りの区切り線 */
+.ruler { height: 14px; margin: 0; border: 0; border-top: 1px solid var(--glass-line); background-image: linear-gradient(90deg, var(--faint) 1px, transparent 1px), linear-gradient(90deg, var(--glass-line) 1px, transparent 1px); background-size: 80px 14px, 8px 6px; background-repeat: repeat-x; opacity: .8; }
+
+/* 見出し */
+.lab section.block { padding: 64px 0; }
+.lab .over { font: 600 12px/1 var(--mono); letter-spacing: .16em; text-transform: uppercase; color: var(--accent); margin: 0 0 14px; display: flex; align-items: center; gap: 12px; }
+.lab .over::after { content: ""; flex: 0 0 48px; height: 1px; background: currentColor; opacity: .6; }
+.lab .block > h2 { margin-bottom: 44px; }
+
+/* 製品の札: 角の印、番号、上にのる個体 */
+.lab .products { gap: 44px 20px; }
+.lab .product, .lab .glass.tagged { position: relative; transition: border-color .3s, box-shadow .3s, opacity .9s ease, transform .9s cubic-bezier(.2, .7, .2, 1); }
+.lab .product::before, .lab .glass.tagged::before { content: ""; position: absolute; left: 10px; top: 10px; width: 14px; height: 14px; border: solid var(--accent); border-width: 1.5px 0 0 1.5px; border-top-left-radius: 5px; opacity: .9; pointer-events: none; }
+.lab .product::after, .lab .glass.tagged::after { content: ""; position: absolute; right: 10px; bottom: 10px; width: 14px; height: 14px; border: solid var(--accent); border-width: 0 1.5px 1.5px 0; border-bottom-right-radius: 5px; opacity: .9; pointer-events: none; }
+.lab .product:hover, .lab .glass.tagged:hover { border-color: color-mix(in srgb, var(--accent) 60%, transparent); box-shadow: 0 30px 60px -42px var(--accent); }
+.lab .no { font: 600 11px/1 var(--mono); letter-spacing: .08em; color: var(--faint); margin-right: 10px; }
+.lab .product .shot { border-radius: 20px; }
+.lab .mini { position: absolute; right: 26px; top: -31px; width: 132px; height: 60px; pointer-events: none; transition: transform 1.2s cubic-bezier(.3, .6, .3, 1); }
+.lab [data-slug]:hover .mini { transform: translateX(-22px); }
+.lab.light .product .kind { color: color-mix(in srgb, var(--accent) 78%, #000) !important; }
+
+/* 作っている人 */
+.lab #maker .glass { padding: 36px; }
+.lab #maker h3 { font-size: 22px; }
+
+/* フッターの線の上を這う */
+.lab footer.site { position: relative; }
+.crawl { position: absolute; left: 0; right: 0; top: -31px; height: 60px; overflow: hidden; pointer-events: none; }
+.crawl canvas { position: absolute; left: 0; top: 0; width: 132px; height: 60px; animation: lab-crawl 120s linear infinite; }
+@keyframes lab-crawl { from { transform: translateX(100vw); } to { transform: translateX(-140px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .specimen .ring .ticks, .bubbles i, .crawl canvas { animation: none; }
+  .bubbles { display: none; }
+  .crawl canvas { left: auto; right: 12%; }
+  .lab .mini { transition: none; }
+}
+@media (max-width: 900px) {
+  .lab .hero { grid-template-columns: 1fr; gap: 28px; min-height: auto; padding: 36px 0 40px; }
+  .specimen { max-width: 440px; }
+}
+@media (max-width: 560px) {
+  .lab .pill a[href="#products"] { display: none; }
+  .specimen .callouts text { font-size: 12px; }
+  .specimen .callouts .la { display: none; }
+  .lab .mini { right: 16px; width: 110px; height: 50px; top: -26px; }
+  .lab #maker .glass { padding: 24px; }
+}
