@@ -6,9 +6,20 @@
 <meta name="google-site-verification" content="i6QXPe-ekJr9mqzgOIiNDW34vpzmW_kZAoHhqb97MzU" />
 <title>うみうしラボのプロダクト</title>
 <meta name="description" content="投稿型のウミウシ図鑑「世界のウミウシ」、気温つき写真日記「かさね日記」、消耗品の実質最安をさがす「きれるまえ」、EC-CUBE のお店を守る「Shisa」とデータ移行プラグイン。">
+<meta property="og:title" content="うみうしラボのプロダクト">
+<meta property="og:description" content="投稿型のウミウシ図鑑「世界のウミウシ」、気温つき写真日記「かさね日記」、消耗品の実質最安をさがす「きれるまえ」、EC-CUBE のお店を守る「Shisa」とデータ移行プラグイン。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://umiushi-lab.com/">
+<meta property="og:site_name" content="うみうしラボ">
+<meta property="og:image" content="https://umiushi-lab.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://umiushi-lab.com/">
 <link rel="alternate" hreflang="ja" href="https://umiushi-lab.com/">
 <link rel="alternate" hreflang="en" href="https://umiushi-lab.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://umiushi-lab.com/en/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"うみうしラボ","alternateName":["Umiushi Lab","umiushi-lab"],"url":"https://umiushi-lab.com/","inLanguage":["ja","en"]}
+</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Nobuhiko Kimoto","url":"https://umiushi-lab.com/","sameAs":["https://umiushi1.substack.com/","https://zenn.dev/nobuhiko","https://seaslug.world/"],"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"SoftwareApplication","name":"かさね日記 (Kasane)","url":"https://umiushi-lab.com/kasane-diary/"}},{"@type":"Offer","itemOffered":{"@type":"WebSite","name":"世界のウミウシ (SEASLUG.WORLD)","url":"https://seaslug.world/"}},{"@type":"Offer","itemOffered":{"@type":"WebSite","name":"きれるまえ","url":"https://kirerumae.com/"}},{"@type":"Offer","itemOffered":{"@type":"SoftwareApplication","name":"Shisa(シーサー)","url":"https://github.com/nobuhiko/shisa"}},{"@type":"Offer","itemOffered":{"@type":"SoftwareApplication","name":"データ移行プラグイン for EC-CUBE 4.2 / 4.3","url":"https://www.ec-cube.net/products/detail.php?product_id=3189"}}]}
 </script>
@@ -25,8 +36,9 @@
 <link rel="apple-touch-icon" href="./apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;700;800&display=swap">
-<link rel="stylesheet" href="./assets/site.css?v=20261022">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;700;800&display=swap"><style>.reveal{opacity:1;transform:none}</style></noscript>
+<link rel="stylesheet" href="./assets/site.css?v=20261110">
 </head>
 <body>
 <header class="nav">
@@ -38,7 +50,7 @@
 
 <main class="wrap">
   <section class="hero" style="grid-template-columns:1fr">
-    <div class="reveal">
+    <div>
       <p class="eyebrow">Independent maker</p>
       <h1 class="display">迷う時間を、<br><span class="soft">すこし短く。</span></h1>
       <div class="cta"><a class="btn" href="#products">プロダクトを見る</a><a class="btn ghost" href="https://umiushi1.substack.com/">Substack(英語)</a></div>
@@ -48,8 +60,8 @@
   <section id="products" class="block">
     <h2 class="reveal">プロダクト</h2>
     <div class="products">
-      <article class="glass product reveal" style="--accent:#1E7FA8">
-        <div class="shot"><img src="./assets/seaslug-zukan.webp" alt="世界のウミウシの図鑑の画面" loading="lazy"></div>
+      <article class="glass product" style="--accent:#1E7FA8">
+        <div class="shot"><img src="./assets/seaslug-zukan.webp" srcset="./assets/seaslug-zukan-440.webp 440w, ./assets/seaslug-zukan.webp 640w" sizes="(max-width: 560px) 240px, 200px" width="640" height="1422" alt="世界のウミウシの図鑑の画面" fetchpriority="high"></div>
         <div>
           <span class="kind" style="color:#4FB3DD">Field guide</span>
           <h3>世界のウミウシ</h3>
@@ -58,7 +70,7 @@
         </div>
       </article>
       <article class="glass product reveal" style="--accent:#D96C3D">
-        <div class="shot"><img src="./assets/kasane-07.webp" alt="かさね日記の、きょうの気温と似た日の写真が並ぶ画面" loading="lazy"></div>
+        <div class="shot"><img src="./assets/kasane-07.webp" srcset="./assets/kasane-07-440.webp 440w, ./assets/kasane-07.webp 640w" sizes="(max-width: 560px) 240px, 200px" width="640" height="1390" alt="かさね日記の、きょうの気温と似た日の写真が並ぶ画面" loading="lazy"></div>
         <div>
           <span class="kind" style="color:#F08A5D">Photo diary</span>
           <h3>かさね日記</h3>
@@ -107,7 +119,7 @@
 </main>
 
 <footer class="site"><div class="wrap"><span>© 2026 うみうしラボ</span><span><a href="./kasane-diary/">かさね日記</a> · <a href="https://seaslug.world/">世界のウミウシ</a> · <a href="https://kirerumae.com/">きれるまえ</a></span></div></footer>
-<script src="./assets/site.js?v=20261022"></script>
+<script src="./assets/site.js?v=20261110"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YYZQDTEPR0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YYZQDTEPR0');</script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8e368a03b62f48a98ec3d3205e06c11d"}'></script><!-- End Cloudflare Web Analytics -->

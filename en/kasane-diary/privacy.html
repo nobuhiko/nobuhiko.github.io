@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kasane Privacy Policy</title>
+<meta name="description" content="Privacy policy for Kasane: One Photo a Day Diary. Photos and records stay on your device; only a rounded location and a date are sent to get the temperature.">
+<link rel="canonical" href="https://umiushi-lab.com/en/kasane-diary/privacy.html">
+<link rel="alternate" hreflang="ja" href="https://umiushi-lab.com/kasane-diary/privacy.html">
+<link rel="alternate" hreflang="en" href="https://umiushi-lab.com/en/kasane-diary/privacy.html">
+<link rel="alternate" hreflang="x-default" href="https://umiushi-lab.com/en/kasane-diary/privacy.html">
+<!-- 日本語の ../../kasane-diary/privacy.html の英訳。日本語を直したら、ここも直す -->
+<style>
+  body { margin: 0; background: #FFF7EA; color: #3A2E24; font-family: -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif; line-height: 1.7; }
+  main { max-width: 640px; margin: 0 auto; padding: 48px 24px; }
+  h1 { font-size: 24px; }
+  h2 { font-size: 17px; margin-top: 32px; border-bottom: 1px solid #EAD5BF; padding-bottom: 6px; }
+  a { color: #A84A20; }
+  ul { padding-left: 20px; }
+  footer { margin-top: 40px; font-size: 13px; color: #7A614B; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Kasane Privacy Policy</h1>
+  <p>Kasane: One Photo a Day Diary ("the app") is designed to keep your photos and records on your device only. This policy explains what information the app handles and how.</p>
+  <p>This is an English translation of the <a href="../../kasane-diary/privacy.html" hreflang="ja">Japanese policy</a>. If the two differ, the Japanese version applies.</p>
+
+  <h2>1. Information stored on your device</h2>
+  <ul>
+    <li>Photos (a reduced-size copy and a thumbnail), notes, and the date and time each photo was taken</li>
+    <li>The day's weather and its high and low temperatures</li>
+    <li>The location where the photo was taken (latitude and longitude rounded to 2 decimal places, about 1 km) and the name of the city or town</li>
+    <li>Settings (home location, reminder time)</li>
+  </ul>
+  <p>These are stored only in a database and files on your device. They are not sent to or stored on any outside server, including the developer's. If you turn on "Save automatically" (Pro), a copy is saved to your own iCloud Drive or to a folder you choose, as described in section 2.</p>
+
+  <h2>2. Information sent outside your device</h2>
+  <p>To get the temperature and weather, the app sends only the following to the <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> API.</p>
+  <ul>
+    <li>Latitude and longitude (rounded to 1 decimal place, about 10 km)</li>
+    <li>A date (or a date range)</li>
+  </ul>
+  <p>Photos, notes, your name, email address and other information that could identify you are not sent. Open-Meteo handles this data under its own policy.</p>
+  <p><strong>Save automatically (Pro)</strong>: Only if you turn this on in Settings, the app saves your photos (reduced-size copies and thumbnails) and the list of records (the information in section 1) when you open the app: on iOS, to the "Kasane" folder in your iCloud Drive; on Android, to a folder you choose. The destination is your own iCloud or folder, and nothing is sent to the developer's server. Data in iCloud is handled under Apple's policy; if the folder you choose belongs to a cloud service's app, it is handled under that service's policy. If you turn this off, nothing more is saved (files already saved can be deleted from the Files app or similar).</p>
+  <p><strong>Buying Pro (iOS)</strong>: The app uses <a href="https://www.revenuecat.com/" target="_blank" rel="noopener">RevenueCat</a> to confirm and restore purchases. RevenueCat receives an anonymous user ID created by the app, the purchase record, and technical information such as the device type, OS and app version. To know whether someone installed the app from an Apple Search Ads ad, the app also sends the ad attribution information Apple creates on the device (the AdServices token). Photos, records, your name and your email address are not sent. RevenueCat handles this data under its own policy.</p>
+  <p>When you search for a place by name (for your home location or a photo's location), the name you type is sent to the place-name search API of the <a href="https://www.gsi.go.jp/" target="_blank" rel="noopener">Geospatial Information Authority of Japan</a> for Japanese place names, and to Open-Meteo's place-name search API for names not found there or not in Japanese.</p>
+
+  <h2>3. Device features and permissions</h2>
+  <ul>
+    <li><strong>Camera</strong>: to take today's photo</li>
+    <li><strong>Photo library</strong>: to choose a photo and to import past photos. When importing, the app reads each photo's date, time and location (EXIF) and uses them to add the temperature of that day. When you import with a "What is this diary about?" theme, the app uses the device's OS features (Vision on iOS, ML Kit on Android) to tell what is in each photo (whether there is a face, or things like a dog or the sky) and picks the photo that fits the theme. This happens on your device; photos and results are not sent anywhere</li>
+    <li><strong>Location</strong>: to get the temperature where you are. The location is rounded before it is stored or sent</li>
+    <li><strong>Notifications</strong>: to remind you of today's photo at the time you set (a local notification scheduled on your device)</li>
+  </ul>
+  <p>To get the name of the city or town, the app uses the reverse geocoding provided by the device's OS (Apple or Google). If that is not available (for example, on Android when location access is not allowed), for places in Japan the app sends the latitude and longitude (rounded to 2 decimal places, about 1 km) to the reverse geocoder API of the Geospatial Information Authority of Japan.</p>
+
+  <h2>4. Analytics and advertising</h2>
+  <p>The app does not use analytics tools or advertising SDKs (see section 2 for RevenueCat, used to confirm Pro purchases, and for ad attribution information).</p>
+  <p>This website (the app's page and this page) uses Cloudflare Web Analytics and Google Analytics to see how many times each page is viewed and where visitors come from. Google Analytics uses cookies to collect browsing trends. This data is anonymous and does not identify you. If you do not want it collected, turn off cookies in your browser or use the <a href="https://tools.google.com/dlpage/gaoptout?hl=en">Google Analytics Opt-out Add-on</a>. See <a href="https://policies.google.com/technologies/partner-sites?hl=en">Google's policy</a> for how Google handles data. Cloudflare Web Analytics does not use cookies. Neither has anything to do with the photos and records in the app.</p>
+
+  <h2>5. Photos of children</h2>
+  <p>The app is intended to be used by adults such as parents. Photos you record do not leave your device, except to your own destination when "Save automatically" is on, so photos of your children are not sent to third parties.</p>
+
+  <h2>6. Deleting your data</h2>
+  <p>You can delete records from Settings in the app, and uninstalling the app deletes all stored information from your device. See <a href="./delete.html">Deleting your data</a> for details.</p>
+
+  <h2>7. Changes</h2>
+  <p>If this policy changes, the new version will be published on this page.</p>
+
+  <h2>8. Contact</h2>
+  <p><a href="mailto:info@umiushi-lab.com">info@umiushi-lab.com</a> (English or Japanese)</p>
+
+  <footer>Established: September 11, 2026 / Revised: November 2, 2026<br>© 2026 Umiushi Lab · <a href="./">Kasane</a> · <a href="../../kasane-diary/privacy.html" hreflang="ja" lang="ja">日本語</a></footer>
+</main>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YYZQDTEPR0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YYZQDTEPR0');</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8e368a03b62f48a98ec3d3205e06c11d"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

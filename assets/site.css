@@ -77,7 +77,8 @@ img { max-width: 100%; display: block; }
 .display .soft { color: var(--faint); }
 .lead { font-size: clamp(16px, 1.6vw, 19px); color: var(--mute); max-width: 34em; margin: 24px 0 0; }
 .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; align-items: center; }
-.btn { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 700; font-size: 15px; padding: 13px 24px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); transition: transform .2s ease, box-shadow .2s ease; box-shadow: 0 8px 24px -8px var(--accent); }
+/* 地は --accent を少し暗くする(白い字とのコントラストを 4.5:1 以上に) */
+.btn { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 700; font-size: 15px; padding: 13px 24px; border-radius: 999px; background: color-mix(in srgb, var(--accent) 70%, #000); color: var(--accent-ink); transition: transform .2s ease, box-shadow .2s ease; box-shadow: 0 8px 24px -8px var(--accent); }
 .btn:hover { transform: translateY(-1px); }
 .btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--glass-line); box-shadow: none; }
 .note { font-size: 13px; color: var(--faint); margin: 14px 0 0; }

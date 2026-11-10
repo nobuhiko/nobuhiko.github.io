@@ -8,9 +8,17 @@
   els.forEach((e) => io.observe(e));
 })();
 
-// 動きを減らす設定のときは、ぱらぱらの動画を止めておく(最初の 1 こまのまま)
-if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  document.querySelectorAll('video[autoplay]').forEach((v) => { v.removeAttribute('autoplay'); v.pause(); });
+// ぱらぱらの動画は、画面に近づいてから読んで動かす(最初の表示を軽くする)。動きを減らす設定のときは、最初の 1 こま(poster)のまま
+if (!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+  const vids = document.querySelectorAll('video[data-autoplay]');
+  const start = (v) => { const p = v.play(); if (p) p.catch(() => {}); };
+  if (!('IntersectionObserver' in window)) vids.forEach(start);
+  else {
+    const vo = new IntersectionObserver((entries) => {
+      for (const e of entries) if (e.isIntersecting) { start(e.target); vo.unobserve(e.target); }
+    }, { rootMargin: '300px 0px' });
+    vids.forEach((v) => vo.observe(v));
+  }
 }
 
 // 明るい/暗いの切り替え(トップのナビの ◐)。選んだほうを覚えておく
