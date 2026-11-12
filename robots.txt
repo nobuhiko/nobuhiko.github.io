@@ -1,4 +1,5 @@
 User-agent: *
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
 Allow: /
 Sitemap: https://umiushi-lab.com/sitemap.xml
 Sitemap: https://umiushi-lab.com/kasane-diary/sitemap.xml
