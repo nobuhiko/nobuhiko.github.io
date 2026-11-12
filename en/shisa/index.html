@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shisa - Finds weaknesses in custom code and fixes them with your approval | WordPress, EC-CUBE</title>
+<meta name="description" content="WordPress and every plugin can be up to date and the site still has a weak spot: the code built just for it. Shisa reads that custom code, reports what an outsider could see or change, and repairs small weaknesses after the owner approves each change.">
+<meta property="og:title" content="Shisa - Finds weaknesses in custom code and fixes them with your approval">
+<meta property="og:description" content="WordPress and every plugin can be up to date and the site still has a weak spot: the code built just for it. Shisa reads that custom code, reports what an outsider could see or change, and repairs small weaknesses after the owner approves each change.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://umiushi-lab.com/en/shisa/">
+<meta property="og:site_name" content="Umiushi Lab">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://umiushi-lab.com/en/shisa/">
+<link rel="alternate" hreflang="ja" href="https://umiushi-lab.com/shisa/">
+<link rel="alternate" hreflang="en" href="https://umiushi-lab.com/en/shisa/">
+<link rel="alternate" hreflang="x-default" href="https://umiushi-lab.com/en/shisa/">
+<link rel="icon" href="../../favicon.ico" sizes="any">
+<link rel="icon" href="../../favicon-32.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"><style>.reveal{opacity:1;transform:none}</style></noscript>
+<link rel="stylesheet" href="../../assets/site.css?v=20261110">
+<style>
+/* Shisa のページだけの部品(家の絵・番号の並び・流れ・対応・値段) */
+.hero .house { background: linear-gradient(180deg, #eaf5fb 0%, #fdf8f1 100%); border: 1px solid var(--glass-line); border-radius: var(--radius); padding: 24px 16px 0; }
+.hero .house svg { width: 100%; height: auto; display: block; }
+.display.sm { font-size: clamp(30px, 4.6vw, 58px); line-height: 1.16; }
+.parts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.parts li { background: var(--glass); border: 1px solid var(--glass-line); border-left: 6px solid #9e9e9e; border-radius: 16px; padding: 16px 18px; }
+.parts li.main { grid-column: 1 / -1; border-left-color: #d39b2a; background: #fffaf0; padding: 22px 24px; }
+.parts .n { display: inline-block; width: 24px; height: 24px; line-height: 24px; border-radius: 50%; background: #607d8b; color: #fff; text-align: center; font-size: 13px; font-weight: 700; margin-right: 8px; }
+.parts li.main .n { background: #d39b2a; }
+.parts .h { font-weight: 800; font-size: 17px; }
+.parts li.main .h { font-size: 21px; }
+.parts .w { color: var(--faint); font-size: 13px; margin-left: 6px; }
+.parts p { margin: 6px 0 0; color: var(--mute); font-size: 15px; }
+.parts li.main p { font-size: 16px; }
+.flow { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; counter-reset: f; }
+.flow li { counter-increment: f; background: var(--glass); border: 1px solid var(--glass-line); border-radius: 20px; padding: 20px; }
+.flow li::before { content: counter(f); display: block; width: 32px; height: 32px; line-height: 32px; border-radius: 50%; background: color-mix(in srgb, var(--accent) 70%, #000); color: #fff; text-align: center; font-weight: 800; margin-bottom: 10px; }
+.flow b { display: block; font-size: 18px; }
+.flow span { color: var(--mute); font-size: 15px; }
+.case { border-left: 6px solid var(--accent); }
+.case p { font-size: 16px; }
+.state { display: inline-block; font-size: 12px; font-weight: 700; padding: 3px 12px; border-radius: 999px; margin-bottom: 10px; }
+.state.soon { background: #e6f4ea; color: #1b5e20; }
+.state.prep { background: #fff1e0; color: #8a4b00; }
+.plat h3 { font-size: 24px; }
+.plat ul, .plan ul { margin: 12px 0 0; padding-left: 1.3em; color: var(--mute); font-size: 15px; }
+.plat li, .plan li { margin-bottom: 6px; }
+.plan .kind { font-size: 13px; color: var(--faint); }
+.plan h3 { font-size: 20px; }
+.plan .price { font-size: 38px; font-weight: 800; letter-spacing: -.02em; line-height: 1.2; margin: 8px 0 2px; }
+.plan .price small { font-size: 14px; font-weight: 400; color: var(--faint); margin-left: 6px; }
+.plan .pn { font-size: 14px; color: #8a4b00; min-height: 1.75em; }
+.cando { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.cando ul { margin: 8px 0 0; padding-left: 1.3em; color: var(--mute); font-size: 15px; }
+.cando li { margin-bottom: 6px; }
+table.terms { width: 100%; border-collapse: collapse; font-size: 15px; }
+table.terms th, table.terms td { text-align: left; vertical-align: top; padding: 12px 8px; border-bottom: 1px solid var(--glass-line); }
+table.terms th { width: 9.5em; color: var(--mute); font-weight: 700; }
+@media (max-width: 900px) { .flow, .parts { grid-template-columns: 1fr 1fr; } .cando { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .flow, .parts { grid-template-columns: 1fr; } table.terms th { width: 6.5em; } .plan .price { font-size: 32px; } }
+.display.sm { font-size: clamp(30px, 4.2vw, 54px); }
+</style>
+</head>
+<body class="light" style="--accent:#C9502A">
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="./"><span class="dot"></span>Shisa</a>
+    <nav class="pill"><a class="opt" href="#where">What it checks</a><a class="opt" href="#platforms">Platforms</a><a class="opt" href="#faq">FAQ</a><a href="../../shisa/" hreflang="ja" lang="ja">日本語</a><a href="../">Umiushi Lab</a></nav>
+  </div>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <p class="eyebrow">WordPress · EC-CUBE</p>
+      <h1 class="display sm">Everything is updated.<br>Nobody has checked<br><span class="soft">the custom code.</span></h1>
+      <p class="lead">Updates reach WordPress and the plugins from WordPress.org. They do not reach the theme a contractor built for you or the plugin written only for your site. Shisa reads that code, reports what an outsider could see or change, and repairs small weaknesses after you approve each change.</p>
+      <div class="cta"><a class="btn" href="#platforms">See what is available</a><a class="btn ghost" href="mailto:info@umiushi-lab.com?subject=Shisa">Contact</a></div>
+      <p class="note">Shisa is named after the guardian figures on Okinawan rooftops.</p>
+    </div>
+    <div class="house">
+      <svg viewBox="0 0 460 262" role="img" aria-label="A site drawn as a house: PHP is the foundation, the core is the building, bundled libraries are the fittings, and custom code is the extension. Two shisa guardians sit on the roof.">
+        <defs>
+          <g id="shhMane"><circle cx="0" cy="-78" r="22"/><circle cx="40" cy="-68" r="22"/><circle cx="-40" cy="-68" r="22"/><circle cx="68" cy="-40" r="22"/><circle cx="-68" cy="-40" r="22"/><circle cx="78" cy="0" r="22"/><circle cx="-78" cy="0" r="22"/><circle cx="68" cy="40" r="22"/><circle cx="-68" cy="40" r="22"/><circle cx="40" cy="66" r="22"/><circle cx="-40" cy="66" r="22"/><circle cx="0" cy="76" r="22"/></g>
+          <g id="shhFace"><use href="#shhMane" fill="#b5532f"/><circle r="66" fill="#d9774a"/><path d="M-44,-30 q14,-16 30,-4" stroke="#7a2f17" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M44,-30 q-14,-16 -30,-4" stroke="#7a2f17" stroke-width="7" fill="none" stroke-linecap="round"/><circle cx="-26" cy="-12" r="13" fill="#fff8ec"/><circle cx="26" cy="-12" r="13" fill="#fff8ec"/><circle cx="-24" cy="-11" r="6" fill="#2b1a12"/><circle cx="24" cy="-11" r="6" fill="#2b1a12"/><ellipse cx="0" cy="12" rx="20" ry="13" fill="#9b3f20"/><circle cx="-8" cy="13" r="4" fill="#5a2210"/><circle cx="8" cy="13" r="4" fill="#5a2210"/></g>
+          <linearGradient id="shhRoof" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9532b"/><stop offset="1" stop-color="#b63d1c"/></linearGradient>
+        </defs>
+        <circle cx="424" cy="30" r="14" fill="#ffd36b"/>
+        <rect x="52" y="228" width="346" height="22" rx="2" fill="#b9b2a6" stroke="#8f887c" stroke-width="2"/>
+        <rect x="72" y="140" width="208" height="88" fill="#fffaf2" stroke="#d8c7ae" stroke-width="2"/>
+        <path d="M54 140 L176 96 L298 140 Z" fill="url(#shhRoof)"/>
+        <g stroke="#ffffff" stroke-width="2" opacity=".85" fill="none"><path d="M85 129 L267 129"/><path d="M115 118 L237 118"/><path d="M146 107 L206 107"/></g>
+        <path d="M54 140 L176 96 L298 140" fill="none" stroke="#8c2c12" stroke-width="3" stroke-linejoin="round"/>
+        <rect x="88" y="164" width="50" height="42" fill="#bfe3f2" stroke="#8ab9cf" stroke-width="2"/>
+        <path d="M113 164 V206 M88 185 H138" stroke="#8ab9cf" stroke-width="2"/>
+        <rect x="154" y="172" width="38" height="50" rx="4" fill="#e3e8eb" stroke="#9aa4ab" stroke-width="2"/>
+        <circle cx="173" cy="188" r="8" fill="#fff" stroke="#9aa4ab" stroke-width="2"/><path d="M173 188 L178 184" stroke="#c0392b" stroke-width="2" stroke-linecap="round"/>
+        <path d="M162 206 H184 M162 213 H184" stroke="#9aa4ab" stroke-width="2"/>
+        <rect x="212" y="164" width="48" height="64" fill="#a46a3d" stroke="#7d4d28" stroke-width="2"/>
+        <circle cx="250" cy="198" r="3.5" fill="#f3d27a"/><rect x="246" y="204" width="8" height="9" rx="1.5" fill="#f3d27a"/>
+        <rect x="280" y="170" width="104" height="58" fill="#fff3d6" stroke="#d39b2a" stroke-width="2.5" stroke-dasharray="7 4"/>
+        <path d="M276 170 L390 170 L382 154 L280 148 Z" fill="#e0a94a" stroke="#b97f1c" stroke-width="2" stroke-linejoin="round"/>
+        <rect x="312" y="186" width="40" height="28" fill="#bfe3f2" stroke="#8ab9cf" stroke-width="2"/>
+        <g fill="#8d8d8d" stroke="none"><ellipse cx="412" cy="240" rx="7" ry="4" transform="rotate(-20 412 240)"/><ellipse cx="432" cy="250" rx="7" ry="4" transform="rotate(-20 432 250)"/><ellipse cx="448" cy="238" rx="6" ry="3.5" transform="rotate(-20 448 238)"/></g>
+        <g transform="translate(146 79) scale(.28)"><use href="#shhFace"/><path d="M-36,30 q36,44 72,0 z" fill="#5a1d10"/><path d="M-26,31 l6,10 l6,-10 M14,31 l6,10 l6,-10" fill="#fff8ec"/><ellipse cx="0" cy="48" rx="14" ry="6" fill="#e0675a"/></g>
+        <g transform="translate(208 79) scale(.28)"><use href="#shhFace"/><path d="M-32,36 q32,14 64,0" stroke="#5a1d10" stroke-width="7" fill="none" stroke-linecap="round"/></g>
+        <g font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="#fff">
+          <circle cx="372" cy="182" r="10" fill="#d39b2a"/><text x="372" y="182">1</text>
+          <circle cx="66" cy="239" r="10" fill="#607d8b"/><text x="66" y="239">2</text>
+          <circle cx="84" cy="150" r="10" fill="#607d8b"/><text x="84" y="150">3</text>
+          <circle cx="192" cy="172" r="10" fill="#607d8b"/><text x="192" y="172">4</text>
+          <circle cx="430" cy="226" r="10" fill="#607d8b"/><text x="430" y="226">5</text>
+          <circle cx="138" cy="164" r="10" fill="#607d8b"/><text x="138" y="164">6</text>
+          <circle cx="260" cy="164" r="10" fill="#607d8b"/><text x="260" y="164">7</text>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <section class="block" id="where">
+    <h2 class="reveal">What it checks</h2>
+    <ul class="parts reveal">
+      <li class="main"><span class="n">1</span><span class="h">The extension</span><span class="w">= custom code built for this site</span>
+        <p><b>No vendor inspects this part.</b> Update notices and version scanners do not cover it. Shisa reads it and looks for pages and handlers that skip a login check or an ownership check. When it finds one, it shows you the change and waits for your approval.</p></li>
+      <li><span class="n">2</span><span class="h">PHP</span><span class="w">(foundation)</span><p>Checks whether the PHP version is still supported. Replacing PHP is the hosting company's job.</p></li>
+      <li><span class="n">3</span><span class="h">Core and plugins</span><span class="w">(building)</span><p>If an official fix is out, Shisa installs it after you approve.</p></li>
+      <li><span class="n">4</span><span class="h">Bundled libraries</span><span class="w">(fittings)</span><p>Third-party libraries that ship with the core. Replaced after you approve, when a fix is out.</p></li>
+      <li><span class="n">5</span><span class="h">Signs of tampering</span><span class="w">(footprints)</span><p>Looks for files that should not be there.</p></li>
+      <li><span class="n">6</span><span class="h">Exposed information</span><span class="w">(windows)</span><p>Closes files that should not open from outside.</p></li>
+      <li><span class="n">7</span><span class="h">Weak settings</span><span class="w">(locks)</span><p>Checks settings that amount to an unlocked door.</p></li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <h2 class="reveal">From finding to fixing</h2>
+    <ol class="flow reveal">
+      <li><b>Find</b><span>Shisa reads the custom code.</span></li>
+      <li><b>Show</b><span>You see the change, before and after.</span></li>
+      <li><b>Approve</b><span>You press the button. Until then, nothing changes.</span></li>
+      <li><b>Fix and verify</b><span>Shisa takes a backup, applies the change and opens the site. If the site does not open, it restores the backup.</span></li>
+    </ol>
+  </section>
+
+  <section class="block" id="platforms">
+    <h2 class="reveal">Platforms</h2>
+    <div class="grid">
+      <div class="glass plat reveal">
+        <span class="state prep">In preparation</span>
+        <h3>WordPress</h3>
+        <p>For sites with a theme built by a contractor or plugins written only for that site.</p>
+        <ul>
+          <li>Free plugin, "Shisa – Custom Code Map": finds the themes and plugins that do not come from WordPress.org, and counts the pages and handlers that can be called from outside. It runs inside your site and sends no code or site data anywhere.</li>
+          <li>The paid service, which reads the code and repairs it with your approval, is being tested on our own copies of sites.</li>
+        </ul>
+        <p class="note">The release date and the price are not decided. We will write them here.</p>
+      </div>
+      <div class="glass plat reveal">
+        <span class="state soon">Orders open in December 2026 (planned)</span>
+        <h3>EC-CUBE</h3>
+        <p>EC-CUBE is an open-source store system used in Japan. Shisa supports versions 4.2 and 4.3 as a plugin.</p>
+        <ul>
+          <li>Free quick check: compares the store with official information and lists what is out of date</li>
+          <li>Paid inspection and repair: reads the custom code and fixes it with the owner's approval</li>
+        </ul>
+        <p class="note">The EC-CUBE service and its support are in Japanese. <a href="../../shisa/" hreflang="ja">Japanese page</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="reveal">What it can and cannot do</h2>
+    <div class="cando">
+      <div class="glass reveal"><h3>It can</h3>
+        <ul>
+          <li>Confirm whether PHP, the core and the plugins are at a version that includes the official fixes</li>
+          <li>Read custom code and look for pages and handlers that skip a login check or an ownership check</li>
+          <li>Fix or block what it finds, after you approve</li>
+          <li>Report how many pages and handlers it read, what it checked and what it did not look at</li>
+        </ul></div>
+      <div class="glass reveal"><h3>It cannot</h3>
+        <ul>
+          <li>Say that custom code has no weakness. A human reviewer cannot say that either.</li>
+          <li>Prevent weaknesses that nobody knows about yet</li>
+          <li>Update PHP on the server, or rewrite large parts of custom code</li>
+        </ul>
+        <p>Shisa uses AI to inspect and to propose changes, and AI makes mistakes. That is why it shows each change first and waits for your approval.</p></div>
+    </div>
+  </section>
+
+  <section class="block faq" id="faq">
+    <h2 class="reveal">FAQ</h2>
+    <details><summary>Does the free WordPress plugin send my code anywhere?</summary><p>No. It reads files on your server and stores the counts in your database. The only outside request is optional: when an administrator presses a button, it asks api.wordpress.org whether the installed WordPress.org plugins were closed or abandoned, sending only their slugs.</p></details>
+    <details><summary>Does the free plugin install the paid service?</summary><p>No. The free plugin works by itself and downloads nothing. The paid service will be a separate product.</p></details>
+    <details><summary>The map marks a page. Is it vulnerable?</summary><p>Not necessarily. The map marks pages and handlers that take outside input where no login or permission check is visible in the same file. The check may be in another file. Someone has to read the code to know.</p></details>
+    <details><summary>Who runs Shisa?</summary><p>Umiushi Lab LLC, a small software company in Tokyo. <a href="../../tokushoho.html" hreflang="ja">Legal notice (Japanese)</a></p></details>
+  </section>
+
+  <section class="statement reveal" id="contact">
+    <h2>Want to hear<br>when it opens?</h2>
+    <p>Send an email and we will write to you when the WordPress version is released.</p>
+    <div class="cta" style="justify-content:center"><a class="btn" href="mailto:info@umiushi-lab.com?subject=Shisa">info@umiushi-lab.com</a></div>
+  </section>
+</main>
+<footer class="site"><div class="wrap"><span>© 2026 Umiushi Lab</span><span><a href="../../shisa/" hreflang="ja" lang="ja">日本語</a> · <a href="../">Umiushi Lab</a></span></div></footer>
+<script src="../../assets/site.js?v=20261110"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YYZQDTEPR0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YYZQDTEPR0');</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8e368a03b62f48a98ec3d3205e06c11d"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

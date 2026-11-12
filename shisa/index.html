@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shisa(シーサー) - カスタマイズの中の弱点を探して、承認で直す | EC-CUBE・WordPress</title>
+<meta name="description" content="本体もプラグインも最新。それでも残るのが、お店に合わせて作り込んだ部分(カスタマイズ)の弱点です。Shisa はそこを中まで調べ、見つけたら店主さんの承認で直します。EC-CUBE 4.2・4.3 に対応、WordPress は準備中。">
+<meta property="og:title" content="Shisa(シーサー) - カスタマイズの中の弱点を探して、承認で直す">
+<meta property="og:description" content="本体もプラグインも最新。それでも残るのが、お店に合わせて作り込んだ部分(カスタマイズ)の弱点です。Shisa はそこを中まで調べ、見つけたら店主さんの承認で直します。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://umiushi-lab.com/shisa/">
+<meta property="og:site_name" content="うみうしラボ">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://umiushi-lab.com/shisa/">
+<link rel="alternate" hreflang="ja" href="https://umiushi-lab.com/shisa/">
+<link rel="alternate" hreflang="en" href="https://umiushi-lab.com/en/shisa/">
+<link rel="alternate" hreflang="x-default" href="https://umiushi-lab.com/en/shisa/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Shisa","alternateName":["シーサー","Shisa お店の守り神"],"description":"EC-CUBE と WordPress のサイトで、お店に合わせて作り込んだ部分(カスタマイズ)の弱点を探し、持ち主の承認で直すサービス。","applicationCategory":"SecurityApplication","operatingSystem":"EC-CUBE 4.2, EC-CUBE 4.3","inLanguage":"ja","url":"https://umiushi-lab.com/shisa/","publisher":{"@type":"Organization","name":"合同会社うみうしラボ","url":"https://umiushi-lab.com/"}}
+</script>
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" href="../favicon-32.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;700;800&display=swap"><style>.reveal{opacity:1;transform:none}</style></noscript>
+<link rel="stylesheet" href="../assets/site.css?v=20261110">
+<style>
+/* Shisa のページだけの部品(家の絵・番号の並び・流れ・対応・値段) */
+.hero .house { background: linear-gradient(180deg, #eaf5fb 0%, #fdf8f1 100%); border: 1px solid var(--glass-line); border-radius: var(--radius); padding: 24px 16px 0; }
+.hero .house svg { width: 100%; height: auto; display: block; }
+.display.sm { font-size: clamp(30px, 4.6vw, 58px); line-height: 1.16; }
+.parts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.parts li { background: var(--glass); border: 1px solid var(--glass-line); border-left: 6px solid #9e9e9e; border-radius: 16px; padding: 16px 18px; }
+.parts li.main { grid-column: 1 / -1; border-left-color: #d39b2a; background: #fffaf0; padding: 22px 24px; }
+.parts .n { display: inline-block; width: 24px; height: 24px; line-height: 24px; border-radius: 50%; background: #607d8b; color: #fff; text-align: center; font-size: 13px; font-weight: 700; margin-right: 8px; }
+.parts li.main .n { background: #d39b2a; }
+.parts .h { font-weight: 800; font-size: 17px; }
+.parts li.main .h { font-size: 21px; }
+.parts .w { color: var(--faint); font-size: 13px; margin-left: 6px; }
+.parts p { margin: 6px 0 0; color: var(--mute); font-size: 15px; }
+.parts li.main p { font-size: 16px; }
+.flow { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; counter-reset: f; }
+.flow li { counter-increment: f; background: var(--glass); border: 1px solid var(--glass-line); border-radius: 20px; padding: 20px; }
+.flow li::before { content: counter(f); display: block; width: 32px; height: 32px; line-height: 32px; border-radius: 50%; background: color-mix(in srgb, var(--accent) 70%, #000); color: #fff; text-align: center; font-weight: 800; margin-bottom: 10px; }
+.flow b { display: block; font-size: 18px; }
+.flow span { color: var(--mute); font-size: 15px; }
+.case { border-left: 6px solid var(--accent); }
+.case p { font-size: 16px; }
+.state { display: inline-block; font-size: 12px; font-weight: 700; padding: 3px 12px; border-radius: 999px; margin-bottom: 10px; }
+.state.soon { background: #e6f4ea; color: #1b5e20; }
+.state.prep { background: #fff1e0; color: #8a4b00; }
+.plat h3 { font-size: 24px; }
+.plat ul, .plan ul { margin: 12px 0 0; padding-left: 1.3em; color: var(--mute); font-size: 15px; }
+.plat li, .plan li { margin-bottom: 6px; }
+.plan .kind { font-size: 13px; color: var(--faint); }
+.plan h3 { font-size: 20px; }
+.plan .price { font-size: 38px; font-weight: 800; letter-spacing: -.02em; line-height: 1.2; margin: 8px 0 2px; }
+.plan .price small { font-size: 14px; font-weight: 400; color: var(--faint); margin-left: 6px; }
+.plan .pn { font-size: 14px; color: #8a4b00; min-height: 1.75em; }
+.cando { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.cando ul { margin: 8px 0 0; padding-left: 1.3em; color: var(--mute); font-size: 15px; }
+.cando li { margin-bottom: 6px; }
+table.terms { width: 100%; border-collapse: collapse; font-size: 15px; }
+table.terms th, table.terms td { text-align: left; vertical-align: top; padding: 12px 8px; border-bottom: 1px solid var(--glass-line); }
+table.terms th { width: 9.5em; color: var(--mute); font-weight: 700; }
+@media (max-width: 900px) { .flow, .parts { grid-template-columns: 1fr 1fr; } .cando { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .flow, .parts { grid-template-columns: 1fr; } table.terms th { width: 6.5em; } .plan .price { font-size: 32px; } }
+</style>
+</head>
+<body class="light" style="--accent:#C9502A">
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="./"><span class="dot"></span>Shisa(シーサー)</a>
+    <nav class="pill"><a class="opt" href="#where">どこを見るか</a><a class="opt" href="#platforms">対応</a><a class="opt" href="#price">値段</a><a class="opt" href="#faq">よくある質問</a><a href="../en/shisa/" hreflang="en" lang="en">English</a><a href="../">うみうしラボ</a></nav>
+  </div>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <p class="eyebrow">EC-CUBE · WordPress(準備中)</p>
+      <h1 class="display sm">最新にしても、<br>増築した所は<br><span class="soft">だれも見ていない。</span></h1>
+      <p class="lead">本体もプラグインも最新。それでも残るのが、お店に合わせて作り込んだ部分(カスタマイズ)の弱点です。Shisa は、そこを中まで調べます。見つけたら、店主さんの承認で直します。入れたら、まず無料のかんたん点検から。</p>
+      <div class="cta"><a class="btn" href="https://ec-cube-demo43.umiushi-lab.com/admin/shisa/sample">見本の点検を見る(1 分)</a><a class="btn ghost" href="https://ec-cube-demo43.umiushi-lab.com/admin/shisa/diagnosis">デモのお店で試す</a></div>
+      <p class="note">どちらも、デモのお店の管理画面で開きます(ログインの ID とパスワードは、開いた画面に書いてあります)。申し込みの受け付けは、EC-CUBE 版が 2026 年 12 月からの予定です。</p>
+    </div>
+    <div class="house">
+      <svg viewBox="0 0 460 262" role="img" aria-label="お店を家にたとえた絵。土台が PHP、建物が本体、備えつけの設備が中の部品、増築した所がカスタマイズ。屋根の上に 2 体のシーサーがいる">
+        <defs>
+          <g id="shhMane"><circle cx="0" cy="-78" r="22"/><circle cx="40" cy="-68" r="22"/><circle cx="-40" cy="-68" r="22"/><circle cx="68" cy="-40" r="22"/><circle cx="-68" cy="-40" r="22"/><circle cx="78" cy="0" r="22"/><circle cx="-78" cy="0" r="22"/><circle cx="68" cy="40" r="22"/><circle cx="-68" cy="40" r="22"/><circle cx="40" cy="66" r="22"/><circle cx="-40" cy="66" r="22"/><circle cx="0" cy="76" r="22"/></g>
+          <g id="shhFace"><use href="#shhMane" fill="#b5532f"/><circle r="66" fill="#d9774a"/><path d="M-44,-30 q14,-16 30,-4" stroke="#7a2f17" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M44,-30 q-14,-16 -30,-4" stroke="#7a2f17" stroke-width="7" fill="none" stroke-linecap="round"/><circle cx="-26" cy="-12" r="13" fill="#fff8ec"/><circle cx="26" cy="-12" r="13" fill="#fff8ec"/><circle cx="-24" cy="-11" r="6" fill="#2b1a12"/><circle cx="24" cy="-11" r="6" fill="#2b1a12"/><ellipse cx="0" cy="12" rx="20" ry="13" fill="#9b3f20"/><circle cx="-8" cy="13" r="4" fill="#5a2210"/><circle cx="8" cy="13" r="4" fill="#5a2210"/></g>
+          <linearGradient id="shhRoof" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9532b"/><stop offset="1" stop-color="#b63d1c"/></linearGradient>
+        </defs>
+        <circle cx="424" cy="30" r="14" fill="#ffd36b"/>
+        <rect x="52" y="228" width="346" height="22" rx="2" fill="#b9b2a6" stroke="#8f887c" stroke-width="2"/>
+        <rect x="72" y="140" width="208" height="88" fill="#fffaf2" stroke="#d8c7ae" stroke-width="2"/>
+        <path d="M54 140 L176 96 L298 140 Z" fill="url(#shhRoof)"/>
+        <g stroke="#ffffff" stroke-width="2" opacity=".85" fill="none"><path d="M85 129 L267 129"/><path d="M115 118 L237 118"/><path d="M146 107 L206 107"/></g>
+        <path d="M54 140 L176 96 L298 140" fill="none" stroke="#8c2c12" stroke-width="3" stroke-linejoin="round"/>
+        <rect x="88" y="164" width="50" height="42" fill="#bfe3f2" stroke="#8ab9cf" stroke-width="2"/>
+        <path d="M113 164 V206 M88 185 H138" stroke="#8ab9cf" stroke-width="2"/>
+        <rect x="154" y="172" width="38" height="50" rx="4" fill="#e3e8eb" stroke="#9aa4ab" stroke-width="2"/>
+        <circle cx="173" cy="188" r="8" fill="#fff" stroke="#9aa4ab" stroke-width="2"/><path d="M173 188 L178 184" stroke="#c0392b" stroke-width="2" stroke-linecap="round"/>
+        <path d="M162 206 H184 M162 213 H184" stroke="#9aa4ab" stroke-width="2"/>
+        <rect x="212" y="164" width="48" height="64" fill="#a46a3d" stroke="#7d4d28" stroke-width="2"/>
+        <circle cx="250" cy="198" r="3.5" fill="#f3d27a"/><rect x="246" y="204" width="8" height="9" rx="1.5" fill="#f3d27a"/>
+        <rect x="280" y="170" width="104" height="58" fill="#fff3d6" stroke="#d39b2a" stroke-width="2.5" stroke-dasharray="7 4"/>
+        <path d="M276 170 L390 170 L382 154 L280 148 Z" fill="#e0a94a" stroke="#b97f1c" stroke-width="2" stroke-linejoin="round"/>
+        <rect x="312" y="186" width="40" height="28" fill="#bfe3f2" stroke="#8ab9cf" stroke-width="2"/>
+        <g fill="#8d8d8d" stroke="none"><ellipse cx="412" cy="240" rx="7" ry="4" transform="rotate(-20 412 240)"/><ellipse cx="432" cy="250" rx="7" ry="4" transform="rotate(-20 432 250)"/><ellipse cx="448" cy="238" rx="6" ry="3.5" transform="rotate(-20 448 238)"/></g>
+        <g transform="translate(146 79) scale(.28)"><use href="#shhFace"/><path d="M-36,30 q36,44 72,0 z" fill="#5a1d10"/><path d="M-26,31 l6,10 l6,-10 M14,31 l6,10 l6,-10" fill="#fff8ec"/><ellipse cx="0" cy="48" rx="14" ry="6" fill="#e0675a"/></g>
+        <g transform="translate(208 79) scale(.28)"><use href="#shhFace"/><path d="M-32,36 q32,14 64,0" stroke="#5a1d10" stroke-width="7" fill="none" stroke-linecap="round"/></g>
+        <g font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="#fff">
+          <circle cx="372" cy="182" r="10" fill="#d39b2a"/><text x="372" y="182">1</text>
+          <circle cx="66" cy="239" r="10" fill="#607d8b"/><text x="66" y="239">2</text>
+          <circle cx="84" cy="150" r="10" fill="#607d8b"/><text x="84" y="150">3</text>
+          <circle cx="192" cy="172" r="10" fill="#607d8b"/><text x="192" y="172">4</text>
+          <circle cx="430" cy="226" r="10" fill="#607d8b"/><text x="430" y="226">5</text>
+          <circle cx="138" cy="164" r="10" fill="#607d8b"/><text x="138" y="164">6</text>
+          <circle cx="260" cy="164" r="10" fill="#607d8b"/><text x="260" y="164">7</text>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <section class="block" id="where">
+    <h2 class="reveal">どこを見るか</h2>
+    <ul class="parts reveal">
+      <li class="main"><span class="n">1</span><span class="h">増築した所</span><span class="w">= カスタマイズ(お店に合わせて作り込んだ部分)</span>
+        <p><b>ここは、メーカーの点検の外です。</b>更新のお知らせも、バージョンを見比べる検査も、ここには届きません。Shisa が中まで調べて、ログインしているか、持ち主本人かを確かめていない所を探します。見つけたら、承認をもらって直します。</p></li>
+      <li><span class="n">2</span><span class="h">PHP</span><span class="w">(土台)</span><p>古くなっていないかを見て、守りを入れます。入れ替えはサーバー会社の作業です。</p></li>
+      <li><span class="n">3</span><span class="h">本体とプラグイン</span><span class="w">(建物)</span><p>公式の修正が出ていれば、承認をもらって入れます。</p></li>
+      <li><span class="n">4</span><span class="h">中の部品</span><span class="w">(備えつけの設備)</span><p>本体に付いてくる、ほかのメーカーの部品。修正が出ていれば、承認をもらって入れ替えます。</p></li>
+      <li><span class="n">5</span><span class="h">書き換えられた跡</span><span class="w">(入られた跡)</span><p>置かれるはずのないファイルを探します。</p></li>
+      <li><span class="n">6</span><span class="h">外から見えていた情報</span><span class="w">(窓)</span><p>見えてはいけないファイルを、外から開けなくします。</p></li>
+      <li><span class="n">7</span><span class="h">設定の甘さ</span><span class="w">(戸じまり)</span><p>鍵のかけ忘れに当たる設定を見ます。</p></li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <h2 class="reveal">実際に見つけたもの</h2>
+    <div class="glass case reveal">
+      <p>EC-CUBE で作られた、あるお店の点検で、ほかのお客さんのカートの明細が開けてしまうページが見つかりました。EC-CUBE もプラグインも、最新のバージョンでした。弱点は、そのお店のために作られたページの中にあり、持ち主本人かどうかを確かめていませんでした。</p>
+      <p>同じ弱点は本番のお店にもあり、お店の側で直されています(2026 年 11 月)。</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="reveal">見つけてから、直るまで</h2>
+    <ol class="flow reveal">
+      <li><b>見つける</b><span>カスタマイズの中まで調べます。</span></li>
+      <li><b>見せる</b><span>何を変えるかを、変える前と後で並べて出します。</span></li>
+      <li><b>承認する</b><span>店主さんがボタンを押します。押すまで、何も変えません。</span></li>
+      <li><b>直して確かめる</b><span>控えを取ってから直し、すぐにお店を開いて確かめます。開かなければ、その場で元に戻します。</span></li>
+    </ol>
+    <p class="note reveal">外から開けてしまうファイルを閉じる、など、お店の動きを変えない守りは、承認を待たずに入れます。</p>
+  </section>
+
+  <section class="block" id="platforms">
+    <h2 class="reveal">対応しているもの</h2>
+    <div class="grid">
+      <div class="glass plat reveal">
+        <span class="state soon">2026 年 12 月から受け付けの予定</span>
+        <h3>EC-CUBE</h3>
+        <p>4.2 系・4.3 系のお店に、プラグインを入れて使います。</p>
+        <ul>
+          <li>無料のかんたん点検: 公式の情報と照らして、古くなったものを見つけます</li>
+          <li>有料の点検と直し: カスタマイズの中まで調べて、承認で直します</li>
+          <li>EC-CUBE の、同じ系列の修正版への更新(4.2.1 → 4.2.3 など)</li>
+          <li>オーナーズストアでの公開を準備しています</li>
+        </ul>
+        <div class="cta"><a class="btn" href="https://ec-cube-demo43.umiushi-lab.com/admin/shisa/diagnosis">デモのお店で試す</a></div>
+      </div>
+      <div class="glass plat reveal">
+        <span class="state prep">準備中</span>
+        <h3>WordPress</h3>
+        <p>制作会社に作ってもらったテーマや、そのサイトだけのプラグインがあるサイト向けです。</p>
+        <ul>
+          <li>無料のプラグイン「カスタマイズの地図」: WordPress.org のものでないテーマとプラグインを見つけて、外から呼び出せるページや処理を数えます。コードもデータも、サイトの外に送りません</li>
+          <li>中まで調べて、承認で直すところは、手元のサイトで試している段階です</li>
+        </ul>
+        <p class="note">公開の時期と値段は、決まりしだいここに書きます。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="price">
+    <h2 class="reveal">値段(EC-CUBE)</h2>
+    <div class="grid">
+      <div class="glass plan reveal">
+        <div class="kind">1 回だけ頼む</div>
+        <h3>1 回の点検と直し</h3>
+        <div class="price">50,000 円<small>/ 初回</small></div>
+        <div class="pn">初回はキャンペーンで半額です(通常 100,000 円)。2 回目からは 30,000 円</div>
+        <ul>
+          <li><b>カスタマイズの中まで調べて</b>、ログインしているか、持ち主本人かを確かめていない所を探す</li>
+          <li>PHP・EC-CUBE・プラグインが、公式の修正が入ったバージョンかを確かめる</li>
+          <li>直せるものは、承認すれば直る形にして出す</li>
+          <li>承認したあとの続きは、7 日のあいだ回数に数えません</li>
+          <li>30 日以内に、仕上げの点検をもう 1 回</li>
+          <li>調べた範囲・見つけたこと・直したこと・残っていることの報告</li>
+        </ul>
+      </div>
+      <div class="glass plan reveal">
+        <div class="kind">続けて守る</div>
+        <h3>毎日の見張り</h3>
+        <div class="price">50,000 円<small>/ 月</small></div>
+        <div class="pn">1 回の点検と直しを済ませたお店が申し込めます</div>
+        <ul>
+          <li>Shisa が毎日、決まった時刻に点検を始める</li>
+          <li>新しい弱点のお知らせは、その日のうちに確かめる</li>
+          <li>承認したあとの続きは、いつでも始められる</li>
+          <li>オート: 選んだ種類は、承認を待たずに直す(カスタマイズを直すときは、いつも承認を待ちます)</li>
+          <li>いつでも解約できます</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note reveal">値段は予定です。画面に出る金額が、お支払いの総額です。かんたん点検は無料です。</p>
+  </section>
+
+  <section class="block">
+    <h2 class="reveal">できること、できないこと</h2>
+    <div class="cando">
+      <div class="glass reveal"><h3>できること</h3>
+        <ul>
+          <li>PHP・本体・プラグインが、公式の修正が入ったバージョンかどうかを確かめる(ここは言い切れます)</li>
+          <li>カスタマイズの中まで調べて、ログインしているか、持ち主本人かを確かめていない所を探す</li>
+          <li>見つけたものを、承認をもらって直す・塞ぐ</li>
+          <li>調べたページや処理の数・確かめたこと・見ていない所を、報告にそのまま書く</li>
+        </ul></div>
+      <div class="glass reveal"><h3>できないこと</h3>
+        <ul>
+          <li>カスタマイズしたコードに弱点が「無い」と言い切ること(人が調べても同じです)</li>
+          <li>まだ世の中に知られていない弱点を防ぐこと</li>
+          <li>サーバーの PHP の更新、系列をまたぐバージョンアップ(4.2 → 4.3 など)、カスタマイズの大きな修正</li>
+        </ul>
+        <p>点検と提案には AI を使っているので、まちがえることもあります。だから、変える前に見せて、承認を待ちます。</p></div>
+    </div>
+  </section>
+
+  <section class="block faq" id="faq">
+    <h2 class="reveal">よくある質問</h2>
+    <details><summary>具体的に、何を見つけますか?</summary><p>カスタマイズでは、ほかのお客さんのカート・注文・会員の情報が見える・変えられるページ、ログインしていないのに開けるページ、お客さんが入力した値が確かめられずにデータベースや画面に入る所。本体・プラグイン・中の部品では、公式の修正が出ているのに、まだ入っていないもの。ほかに、サポートが終わった PHP、置かれるはずのないファイル、外から開けてしまう設定・控え・ログのファイルです。</p></details>
+    <details><summary>1 回で全部直りますか?</summary><p>直せるものは、承認すれば直る形まで出します。承認すると、続きの用意が要ることがあります(部品を入れてから、本体を上げる、など)。承認したあとの続きの点検は、7 日のあいだ回数に数えません。承認がたくさん出ても料金は変わりません。</p></details>
+    <details><summary>Shisa が直せないものは、どうなりますか?</summary><p>いまできる守りを入れたうえで、なぜ直せないかと、残っている危なさを報告に書きます。制作会社やサーバー会社に頼むときにそのまま渡せる文も、報告に付けます。</p></details>
+    <details><summary>直したあと、お店が動かなくなりませんか?</summary><p>直す前に控えを取り、直したらすぐお店を開いて確かめます。開かなければ、その場で元に戻します。</p></details>
+    <details><summary>お店のデータやパスワードは?</summary><p>パスワードはお預かりしません。データベースの中身(お客さまの情報)とアクセスのログは読みません。API とつなぐと、お店に Shisa のファイル(self-harden.php)を 1 つ置きます。</p></details>
+    <details><summary>どちらのプランを選べばいいですか?</summary><p>最初は、どのお店も「1 回の点検と直し」です(お店の中を全部調べる、いちばん重い回です)。そのあとは 2 通りあります。新しい弱点のお知らせが気になったときだけ頼むなら、2 回目からの点検と直し。毎日見ていてほしいなら「毎日の見張り」です。</p></details>
+    <details><summary>制作会社ですが、お客さんのお店に入れられますか?</summary><p>入れられます。承認のボタンを押せるのは、システム管理者か店舗オーナーの権限を持つ人です。複数のお店でのご利用は、下の連絡先へご相談ください。</p></details>
+    <details><summary>始め方は?</summary><p>1. プラグインを入れて、無料のかんたん点検を回す。2. 設定で「API とつなぐ」(無料)。3. プランの「申し込む」からカードで支払う。4. 点検の画面で「今すぐ点検する」。</p></details>
+  </section>
+
+  <section class="block" id="terms">
+    <h2 class="reveal">お支払いと解約(EC-CUBE)</h2>
+    <table class="terms reveal">
+      <tr><th>お支払いの方法</th><td>クレジットカード(決済は Stripe を使います)</td></tr>
+      <tr><th>お支払いの時期</th><td>1 回の点検と直し: 申し込みのとき。毎日の見張り: 申し込みのときと、そのあと毎月の同じ日</td></tr>
+      <tr><th>提供の時期</th><td>お支払いのあと、すぐに使えます</td></tr>
+      <tr><th>解約</th><td>毎日の見張りは、プラグインの設定の画面の「契約の管理」から、いつでも解約できます。解約しても、支払い済みの期間の終わりまで使えます。期間の途中で解約したときの日割りの返金はありません</td></tr>
+      <tr><th>返金</th><td>サービスの性質上、提供を始めたあとの返金はお受けしていません。ただし、点検が報告まで進まなかったとき(お店に届かない、途中で止まった、など理由を問いません)は、その 1 回の点検と直しの回数を使わなかったものとして戻します</td></tr>
+      <tr><th>動く環境</th><td>EC-CUBE 4.2 系・4.3 系。お店のサーバーから外へ https でつなげること、Shisa の点検の場所からお店の URL を開けること</td></tr>
+      <tr><th>販売事業者</th><td>合同会社うみうしラボ(<a href="../tokushoho.html">特定商取引法に基づく表記</a>)</td></tr>
+    </table>
+  </section>
+
+  <section class="statement reveal" id="contact">
+    <h2>受け付けが始まったら、<br>お知らせします。</h2>
+    <p>メールをいただければ、EC-CUBE 版の受け付けと、WordPress 版の公開のときにお知らせします。制作会社の方のご相談も、こちらへ。</p>
+    <div class="cta" style="justify-content:center"><a class="btn" href="mailto:info@umiushi-lab.com?subject=Shisa%20%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">info@umiushi-lab.com</a></div>
+  </section>
+</main>
+<footer class="site"><div class="wrap"><span>© 2026 うみうしラボ</span><span><a href="../tokushoho.html">特定商取引法に基づく表記</a> · <a href="../">うみうしラボのプロダクト</a></span></div></footer>
+<script src="../assets/site.js?v=20261110"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YYZQDTEPR0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YYZQDTEPR0');</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8e368a03b62f48a98ec3d3205e06c11d"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
