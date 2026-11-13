@@ -30,7 +30,7 @@
 - 昔の写真が Google フォトや Amazon Photos にしかない → 先にそれぞれのアプリで端末にダウンロードしてから取り込む
 
 ## ほかのプロダクト
-- 脆弱性を AI で診断・修正(WordPress 版の名前は「WP の脆弱性を AI で診断・修正 / AI Security Check & Fix for WP」): EC-CUBE と WordPress のサイトで、お店に合わせて作り込んだ部分(カスタマイズ)の弱点を探し、持ち主の承認で直すサービス。本体やプラグインを最新にしていても残る、ログインや持ち主を確かめていないページを見つける。EC-CUBE 4.2・4.3 と WordPress は、2026 年 12 月から受け付けの予定。https://umiushi-lab.com/shisa/ (英語: https://umiushi-lab.com/en/shisa/)
+- 脆弱性を AI で診断・修正するプラグイン(WordPress 版の名前は「WP の脆弱性を AI で診断・修正 / AI Security Check & Fix for WP」): EC-CUBE と WordPress のサイトで、お店に合わせて作り込んだ部分(カスタマイズ)の弱点を探し、持ち主の承認で直すサービス。本体やプラグインを最新にしていても残る、ログインや持ち主を確かめていないページを見つける。EC-CUBE 4.2・4.3 と WordPress は、2026 年 12 月から受け付けの予定。https://umiushi-lab.com/shisa/ (英語: https://umiushi-lab.com/en/shisa/)
 - きれるまえ: 消耗品 (おむつ・洗剤・水・ミルクなど) を、楽天・Amazon・Yahoo!ショッピングで送料とポイントを引いた値段で毎朝くらべる Web サービス。https://kirerumae.com/ (AI 向けの説明: https://kirerumae.com/llms.txt)
 - 世界のウミウシ: ウミウシの写真図鑑。https://seaslug.world/
 
