@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="ja" class="lab">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>利用規約: カスタマイズの脆弱性を AI で診断・修正 | うみうしラボ</title>
+<meta name="description" content="うみうしラボの「カスタマイズの脆弱性を AI で診断・修正」(EC-CUBE 版・WordPress 版)の利用規約。サービスの内容、料金と解約、データの扱い、保証しないこと、責任の範囲。">
+<link rel="canonical" href="https://umiushi-lab.com/shisa/terms.html">
+<!-- 見た目は tokushoho.html と同じ。規約のバージョンは、下の「規約のバージョン」と、プラグインの同意の欄(CONSENT_VERSION)を同じにする -->
+<script>
+// 明るい/暗い: 選んだことがあればそれ、なければ OS の設定に合わせる(描く前に決めてちらつかせない)
+(() => {
+  let t; try { t = localStorage.getItem('theme'); } catch (e) {}
+  if (!t) t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  if (t === 'light') document.documentElement.classList.add('light');
+})();
+</script>
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" href="../favicon-32.png" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;700;800&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/site.css?v=20261110">
+<link rel="stylesheet" href="../assets/lab.css?v=20261110c">
+<style>
+  .legal { max-width: 820px; padding: 56px 0 0; }
+  .legal h1 { font-size: clamp(28px, 4vw, 44px); font-weight: 800; letter-spacing: -.03em; line-height: 1.15; margin: 0 0 8px; }
+  .legal h2 { font-size: 20px; font-weight: 800; letter-spacing: -.01em; margin: 40px 0 14px; }
+  .legal .glass { padding: 8px 24px; }
+  .legal table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  .legal th, .legal td { text-align: left; vertical-align: top; padding: 14px 0; border-bottom: 1px solid var(--glass-line); }
+  .legal tr:last-child th, .legal tr:last-child td { border-bottom: 0; }
+  .legal th { width: 11em; padding-right: 20px; color: var(--mute); font-weight: 700; }
+  .legal td a { color: var(--accent); }
+  @media (max-width: 560px) {
+    .legal .glass { padding: 4px 18px; }
+    .legal th, .legal td { display: block; width: auto; }
+    .legal th { padding-bottom: 2px; border-bottom: 0; }
+    .legal td { padding-top: 0; }
+  }
+  .legal h2 { counter-increment: art; }
+  .legal p, .legal li { font-size: 15px; line-height: 1.9; }
+  .legal ul, .legal ol { padding-left: 1.3em; margin: 6px 0 0; }
+  .legal .glass { padding: 14px 24px 18px; }
+  .legal .glass p { margin: 0 0 8px; }
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="../"><img src="../apple-touch-icon.png" alt="" width="28" height="28">うみうしラボ</a>
+    <nav class="pill"><a href="../#products">プロダクト</a><a href="mailto:info@umiushi-lab.com">連絡</a><button class="theme" type="button" aria-label="明るい表示と暗い表示を切り替える">◐</button></nav>
+  </div>
+</header>
+
+<main class="wrap legal">
+  <p class="eyebrow">Terms</p>
+  <h1>利用規約</h1>
+  <p class="note">カスタマイズの脆弱性を AI で診断・修正(EC-CUBE 版・WordPress 版)<br>規約のバージョン: 2026-11-13 / 最終更新: 2026年11月13日</p>
+
+  <h2>1. この規約について</h2>
+  <div class="glass">
+    <p>この規約は、合同会社うみうしラボ(以下「当社」)が提供する「カスタマイズの脆弱性を AI で診断・修正」の利用の条件を定めるものです。EC-CUBE 版と、WordPress 版「WP の脆弱性を AI で診断・修正」の両方に当てはまります。以下、あわせて「本サービス」と呼びます。</p>
+    <p>プラグインの設定の画面で「同意します」にチェックを入れて API とつないだ時点で、この規約に同意したものとします。サイトやお店の持ち主に代わって操作する方(制作会社など)は、持ち主の了解を得たうえで同意してください。</p>
+    <p>当社は、この規約を変えることがあります。大事な変更は、このページと、プラグインの画面でお知らせします。変更のあとに本サービスを使ったときは、変更後の規約に同意したものとします。</p>
+  </div>
+
+  <h2>2. サービスの内容</h2>
+  <div class="glass">
+    <p>本サービスは、お客さまのサイト(お店)に入れたプラグインと、当社の API を通じて、次のことを行います。</p>
+    <ul>
+      <li>点検: サイトのプログラム(本体、プラグイン、テーマ、お客さまのために作られたコード)と設定を読み、弱点(脆弱性)と、公式の修正が入っていない所を探します。</li>
+      <li>提案と承認: 見つけたものの直し方を、変える前と後を並べて管理画面に出します。プログラムの書き換えは、管理画面で承認のボタンが押されたときだけ行います。</li>
+      <li>承認を待たずに行うこと: サイトの動きを変えない守り(外から開けてしまうファイルを閉じる、公式が示す当面の対策を入れる、など)。ログインしていない人にサイトを乗っ取られるおそれのあるプログラムは、止めることがあります。行ったことは、報告に書きます。</li>
+      <li>控えと戻し: 書き換える前に控えを取り、書き換えたあとにサイトが開くかを確かめます。開かなければ、その場で控えに戻します。</li>
+    </ul>
+    <p>プランは「1 回の点検と直し」(最初の点検、承認、残りを片付ける「続けて点検」)と、「毎日の見張り」(月額)です。中身と値段は、プラグインのプランの画面と、<a href="./">サービスのページ</a>に書いてあります。</p>
+  </div>
+
+  <h2>3. 料金と支払い</h2>
+  <div class="glass">
+    <p>料金は、申し込みの画面に出る金額(税込み)です。支払いはクレジットカードで、決済には Stripe を使います。カードの情報は Stripe が預かり、当社は受け取りません。</p>
+    <p>「1 回の点検と直し」は申し込みのときに、「毎日の見張り」は申し込みのときと、そのあと毎月の同じ日に請求します。</p>
+    <p>サービスの性質上、提供を始めたあとの返金はお受けしていません。ただし、点検が報告まで進まなかったときは、その 1 回分の回数を使わなかったものとして戻します(サイトに届かない・途中で止まった、など理由を問いません)。</p>
+    <p>「続けて点検」は、前の点検の残りがあるあいだ、最初の点検から 7 日以内に限り、回数を使わずに始められます。</p>
+  </div>
+
+  <h2>4. 解約</h2>
+  <div class="glass">
+    <p>「毎日の見張り」は、プラグインの画面の「契約の管理」から、いつでも解約できます。解約しても、支払い済みの期間の終わりまで使えます。期間の途中で解約したときの、日割りの返金はありません。</p>
+    <p>プラグインを止める・消すだけでは、月額の契約は止まりません。先に「契約の管理」から解約してください。</p>
+  </div>
+
+  <h2>5. お客さまにお願いすること</h2>
+  <div class="glass">
+    <ul>
+      <li>ご自身が持ち主であるサイト、または持ち主から任されているサイトにだけ使ってください。</li>
+      <li>サイトとデータベースのバックアップは、お客さまの側でも取ってください。本サービスが取る控えは、本サービスが書き換えるファイルと、その作業に関わるものだけです。</li>
+      <li>承認のボタンは、出ている説明と、変える所を確かめてから押してください。承認して入れた変更は、お客さまの判断で入れたものとして扱います。</li>
+      <li>契約は、申し込んだサイト 1 つのためのものです。ほかのサイトに使い回さないでください。</li>
+      <li>本サービスが報告した弱点を、ほかの人のサイトを調べる・攻撃する目的で使わないでください。</li>
+    </ul>
+  </div>
+
+  <h2>6. データの扱い</h2>
+  <div class="glass">
+    <p>読むもの: サイトのプログラムのファイル、設定のファイル(鍵やパスワードの値は伏せて読みます)、サーバーの PHP などのバージョンと設定、点検のために外からサイトを開いた結果。</p>
+    <p>読まないもの: データベースの中身(お客さまの情報、注文、記事、利用者、コメント)、アクセスのログ。管理画面のパスワードは、お預かりしません。</p>
+    <p>点検と提案には、Anthropic 社の AI(Claude)を使います。点検のあいだに読んだファイルの中身は、AI に答えさせるために、Anthropic 社のサービスへ送ります。当社が Anthropic 社と結んでいる利用の条件では、送った内容は AI の学習には使われません。</p>
+    <p>点検の経過と結果は、当社の API(Cloudflare 社のサービスの上で動いています)に置きます。当社は、失敗の原因を調べて本サービスを直すために、これを読むことがあります。経過の全部は 90 日で消し、失敗の型(止まった段、エラーの種類、バージョン)だけを、サイトの URL やファイルの中身を除いた形で残します。</p>
+    <p>同意の欄で「ほかのサイトとの共有に協力する」を選んだ場合に限り、バージョンと部品の組み合わせと、効いた直しを、ほかのサイトの点検をよくするために使います。URL やファイルの中身は入れません。あとから外せます。</p>
+    <p>当社は、法令に基づく場合を除き、上に書いた先のほかに、お客さまのデータを渡しません。</p>
+  </div>
+
+  <h2>7. 保証しないこと</h2>
+  <div class="glass">
+    <p>本サービスは、点検と提案に AI を使います。AI は、まちがえることがあります。当社は、次のことを保証しません。</p>
+    <ul>
+      <li>サイトにある弱点を、すべて見つけること。「見つからなかった」は、「弱点が無い」ことの約束ではありません。</li>
+      <li>提案した直しや入れた守りが、必ず効くこと、ほかの不具合を起こさないこと。</li>
+      <li>本サービスを使っているあいだ、サイトが攻撃を受けないこと、情報が漏れないこと。</li>
+      <li>本サービスが、止まらずにいつでも使えること。</li>
+      <li>お客さまのサイトの法令や決まり(クレジットカードの業界の基準など)への適合。</li>
+    </ul>
+    <p>本サービスは、専門の人による脆弱性診断や、サイトの保守の契約に代わるものではありません。</p>
+  </div>
+
+  <h2>8. 責任の範囲</h2>
+  <div class="glass">
+    <p>本サービスを使ったこと・使えなかったことでお客さまに損害が生じたとき、当社が負う責任には上限があります。上限は、損害のもとになった点検について、お客さまが当社に支払った料金です(「毎日の見張り」は、直近 1 か月分の料金)。お客さまが事業者でも、個人でも同じです。</p>
+    <p>この上限をこえる分と、次の損害について、当社は責任を負いません。</p>
+    <ul>
+      <li>サイトが止まったこと</li>
+      <li>売上や利益を得られなかったこと</li>
+      <li>データが消えた・書き換わったこと</li>
+      <li>第三者からの請求</li>
+      <li>攻撃や情報の漏れによる損害</li>
+    </ul>
+    <p>ただし、当社にわざと(故意)または重い不注意(重過失)があった場合は、上の上限と、責任を負わないという決まりは当てはまりません。</p>
+    <p>お客さまが、この規約に反して本サービスを使ったことで、当社または第三者に損害が生じたときは、お客さまがその責任を負います。</p>
+  </div>
+
+  <h2>9. サービスの変更・中断・終了</h2>
+  <div class="glass">
+    <p>当社は、本サービスの内容や値段を変えること、保守や障害のために一時的に止めること、本サービスを終えることがあります。終えるときは、1 か月以上前に、このページとプラグインの画面でお知らせします。「毎日の見張り」の契約は、終える日の前に、次の請求が出ないようにします。</p>
+    <p>お客さまがこの規約に反したとき、支払いが確かめられないとき、本サービスや第三者に害が出るおそれがあるときは、当社はお知らせなしに、そのお客さまの利用を止めることがあります。</p>
+  </div>
+
+  <h2>10. プログラムの権利</h2>
+  <div class="glass">
+    <p>お客さまのサイトに入れるプラグインは、GPL(バージョン 2 か、それより後)で配布しています。当社の API と、点検のしくみ、報告の形についての権利は、当社にあります。</p>
+    <p>お客さまのサイトのプログラムとデータの権利は、お客さま(またはその権利を持つ方)のものです。本サービスが提案して、承認で入れた変更も同じです。</p>
+  </div>
+
+  <h2>11. 準拠法と裁判所</h2>
+  <div class="glass">
+    <p>この規約は、日本の法律に従います。本サービスについての争いは、東京地方裁判所を、最初の裁判を行う専属の裁判所とします。</p>
+  </div>
+
+  <h2>12. 連絡先</h2>
+  <div class="glass">
+    <p>合同会社うみうしラボ<br>メール: <a href="mailto:info@umiushi-lab.com">info@umiushi-lab.com</a><br>事業者の情報は、<a href="../tokushoho.html">特定商取引法に基づく表記</a>をご覧ください。</p>
+  </div>
+</main>
+
+<footer class="site"><div class="wrap"><span>© 2026 うみうしラボ · <a href="../tokushoho.html">特定商取引法に基づく表記</a></span><span><a href="../kasane-diary/">かさね日記</a> · <a href="https://seaslug.world/">世界のウミウシ</a> · <a href="https://kirerumae.com/">きれるまえ</a></span></div></footer>
+<script src="../assets/site.js?v=20261110"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YYZQDTEPR0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YYZQDTEPR0');</script>
+</body>
+</html>
