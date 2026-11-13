@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Shisa(シーサー) - カスタマイズの中の弱点を探して、承認で直す | EC-CUBE・WordPress</title>
-<meta name="description" content="本体もプラグインも最新。それでも残るのが、お店に合わせて作り込んだ部分(カスタマイズ)の弱点です。Shisa はそこを中まで調べ、見つけたら店主さんの承認で直します。EC-CUBE 4.2・4.3 に対応、WordPress は準備中。">
-<meta property="og:title" content="Shisa(シーサー) - カスタマイズの中の弱点を探して、承認で直す">
-<meta property="og:description" content="本体もプラグインも最新。それでも残るのが、お店に合わせて作り込んだ部分(カスタマイズ)の弱点です。Shisa はそこを中まで調べ、見つけたら店主さんの承認で直します。">
+<title>カスタマイズの中の脆弱性を、AI で診断・修正 | EC-CUBE・WordPress | うみうしラボ</title>
+<meta name="description" content="本体もプラグインも最新。それでも残るのが、お店に合わせて作り込んだ部分(カスタマイズ)の弱点(脆弱性)です。そこを AI が中まで調べ、見つけたら持ち主の承認で直します。EC-CUBE 4.2・4.3 と WordPress に対応。">
+<meta property="og:title" content="カスタマイズの中の脆弱性を、AI で診断・修正 | EC-CUBE・WordPress">
+<meta property="og:description" content="本体もプラグインも最新。それでも残るのが、お店に合わせて作り込んだ部分(カスタマイズ)の弱点(脆弱性)です。そこを AI が中まで調べ、見つけたら持ち主の承認で直します。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://umiushi-lab.com/shisa/">
 <meta property="og:site_name" content="うみうしラボ">
@@ -16,7 +16,7 @@
 <link rel="alternate" hreflang="en" href="https://umiushi-lab.com/en/shisa/">
 <link rel="alternate" hreflang="x-default" href="https://umiushi-lab.com/en/shisa/">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Shisa","alternateName":["シーサー","Shisa お店の守り神"],"description":"EC-CUBE と WordPress のサイトで、お店に合わせて作り込んだ部分(カスタマイズ)の弱点を探し、持ち主の承認で直すサービス。","applicationCategory":"SecurityApplication","operatingSystem":"EC-CUBE 4.2, EC-CUBE 4.3","inLanguage":"ja","url":"https://umiushi-lab.com/shisa/","publisher":{"@type":"Organization","name":"合同会社うみうしラボ","url":"https://umiushi-lab.com/"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"カスタマイズの脆弱性を AI で診断・修正","alternateName":["WP の脆弱性を AI で診断・修正","AI Security Check & Fix for WP"],"description":"EC-CUBE と WordPress のサイトで、お店に合わせて作り込んだ部分(カスタマイズ)の弱点を探し、持ち主の承認で直すサービス。","applicationCategory":"SecurityApplication","operatingSystem":"EC-CUBE 4.2, EC-CUBE 4.3, WordPress","inLanguage":"ja","url":"https://umiushi-lab.com/shisa/","publisher":{"@type":"Organization","name":"合同会社うみうしラボ","url":"https://umiushi-lab.com/"}}
 </script>
 <link rel="icon" href="../favicon.ico" sizes="any">
 <link rel="icon" href="../favicon-32.png" type="image/png">
@@ -26,7 +26,7 @@
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;700;800&display=swap"><style>.reveal{opacity:1;transform:none}</style></noscript>
 <link rel="stylesheet" href="../assets/site.css?v=20261110">
 <style>
-/* Shisa のページだけの部品(家の絵・番号の並び・流れ・対応・値段) */
+/* このページだけの部品(家の絵・番号の並び・流れ・対応・値段) */
 .hero .house { background: linear-gradient(180deg, #eaf5fb 0%, #fdf8f1 100%); border: 1px solid var(--glass-line); border-radius: var(--radius); padding: 24px 16px 0; }
 .hero .house svg { width: 100%; height: auto; display: block; }
 .display.sm { font-size: clamp(30px, 4.6vw, 58px); line-height: 1.16; }
@@ -71,21 +71,21 @@ table.terms th { width: 9.5em; color: var(--mute); font-weight: 700; }
 <body class="light" style="--accent:#C9502A">
 <header class="nav">
   <div class="nav-in">
-    <a class="brand" href="./"><span class="dot"></span>Shisa(シーサー)</a>
+    <a class="brand" href="./"><span class="dot"></span>AI 診断・修正</a>
     <nav class="pill"><a class="opt" href="#where">どこを見るか</a><a class="opt" href="#platforms">対応</a><a class="opt" href="#price">値段</a><a class="opt" href="#faq">よくある質問</a><a href="../en/shisa/" hreflang="en" lang="en">English</a><a href="../">うみうしラボ</a></nav>
   </div>
 </header>
 <main class="wrap">
   <section class="hero">
     <div>
-      <p class="eyebrow">EC-CUBE · WordPress(準備中)</p>
+      <p class="eyebrow">EC-CUBE · WordPress</p>
       <h1 class="display sm">最新にしても、<br>増築した所は<br><span class="soft">だれも見ていない。</span></h1>
-      <p class="lead">本体もプラグインも最新。それでも残るのが、お店に合わせて作り込んだ部分(カスタマイズ)の弱点です。Shisa は、そこを中まで調べます。見つけたら、店主さんの承認で直します。入れたら、まず無料のかんたん点検から。</p>
+      <p class="lead">本体もプラグインも最新。それでも残るのが、お店に合わせて作り込んだ部分(カスタマイズ)の弱点です。そこを、AI が中まで調べます。見つけたら、店主さんの承認で直します。EC-CUBE 版も WordPress 版も、無料の点検から始められます。</p>
       <div class="cta"><a class="btn" href="https://ec-cube-demo43.umiushi-lab.com/admin/shisa/sample">見本の点検を見る(1 分)</a><a class="btn ghost" href="https://ec-cube-demo43.umiushi-lab.com/admin/shisa/diagnosis">デモのお店で試す</a></div>
-      <p class="note">どちらも、デモのお店の管理画面で開きます(ログインの ID とパスワードは、開いた画面に書いてあります)。申し込みの受け付けは、EC-CUBE 版が 2026 年 12 月からの予定です。</p>
+      <p class="note">どちらも、デモのお店の管理画面で開きます(ログインの ID とパスワードは、開いた画面に書いてあります)。申し込みの受け付けは、EC-CUBE 版・WordPress 版とも 2026 年 12 月からの予定です。</p>
     </div>
     <div class="house">
-      <svg viewBox="0 0 460 262" role="img" aria-label="お店を家にたとえた絵。土台が PHP、建物が本体、備えつけの設備が中の部品、増築した所がカスタマイズ。屋根の上に 2 体のシーサーがいる">
+      <svg viewBox="0 0 460 262" role="img" aria-label="お店を家にたとえた絵。土台が PHP、建物が本体、備えつけの設備が中の部品、増築した所がカスタマイズ。屋根の上に 2 体の守り神の像がいる">
         <defs>
           <g id="shhMane"><circle cx="0" cy="-78" r="22"/><circle cx="40" cy="-68" r="22"/><circle cx="-40" cy="-68" r="22"/><circle cx="68" cy="-40" r="22"/><circle cx="-68" cy="-40" r="22"/><circle cx="78" cy="0" r="22"/><circle cx="-78" cy="0" r="22"/><circle cx="68" cy="40" r="22"/><circle cx="-68" cy="40" r="22"/><circle cx="40" cy="66" r="22"/><circle cx="-40" cy="66" r="22"/><circle cx="0" cy="76" r="22"/></g>
           <g id="shhFace"><use href="#shhMane" fill="#b5532f"/><circle r="66" fill="#d9774a"/><path d="M-44,-30 q14,-16 30,-4" stroke="#7a2f17" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M44,-30 q-14,-16 -30,-4" stroke="#7a2f17" stroke-width="7" fill="none" stroke-linecap="round"/><circle cx="-26" cy="-12" r="13" fill="#fff8ec"/><circle cx="26" cy="-12" r="13" fill="#fff8ec"/><circle cx="-24" cy="-11" r="6" fill="#2b1a12"/><circle cx="24" cy="-11" r="6" fill="#2b1a12"/><ellipse cx="0" cy="12" rx="20" ry="13" fill="#9b3f20"/><circle cx="-8" cy="13" r="4" fill="#5a2210"/><circle cx="8" cy="13" r="4" fill="#5a2210"/></g>
@@ -127,7 +127,7 @@ table.terms th { width: 9.5em; color: var(--mute); font-weight: 700; }
     <h2 class="reveal">どこを見るか</h2>
     <ul class="parts reveal">
       <li class="main"><span class="n">1</span><span class="h">増築した所</span><span class="w">= カスタマイズ(お店に合わせて作り込んだ部分)</span>
-        <p><b>ここは、メーカーの点検の外です。</b>更新のお知らせも、バージョンを見比べる検査も、ここには届きません。Shisa が中まで調べて、ログインしているか、持ち主本人かを確かめていない所を探します。見つけたら、承認をもらって直します。</p></li>
+        <p><b>ここは、メーカーの点検の外です。</b>更新のお知らせも、バージョンを見比べる検査も、ここには届きません。ここを中まで調べて、ログインしているか、持ち主本人かを確かめていない所を探します。見つけたら、承認をもらって直します。</p></li>
       <li><span class="n">2</span><span class="h">PHP</span><span class="w">(土台)</span><p>古くなっていないかを見て、守りを入れます。入れ替えはサーバー会社の作業です。</p></li>
       <li><span class="n">3</span><span class="h">本体とプラグイン</span><span class="w">(建物)</span><p>公式の修正が出ていれば、承認をもらって入れます。</p></li>
       <li><span class="n">4</span><span class="h">中の部品</span><span class="w">(備えつけの設備)</span><p>本体に付いてくる、ほかのメーカーの部品。修正が出ていれば、承認をもらって入れ替えます。</p></li>
@@ -172,20 +172,22 @@ table.terms th { width: 9.5em; color: var(--mute); font-weight: 700; }
         <div class="cta"><a class="btn" href="https://ec-cube-demo43.umiushi-lab.com/admin/shisa/diagnosis">デモのお店で試す</a></div>
       </div>
       <div class="glass plat reveal">
-        <span class="state prep">準備中</span>
+        <span class="state soon">2026 年 12 月から受け付けの予定</span>
         <h3>WordPress</h3>
-        <p>制作会社に作ってもらったテーマや、そのサイトだけのプラグインがあるサイト向けです。</p>
+        <p>制作会社に作ってもらったテーマや、そのサイトだけのプラグイン、更新の止まったプラグインを使っているサイト向けです。</p>
         <ul>
-          <li>無料のプラグイン「カスタマイズの地図」: WordPress.org のものでないテーマとプラグインを見つけて、外から呼び出せるページや処理を数えます。コードもデータも、サイトの外に送りません</li>
-          <li>中まで調べて、承認で直すところは、手元のサイトで試している段階です</li>
+          <li>無料のプラグイン(WordPress.org で審査中): 更新が届かないテーマとプラグインを見つけて、外から呼び出せるページや処理を数えます。コードもデータも、サイトの外に送りません</li>
+          <li>有料の「WP の脆弱性を AI で診断・修正」: テーマとプラグインの中まで調べて、承認で直します。公開が止められたプラグインの中も調べます</li>
+          <li>WordPress 本体とプラグインを、公式の配布物と、公表済みの弱点の一覧に照らします</li>
         </ul>
-        <p class="note">公開の時期と値段は、決まりしだいここに書きます。</p>
+        <div class="cta"><a class="btn" href="https://wp-demo.umiushi-lab.com/wp-admin/">デモのサイトで画面を見る</a></div>
+        <p class="note">値段は EC-CUBE 版と同じです(オートは EC-CUBE 版だけ)。</p>
       </div>
     </div>
   </section>
 
   <section class="block" id="price">
-    <h2 class="reveal">値段(EC-CUBE)</h2>
+    <h2 class="reveal">値段</h2>
     <div class="grid">
       <div class="glass plan reveal">
         <div class="kind">1 回だけ頼む</div>
@@ -207,7 +209,7 @@ table.terms th { width: 9.5em; color: var(--mute); font-weight: 700; }
         <div class="price">50,000 円<small>/ 月</small></div>
         <div class="pn">1 回の点検と直しを済ませたお店が申し込めます</div>
         <ul>
-          <li>Shisa が毎日、決まった時刻に点検を始める</li>
+          <li>毎日、決まった時刻に点検を始める</li>
           <li>新しい弱点のお知らせは、その日のうちに確かめる</li>
           <li>承認したあとの続きは、いつでも始められる</li>
           <li>オート: 選んだ種類は、承認を待たずに直す(カスタマイズを直すときは、いつも承認を待ちます)</li>
@@ -242,31 +244,31 @@ table.terms th { width: 9.5em; color: var(--mute); font-weight: 700; }
     <h2 class="reveal">よくある質問</h2>
     <details><summary>具体的に、何を見つけますか?</summary><p>カスタマイズでは、ほかのお客さんのカート・注文・会員の情報が見える・変えられるページ、ログインしていないのに開けるページ、お客さんが入力した値が確かめられずにデータベースや画面に入る所。本体・プラグイン・中の部品では、公式の修正が出ているのに、まだ入っていないもの。ほかに、サポートが終わった PHP、置かれるはずのないファイル、外から開けてしまう設定・控え・ログのファイルです。</p></details>
     <details><summary>1 回で全部直りますか?</summary><p>直せるものは、承認すれば直る形まで出します。承認すると、続きの用意が要ることがあります(部品を入れてから、本体を上げる、など)。承認したあとの続きの点検は、7 日のあいだ回数に数えません。承認がたくさん出ても料金は変わりません。</p></details>
-    <details><summary>Shisa が直せないものは、どうなりますか?</summary><p>いまできる守りを入れたうえで、なぜ直せないかと、残っている危なさを報告に書きます。制作会社やサーバー会社に頼むときにそのまま渡せる文も、報告に付けます。</p></details>
+    <details><summary>直せないものは、どうなりますか?</summary><p>いまできる守りを入れたうえで、なぜ直せないかと、残っている危なさを報告に書きます。制作会社やサーバー会社に頼むときにそのまま渡せる文も、報告に付けます。</p></details>
     <details><summary>直したあと、お店が動かなくなりませんか?</summary><p>直す前に控えを取り、直したらすぐお店を開いて確かめます。開かなければ、その場で元に戻します。</p></details>
-    <details><summary>お店のデータやパスワードは?</summary><p>パスワードはお預かりしません。データベースの中身(お客さまの情報)とアクセスのログは読みません。API とつなぐと、お店に Shisa のファイル(self-harden.php)を 1 つ置きます。</p></details>
+    <details><summary>お店のデータやパスワードは?</summary><p>パスワードはお預かりしません。データベースの中身(お客さまの情報)とアクセスのログは読みません。API とつなぐと、お店に受け口のファイル(self-harden.php)を 1 つ置きます。</p></details>
     <details><summary>どちらのプランを選べばいいですか?</summary><p>最初は、どのお店も「1 回の点検と直し」です(お店の中を全部調べる、いちばん重い回です)。そのあとは 2 通りあります。新しい弱点のお知らせが気になったときだけ頼むなら、2 回目からの点検と直し。毎日見ていてほしいなら「毎日の見張り」です。</p></details>
     <details><summary>制作会社ですが、お客さんのお店に入れられますか?</summary><p>入れられます。承認のボタンを押せるのは、システム管理者か店舗オーナーの権限を持つ人です。複数のお店でのご利用は、下の連絡先へご相談ください。</p></details>
-    <details><summary>始め方は?</summary><p>1. プラグインを入れて、無料のかんたん点検を回す。2. 設定で「API とつなぐ」(無料)。3. プランの「申し込む」からカードで支払う。4. 点検の画面で「今すぐ点検する」。</p></details>
+    <details><summary>始め方は?</summary><p><b>EC-CUBE 版</b>: 1. プラグインを入れて、無料のかんたん点検を回す。2. 設定で「API とつなぐ」(無料)。3. プランの「申し込む」からカードで支払う。4. 点検の画面で「今すぐ点検する」。</p><p><b>WordPress 版</b>: 無料の点検と有料の診断・修正は、別のプラグインです。無料のプラグインは、更新の届かないテーマとプラグインを見つけて数える所までで、サイトの外には何も送りません。中まで調べて直すときは、有料のプラグインを入れて、1. 設定で「API とつなぐ」(無料)。2. プランの「申し込む」からカードで支払う。3. 点検の画面で「今すぐ点検する」。無料のプラグインを入れていなくても使えます。</p></details>
   </section>
 
   <section class="block" id="terms">
-    <h2 class="reveal">お支払いと解約(EC-CUBE)</h2>
+    <h2 class="reveal">お支払いと解約</h2>
     <table class="terms reveal">
       <tr><th>お支払いの方法</th><td>クレジットカード(決済は Stripe を使います)</td></tr>
       <tr><th>お支払いの時期</th><td>1 回の点検と直し: 申し込みのとき。毎日の見張り: 申し込みのときと、そのあと毎月の同じ日</td></tr>
       <tr><th>提供の時期</th><td>お支払いのあと、すぐに使えます</td></tr>
       <tr><th>解約</th><td>毎日の見張りは、プラグインの設定の画面の「契約の管理」から、いつでも解約できます。解約しても、支払い済みの期間の終わりまで使えます。期間の途中で解約したときの日割りの返金はありません</td></tr>
       <tr><th>返金</th><td>サービスの性質上、提供を始めたあとの返金はお受けしていません。ただし、点検が報告まで進まなかったとき(お店に届かない、途中で止まった、など理由を問いません)は、その 1 回の点検と直しの回数を使わなかったものとして戻します</td></tr>
-      <tr><th>動く環境</th><td>EC-CUBE 4.2 系・4.3 系。お店のサーバーから外へ https でつなげること、Shisa の点検の場所からお店の URL を開けること</td></tr>
+      <tr><th>動く環境</th><td>EC-CUBE 4.2 系・4.3 系、または WordPress 6.2 以上(PHP 7.4 以上)。お店のサーバーから外へ https でつなげること、点検の場所(うみうしラボの API)からお店の URL を開けること</td></tr>
       <tr><th>販売事業者</th><td>合同会社うみうしラボ(<a href="../tokushoho.html">特定商取引法に基づく表記</a>)</td></tr>
     </table>
   </section>
 
   <section class="statement reveal" id="contact">
     <h2>受け付けが始まったら、<br>お知らせします。</h2>
-    <p>メールをいただければ、EC-CUBE 版の受け付けと、WordPress 版の公開のときにお知らせします。制作会社の方のご相談も、こちらへ。</p>
-    <div class="cta" style="justify-content:center"><a class="btn" href="mailto:info@umiushi-lab.com?subject=Shisa%20%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">info@umiushi-lab.com</a></div>
+    <p>メールをいただければ、受け付けが始まったときにお知らせします。制作会社の方のご相談も、こちらへ。</p>
+    <div class="cta" style="justify-content:center"><a class="btn" href="mailto:info@umiushi-lab.com?subject=AI%20%E8%A8%BA%E6%96%AD%E3%83%BB%E4%BF%AE%E6%AD%A3%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">info@umiushi-lab.com</a></div>
   </section>
 </main>
 <footer class="site"><div class="wrap"><span>© 2026 うみうしラボ</span><span><a href="../tokushoho.html">特定商取引法に基づく表記</a> · <a href="../">うみうしラボのプロダクト</a></span></div></footer>
