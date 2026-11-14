@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://umiushi-lab.com/en/shisa/og.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"AI Security Check & Fix for WP","description":"You know the site needs updating, but it was built just for you and changing the wrong thing could take it down. This service uses AI to read the code on your WordPress site, checks it against official releases and published vulnerabilities, and repairs weaknesses only after you approve each change. If the site stops loading, the change is rolled back.","applicationCategory":"SecurityApplication","operatingSystem":"WordPress 6.2+","inLanguage":"en","url":"https://umiushi-lab.com/en/shisa/","image":"https://umiushi-lab.com/en/shisa/og.png","publisher":{"@type":"Organization","name":"Umiushi Lab LLC","url":"https://umiushi-lab.com/"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does the free WordPress plugin send my code anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. It reads files on your server and stores the counts in your database. The only outside request is optional: when an administrator presses a button, it asks api.wordpress.org whether the installed WordPress.org plugins were closed or abandoned, sending only their slugs."}},{"@type":"Question","name":"Does the free plugin install the paid service?","acceptedAnswer":{"@type":"Answer","text":"No. The free plugin works by itself and downloads nothing. The paid service will be a separate product."}},{"@type":"Question","name":"The map marks a page. Is it vulnerable?","acceptedAnswer":{"@type":"Answer","text":"Not necessarily. The map marks pages and handlers that take outside input where no login or permission check is visible in the same file. The check may be in another file. Someone has to read the code to know."}},{"@type":"Question","name":"Who runs this service?","acceptedAnswer":{"@type":"Answer","text":"Umiushi Lab LLC, a small software company in Tokyo. Legal notice (Japanese)"}}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"AI Security Check & Fix for WP","description":"You know the site needs updating, but it was built just for you and changing the wrong thing could take it down. This service uses AI to read the code on your WordPress site, checks it against official releases and published vulnerabilities, and repairs weaknesses only after you approve each change. If the site stops loading, the change is rolled back.","applicationCategory":"SecurityApplication","operatingSystem":"WordPress 6.2+","inLanguage":"en","url":"https://umiushi-lab.com/en/shisa/","image":"https://umiushi-lab.com/en/shisa/og.png","publisher":{"@type":"Organization","name":"Umiushi Lab LLC","url":"https://umiushi-lab.com/"},"offers":[{"@type":"Offer","name":"Plugin","price":"0","priceCurrency":"JPY","availability":"https://schema.org/InStock","url":"https://umiushi-lab.com/en/shisa/#price","seller":{"@type":"Organization","name":"Umiushi Lab LLC","url":"https://umiushi-lab.com/"}},{"@type":"Offer","name":"One inspection and repair (first time; regular price 100,000)","price":"50000","priceCurrency":"JPY","availability":"https://schema.org/InStock","url":"https://umiushi-lab.com/en/shisa/#price","seller":{"@type":"Organization","name":"Umiushi Lab LLC","url":"https://umiushi-lab.com/"}},{"@type":"Offer","name":"One inspection and repair (from the second)","price":"30000","priceCurrency":"JPY","availability":"https://schema.org/InStock","url":"https://umiushi-lab.com/en/shisa/#price","seller":{"@type":"Organization","name":"Umiushi Lab LLC","url":"https://umiushi-lab.com/"}},{"@type":"Offer","name":"Daily watch (monthly)","price":"50000","priceCurrency":"JPY","availability":"https://schema.org/InStock","url":"https://umiushi-lab.com/en/shisa/#price","seller":{"@type":"Organization","name":"Umiushi Lab LLC","url":"https://umiushi-lab.com/"},"priceSpecification":{"@type":"UnitPriceSpecification","price":"50000","priceCurrency":"JPY","billingDuration":"P1M"}}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"My site is customized and I have not been able to update it. Can I use this?","acceptedAnswer":{"@type":"Answer","text":"That is who it is for. The free plugin first shows which code updates do not reach. The paid inspection reads that code. Before each repair it takes a backup; afterwards it opens the site, and if the site does not load, the change is rolled back on the spot."}},{"@type":"Question","name":"How much does it cost?","acceptedAnswer":{"@type":"Answer","text":"Installing the plugin is free. One inspection and repair is ¥50,000 for the first one (launch price; regular price ¥100,000) and ¥30,000 from the second. The daily watch is ¥50,000 per month and is available after the first inspection. Prices are in Japanese yen and include tax."}},{"@type":"Question","name":"Does the free WordPress plugin send my code anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. It reads files on your server and stores the counts in your database. The only outside request is optional: when an administrator presses a button, it asks api.wordpress.org whether the installed WordPress.org plugins were closed or abandoned, sending only their slugs."}},{"@type":"Question","name":"Does the free plugin install the paid service?","acceptedAnswer":{"@type":"Answer","text":"No. The free plugin works by itself and downloads nothing. The paid service is a separate plugin, downloaded from this page."}},{"@type":"Question","name":"The map marks a page. Is it vulnerable?","acceptedAnswer":{"@type":"Answer","text":"Not necessarily. The map marks pages and handlers that take outside input where no login or permission check is visible in the same file. The check may be in another file. Someone has to read the code to know."}},{"@type":"Question","name":"Who runs this service?","acceptedAnswer":{"@type":"Answer","text":"Umiushi Lab LLC, a small software company in Tokyo. Legal notice (Japanese)"}}]}]}
 </script>
 <link rel="canonical" href="https://umiushi-lab.com/en/shisa/">
 <link rel="alternate" hreflang="ja" href="https://umiushi-lab.com/shisa/">
@@ -79,7 +79,7 @@ table.terms th { width: 9.5em; color: var(--mute); font-weight: 700; }
 <header class="nav">
   <div class="nav-in">
     <a class="brand" href="./"><span class="dot"></span>AI Security Check &amp; Fix</a>
-    <nav class="pill"><a class="opt" href="#where">What it checks</a><a class="opt" href="#platforms">Platforms</a><a class="opt" href="#faq">FAQ</a><a href="../../shisa/" hreflang="ja" lang="ja">日本語</a><a href="../">Umiushi Lab</a></nav>
+    <nav class="pill"><a class="opt" href="#where">What it checks</a><a class="opt" href="#platforms">Platforms</a><a class="opt" href="#price">Pricing</a><a class="opt" href="#faq">FAQ</a><a href="../../shisa/" hreflang="ja" lang="ja">日本語</a><a href="../">Umiushi Lab</a></nav>
   </div>
 </header>
 <main class="wrap">
@@ -166,6 +166,10 @@ table.terms th { width: 9.5em; color: var(--mute); font-weight: 700; }
         </ul>
         <div class="cta"><a class="btn" href="https://wp-demo.umiushi-lab.com/wp-admin/admin.php?page=umiushi-fix-sample">Watch a recorded inspection (1 min, Japanese)</a><a class="btn ghost" href="https://wp-demo.umiushi-lab.com/wp-admin/">See the screens on the demo site</a></div>
         <p class="note">Both open in the admin screen of the demo site. The login is written on the page that opens.</p>
+        <div class="cta"><a class="btn" href="https://api.shisa.umiushi-lab.com/dl/wp" rel="nofollow">Download the paid plugin (zip)</a></div>
+        <p class="note">Downloading is free. You pay only when you order from the Plans screen inside the plugin.</p>
+        <p class="note">To install: Plugins → Add New Plugin → Upload Plugin, then choose the zip. Later updates arrive on the Updates screen.</p>
+        <p class="note">The plugin's screens, its reports and support are in Japanese for now. If the download does not start, try a current browser.</p>
       </div>
       <div class="glass plat reveal">
         <h3>EC-CUBE</h3>
@@ -177,6 +181,38 @@ table.terms th { width: 9.5em; color: var(--mute); font-weight: 700; }
         <p class="note">The EC-CUBE service and its support are in Japanese. <a href="../../shisa/" hreflang="ja">Japanese page</a></p>
       </div>
     </div>
+  </section>
+
+  <section class="block" id="price">
+    <h2 class="reveal">Pricing</h2>
+    <div class="grid">
+      <div class="glass plan reveal">
+        <div class="kind">One time</div>
+        <h3>One inspection and repair</h3>
+        <div class="price">¥50,000<small>/ first time</small></div>
+        <div class="pn">Launch price for the first inspection (regular price ¥100,000). ¥30,000 from the second.</div>
+        <ul>
+          <li>Reads the code of your theme, your site-specific plugins and plugins closed on WordPress.org, looking for pages and handlers that skip a login check or an ownership check</li>
+          <li>Compares WordPress core and plugins with the official packages and with published vulnerability records</li>
+          <li>Shows each repair before and after, and applies it only when you approve</li>
+          <li>Approvals are not counted; approve as many as you need</li>
+          <li>What is left over is finished with "Continue the inspection" at no extra charge, for 7 days from the first run</li>
+          <li>A report of what was read, what was found, what was fixed and what remains</li>
+        </ul>
+      </div>
+      <div class="glass plan reveal">
+        <div class="kind">Ongoing</div>
+        <h3>Daily watch</h3>
+        <div class="price">¥50,000<small>/ month</small></div>
+        <div class="pn">Available to sites that have had their first inspection and repair</div>
+        <ul>
+          <li>Starts an inspection every day at a set time</li>
+          <li>Checks new vulnerability notices the same day</li>
+          <li>Cancel at any time from the plugin; it stays active until the end of the paid period</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note reveal">Installing the plugin is free. Prices are in Japanese yen and include tax. Payment is by card, through Stripe; the amount shown on the payment screen is the total. Once the service has started there are no refunds, but an inspection that does not reach its report is not counted. <a href="../../shisa/terms.html">Terms of service (Japanese)</a></p>
   </section>
 
   <section class="block">
@@ -201,15 +237,17 @@ table.terms th { width: 9.5em; color: var(--mute); font-weight: 700; }
 
   <section class="block faq" id="faq">
     <h2 class="reveal">FAQ</h2>
+    <details><summary>My site is customized and I have not been able to update it. Can I use this?</summary><p>That is who it is for. The free plugin first shows which code updates do not reach. The paid inspection reads that code. Before each repair it takes a backup; afterwards it opens the site, and if the site does not load, the change is rolled back on the spot.</p></details>
+    <details><summary>How much does it cost?</summary><p>Installing the plugin is free. One inspection and repair is ¥50,000 for the first one (launch price; regular price ¥100,000) and ¥30,000 from the second. The daily watch is ¥50,000 per month and is available after the first inspection. Prices are in Japanese yen and include tax.</p></details>
     <details><summary>Does the free WordPress plugin send my code anywhere?</summary><p>No. It reads files on your server and stores the counts in your database. The only outside request is optional: when an administrator presses a button, it asks api.wordpress.org whether the installed WordPress.org plugins were closed or abandoned, sending only their slugs.</p></details>
-    <details><summary>Does the free plugin install the paid service?</summary><p>No. The free plugin works by itself and downloads nothing. The paid service will be a separate product.</p></details>
+    <details><summary>Does the free plugin install the paid service?</summary><p>No. The free plugin works by itself and downloads nothing. The paid service is a separate plugin, downloaded from this page.</p></details>
     <details><summary>The map marks a page. Is it vulnerable?</summary><p>Not necessarily. The map marks pages and handlers that take outside input where no login or permission check is visible in the same file. The check may be in another file. Someone has to read the code to know.</p></details>
     <details><summary>Who runs this service?</summary><p>Umiushi Lab LLC, a small software company in Tokyo. <a href="../../tokushoho.html" hreflang="ja">Legal notice (Japanese)</a></p></details>
   </section>
 
   <section class="statement reveal" id="contact">
-    <h2>Want to hear<br>when it opens?</h2>
-    <p>Send an email and we will write to you when orders open.</p>
+    <h2>Questions?<br>Write to us.</h2>
+    <p>Not sure whether it fits your site, or want to use it on several sites? Email us, in English or Japanese.</p>
     <div class="cta" style="justify-content:center"><a class="btn" href="mailto:info@umiushi-lab.com?subject=AI%20Security%20Check%20%26%20Fix">info@umiushi-lab.com</a></div>
   </section>
 </main>
