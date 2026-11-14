@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>脆弱性を AI で診断・修正するプラグイン | EC-CUBE・WordPress | うみうしラボ</title>
-<meta name="description" content="本体もプラグインも最新。それでも残るのが、お店に合わせて作り込んだ部分(カスタマイズ)の弱点(脆弱性)です。そこを AI が中まで調べ、見つけたら持ち主の承認で直します。EC-CUBE 4.2・4.3 と WordPress に対応。">
+<meta name="description" content="更新したほうがいいのは分かっている。でも、カスタマイズがあって、止まるのが怖い。そんな EC-CUBE・WordPress のサイトを AI が調べ、公式の修正を承認で入れ、開かなければ元に戻します。カスタマイズの中の弱点(脆弱性)も探します。">
 <meta property="og:title" content="脆弱性を AI で診断・修正するプラグイン | EC-CUBE・WordPress">
-<meta property="og:description" content="本体もプラグインも最新。それでも残るのが、お店に合わせて作り込んだ部分(カスタマイズ)の弱点(脆弱性)です。そこを AI が中まで調べ、見つけたら持ち主の承認で直します。">
+<meta property="og:description" content="更新したほうがいいのは分かっている。でも、カスタマイズがあって、止まるのが怖い。そんな EC-CUBE・WordPress のサイトを AI が調べ、公式の修正を承認で入れ、開かなければ元に戻します。カスタマイズの中の弱点(脆弱性)も探します。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://umiushi-lab.com/shisa/">
 <meta property="og:site_name" content="うみうしラボ">
@@ -66,6 +66,12 @@ table.terms th, table.terms td { text-align: left; vertical-align: top; padding:
 table.terms th { width: 9.5em; color: var(--mute); font-weight: 700; }
 @media (max-width: 900px) { .flow, .parts { grid-template-columns: 1fr 1fr; } .cando { grid-template-columns: 1fr; } }
 @media (max-width: 560px) { .flow, .parts { grid-template-columns: 1fr; } table.terms th { width: 6.5em; } .plan .price { font-size: 32px; } }
+.movie { position: relative; max-width: 880px; margin: 18px auto 0; aspect-ratio: 16 / 9; border-radius: 18px; overflow: hidden; background: #08090b; box-shadow: 0 18px 50px rgba(0,0,0,.18); }
+.movie a, .movie img, .movie iframe { position: absolute; inset: 0; width: 100%; height: 100%; display: block; border: 0; }
+.movie img { object-fit: cover; }
+.movie .play { position: absolute; left: 50%; top: 50%; width: 84px; height: 84px; margin: -42px 0 0 -42px; border-radius: 50%; background: var(--accent, #C9502A); box-shadow: 0 8px 30px rgba(0,0,0,.45); transition: transform .15s; }
+.movie .play::after { content: ""; position: absolute; left: 34px; top: 26px; border-style: solid; border-width: 16px 0 16px 26px; border-color: transparent transparent transparent #fff; }
+.movie a:hover .play { transform: scale(1.08); }
 </style>
 </head>
 <body class="light" style="--accent:#C9502A">
@@ -79,8 +85,8 @@ table.terms th { width: 9.5em; color: var(--mute); font-weight: 700; }
   <section class="hero">
     <div>
       <p class="eyebrow">EC-CUBE · WordPress</p>
-      <h1 class="display sm">最新にしても、<br>増築した所は<br><span class="soft">だれも見ていない。</span></h1>
-      <p class="lead">本体もプラグインも最新。それでも残るのが、お店に合わせて作り込んだ部分(カスタマイズ)の弱点です。そこを、AI が中まで調べます。見つけたら、店主さんの承認で直します。EC-CUBE 版も WordPress 版も、無料の点検から始められます。</p>
+      <h1 class="display sm">分かっているのに、<br>更新できない。<br><span class="soft">そのお店のために。</span></h1>
+      <p class="lead">カスタマイズが入っていて、上げたら、どこが止まるか分からない。作った人も、もういない。そういうお店の中を AI が調べて、公式の修正を、店主さんの承認で入れます。お店が開かなければ、その場で元に戻す仕組みです。公式の修正だけでは届かない、カスタマイズの中の弱点も探します。無料の点検から始められます(EC-CUBE 版・WordPress 版)。</p>
       <div class="cta"><a class="btn" href="https://ec-cube-demo43.umiushi-lab.com/admin/shisa/sample">見本の点検を見る(1 分)</a><a class="btn ghost" href="https://ec-cube-demo43.umiushi-lab.com/admin/shisa/diagnosis">デモのお店で試す</a></div>
       <p class="note">どちらも、デモのお店の管理画面で開きます(ログインの ID とパスワードは、開いた画面に書いてあります)。</p>
     </div>
@@ -121,6 +127,18 @@ table.terms th { width: 9.5em; color: var(--mute); font-weight: 700; }
         </g>
       </svg>
     </div>
+  </section>
+
+  <section class="block" id="movie">
+    <h2 class="reveal">2 分で分かる</h2>
+    <p class="reveal">なぜ最新にできないのか、入れると何が起きるのかを、実際の管理画面で説明します(EC-CUBE 版。音が出ます)。</p>
+    <div class="movie reveal" id="shisa-movie">
+      <a href="https://www.youtube.com/watch?v=korG8HoW_mg" target="_blank" rel="noopener" aria-label="説明の動画を再生する(YouTube)">
+        <img src="explain-thumb.jpg" width="1280" height="720" alt="説明の動画: だから、古いまま、動かしている。" loading="lazy">
+        <span class="play" aria-hidden="true"></span>
+      </a>
+    </div>
+    <p class="note reveal">再生を押すと、YouTube から動画を読み込みます。</p>
   </section>
 
   <section class="block" id="where">
@@ -291,6 +309,10 @@ table.terms th { width: 9.5em; color: var(--mute); font-weight: 700; }
   </section>
 </main>
 <footer class="site"><div class="wrap"><span>© 2026 うみうしラボ</span><span><a href="./terms.html">利用規約</a> · <a href="../tokushoho.html">特定商取引法に基づく表記</a> · <a href="../">うみうしラボのプロダクト</a></span></div></footer>
+<script>
+// 説明の動画: 押されるまで YouTube には何も読みに行かない
+(function(){var b=document.getElementById('shisa-movie');if(!b)return;var a=b.querySelector('a');a.addEventListener('click',function(e){e.preventDefault();var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/korG8HoW_mg?autoplay=1&rel=0';f.title='説明の動画';f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';f.allowFullscreen=true;f.referrerPolicy='strict-origin-when-cross-origin';b.replaceChildren(f);});})();
+</script>
 <script src="../assets/site.js?v=20261110"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YYZQDTEPR0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YYZQDTEPR0');</script>
