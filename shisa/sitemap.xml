@@ -2,4 +2,5 @@
 <!-- tools/update-sitemap.py がルートの sitemap.xml から作る。手で直さない -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://umiushi-lab.com/shisa/</loc><lastmod>2026-11-15</lastmod></url>
+  <url><loc>https://umiushi-lab.com/shisa/ec-cube-php/</loc><lastmod>2026-11-15</lastmod></url>
 </urlset>
