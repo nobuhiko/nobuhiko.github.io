@@ -15,7 +15,7 @@
 <meta property="og:image" content="https://umiushi-lab.com/shisa/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"EC-CUBE と PHP のバージョン対応表、PHP2Shell に当たるかの確かめ方","description":"EC-CUBE 4.0〜4.3 が動く PHP のバージョンと、PHP の脆弱性 PHP2Shell(CVE-2026-109618 / CVE-2026-109619)の修正が入ったバージョンの対応表。PHP2Shell は特別な扱いになり、サポートの終わった古い PHP にも修正が出ました。EC-CUBE のバージョンごとに、何を確かめればよいかをまとめました。","inLanguage":"ja","datePublished":"2026-11-15","dateModified":"2026-11-15","mainEntityOfPage":"https://umiushi-lab.com/shisa/ec-cube-php/","author":{"@type":"Organization","name":"うみうしラボ","url":"https://umiushi-lab.com/"},"publisher":{"@type":"Organization","name":"うみうしラボ","url":"https://umiushi-lab.com/"},"image":"https://umiushi-lab.com/shisa/og.png"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"うみうしラボ","item":"https://umiushi-lab.com/"},{"@type":"ListItem","position":2,"name":"脆弱性を AI で診断・修正するプラグイン","item":"https://umiushi-lab.com/shisa/"},{"@type":"ListItem","position":3,"name":"EC-CUBE と PHP のバージョン対応表","item":"https://umiushi-lab.com/shisa/ec-cube-php/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"EC-CUBE 4.2 が対応する PHP のバージョンは?","acceptedAnswer":{"@type":"Answer","text":"EC-CUBE 4.2 系が対応する PHP は 7.4 〜 8.1 です。PHP 8.2・8.3 には、EC-CUBE 4.3 系が対応しています。"}},{"@type":"Question","name":"PHP 8.1 以前には、PHP2Shell の修正は入りますか?","acceptedAnswer":{"@type":"Answer","text":"サーバーによります。PHP 7.4・8.0・8.1 には、PHP の開発チームが修正のソースを GitHub で提供していて、それを入れるかどうかは、レンタルサーバーや OS の配布元が決めます。PHP 7.3 から 5 系に、自社で修正を入れた会社もあります。バージョンの番号は変わらないので、お使いのサーバーのお知らせを読んで確かめます。これは PHP2Shell にかぎった特別な対応です。"}},{"@type":"Question","name":"PHP のバージョンの番号を見れば、修正が入っているか分かりますか?","acceptedAnswer":{"@type":"Answer","text":"8.2 以上は、番号で分かります(8.2.35、8.3.36、8.4.27、8.5.12 以上)。8.1 以前は、番号を変えずに修正を入れる配布元が多いので、サーバー会社のお知らせを読むか、問い合わせて確かめます。"}}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"EC-CUBE と PHP のバージョン対応表、PHP2Shell に当たるかの確かめ方","description":"EC-CUBE 4.0〜4.3 が動く PHP のバージョンと、PHP の脆弱性 PHP2Shell(CVE-2026-109618 / CVE-2026-109619)の修正が入ったバージョンの対応表。PHP2Shell は特別な扱いになり、サポートの終わった古い PHP にも修正が出ました。EC-CUBE のバージョンごとに、何を確かめればよいかをまとめました。","inLanguage":"ja","datePublished":"2026-11-15","dateModified":"2026-11-15","mainEntityOfPage":"https://umiushi-lab.com/shisa/ec-cube-php/","author":{"@type":"Organization","name":"うみうしラボ","url":"https://umiushi-lab.com/"},"publisher":{"@type":"Organization","name":"うみうしラボ","url":"https://umiushi-lab.com/"},"image":"https://umiushi-lab.com/shisa/og.png"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"うみうしラボ","item":"https://umiushi-lab.com/"},{"@type":"ListItem","position":2,"name":"脆弱性を AI で診断・修正するプラグイン","item":"https://umiushi-lab.com/shisa/"},{"@type":"ListItem","position":3,"name":"EC-CUBE と PHP のバージョン対応表","item":"https://umiushi-lab.com/shisa/ec-cube-php/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"EC-CUBE 4.2 が対応する PHP のバージョンは?","acceptedAnswer":{"@type":"Answer","text":"EC-CUBE 4.2 系が対応する PHP は 7.4 〜 8.1 です。PHP 8.2・8.3 には、EC-CUBE 4.3 系が対応しています。"}},{"@type":"Question","name":"PHP 8.1 以前には、PHP2Shell の修正は入りますか?","acceptedAnswer":{"@type":"Answer","text":"サーバーによります。PHP 7.4・8.0・8.1 には、PHP の開発チームが修正のソースを GitHub で提供していて、それを入れるかどうかは、レンタルサーバーや OS の配布元が決めます。PHP 7.3 から 5 系に、自社で修正を入れた会社もあります。バージョンの番号は変わらないので、お使いのサーバーのお知らせを読んで確かめます。これは PHP2Shell にかぎった特別な対応です。"}},{"@type":"Question","name":"PHP のバージョンの番号を見れば、修正が入っているか分かりますか?","acceptedAnswer":{"@type":"Answer","text":"番号が 8.2.35、8.3.36、8.4.27、8.5.12 以上なら、入っています。それより前の番号では、番号だけではどちらとも言えません。番号を変えずに修正を入れるサーバー会社が多いためです(サポート中の 8.2 以上でも同じです)。サーバー会社のお知らせを読むか、問い合わせて確かめます。"}}]}]}
 </script>
 <script>
 // 明るい/暗い: 選んだことがあればそれ、なければ OS の設定に合わせる(描く前に決めてちらつかせない)
@@ -90,7 +90,7 @@
     <div class="scroll"><table class="ver">
       <thead><tr><th>EC-CUBE</th><th>動く PHP</th><th>PHP2Shell の確かめ方</th></tr></thead>
       <tbody>
-        <tr><th>4.3 系</th><td>8.1 〜 8.3</td><td>PHP の番号で確かめる(8.2.35 か 8.3.36 以上)。PHP 8.1 のお店は、下の行と同じ</td></tr>
+        <tr><th>4.3 系</th><td>8.1 〜 8.3</td><td>番号が 8.2.35 か 8.3.36 以上なら、入っています。それより前の番号のお店は、下の行と同じ</td></tr>
         <tr><th>4.2 系</th><td>7.4 〜 8.1</td><td>サーバー会社が修正を入れたかで確かめる</td></tr>
         <tr><th>4.1 系・4.0 系</th><td>7.3 〜 7.4<br>(4.0.0 〜 4.0.1 は 7.1 〜 7.2、4.0.2 〜 4.0.3 は 7.1 〜 7.3、4.0.4 からは 7.1 〜 7.4)</td><td>サーバー会社が修正を入れたかで確かめる</td></tr>
       </tbody>
@@ -112,6 +112,7 @@
         <tr><th>7.3 〜 5 系</th><td>修正あり(番号は変わりません)</td><td>サポートは終わっていますが、今回は、レンタルサーバー各社が自社で修正を入れています。たとえばエックスサーバーは、PHP 5.1 〜 8.1 に修正を入れたと発表しています</td></tr>
       </tbody>
     </table></div>
+    <p>表の番号は、PHP の開発チームが出した修正版です。番号がこれより前でも、サーバー会社や OS の配布元が、番号を変えずに修正を入れていることがあります。</p>
     <p>IPA によると、この脆弱性は 2026 年 10 月 26 日に、米国 CISA の「悪用が確認された脆弱性」の一覧に載りました。IPA は、国内での被害の事例は把握していないとしています(2026 年 11 月 2 日の更新の時点)。</p>
     <p class="src">出典: <a href="https://www.php.net/archive/2026.php">PHP 公式のお知らせ(2026 年)</a>、<a href="https://www.ipa.go.jp/security/security-alert/2026/alert20261022.html">IPA の注意喚起</a></p>
   </div>
@@ -119,15 +120,16 @@
   <h2>2 つの表を重ねると</h2>
   <div class="glass">
     <ul>
-      <li><b>EC-CUBE 4.3 系で、PHP 8.2 か 8.3 のお店</b>: PHP が 8.2.35 か 8.3.36 以上になっていれば、修正は入っています。レンタルサーバーなら、管理画面で PHP のバージョンを確かめます。</li>
+      <li><b>EC-CUBE 4.3 系で、PHP 8.2 か 8.3 のお店</b>: PHP が 8.2.35 か 8.3.36 以上になっていれば、修正は入っています。番号がそれより前でも、サーバー会社が番号を変えずに修正を入れていることがあります。そのときは、下の 1 〜 5 の順で確かめます。</li>
       <li><b>EC-CUBE 4.3 系で、PHP 8.1 のお店</b>: PHP を 8.2 か 8.3 に切り替えられます。切り替える前に、入れているプラグインがその PHP で動くかを確かめます。</li>
       <li><b>EC-CUBE 4.2 系・4.1 系・4.0 系のお店</b>: PHP 7.4 〜 8.1 などに修正が入ったかどうかは、サーバーによります。お使いのサーバーのお知らせを読んで確かめます。下の 1 〜 5 の順です。</li>
     </ul>
   </div>
 
-  <h2>PHP 8.1 以前のお店が、確かめること</h2>
+  <h2>番号が修正版より前のお店が、確かめること</h2>
   <div class="glass">
-    <p><b>1. PHP の番号では決めない。</b>8.1 以前の PHP は、修正が入っていても番号が変わりません。たとえばエックスサーバーは、PHP 5.1 〜 8.1 にも修正を入れ、バージョンの表示は変えていないと発表しています。</p>
+    <p><b>1. PHP の番号では決めない。</b>サーバー会社が入れた修正は、番号に出ないことがあります。サポート中の 8.2 以上でも同じです。たとえば ConoHa WING の PHP は、7.4.33・8.0.30・8.1.34・8.2.34・8.3.35 のまま、どれも 2026 年 10 月 21 日の夜に作り直されていました(2026 年 11 月 15 日に、契約しているサーバーで確かめました)。エックスサーバーは、PHP 5.1 〜 8.1 にも修正を入れ、バージョンの表示は変えていないと発表しています。</p>
+    <p>PHP が作られた日は、phpinfo の「Build Date」で見られます。公表の日(2026 年 10 月 21 日)より前の日付なら、まだ作り直されていません。後の日付なら作り直されていますが、それだけでは修正が入ったとは言い切れないので、次の 2 か 3 で確かめます。</p>
     <p><b>2. レンタルサーバーなら、サーバー会社のお知らせを読む。</b>「PHP の脆弱性への対応」のようなお知らせに、どのバージョンに修正を入れたかが書かれています。国内の多くの会社が、2026 年 10 月 22 日から 26 日のあいだに、PHP 5 系までさかのぼって修正を入れ終えたと発表しています。自分のお店が使っている PHP が、そこに入っているかを見ます。</p>
     <p><b>3. VPS やクラウドなら、自分で更新する。</b>PHP の更新は、借りている側の作業です。OS の配布元(Ubuntu、AlmaLinux など)が出している更新を、自分か、管理を頼んでいる会社が入れます。</p>
     <p><b>4. お知らせが見つからなければ、尋ねる。</b>そのまま送れる文です。</p>
@@ -151,7 +153,7 @@
   <div class="glass">
     <p><b>EC-CUBE 4.2 が対応する PHP のバージョンは?</b><br>EC-CUBE 4.2 系が対応する PHP は 7.4 〜 8.1 です。PHP 8.2・8.3 には、EC-CUBE 4.3 系が対応しています。</p>
     <p><b>PHP 8.1 以前には、PHP2Shell の修正は入りますか?</b><br>サーバーによります。PHP 7.4・8.0・8.1 には、PHP の開発チームが修正のソースを GitHub で提供していて、それを入れるかどうかは、レンタルサーバーや OS の配布元が決めます。PHP 7.3 から 5 系に、自社で修正を入れた会社もあります。バージョンの番号は変わらないので、お使いのサーバーのお知らせを読んで確かめます。これは PHP2Shell にかぎった特別な対応です。</p>
-    <p><b>PHP のバージョンの番号を見れば、修正が入っているか分かりますか?</b><br>8.2 以上は、番号で分かります(8.2.35、8.3.36、8.4.27、8.5.12 以上)。8.1 以前は、番号を変えずに修正を入れる配布元が多いので、サーバー会社のお知らせを読むか、問い合わせて確かめます。</p>
+    <p><b>PHP のバージョンの番号を見れば、修正が入っているか分かりますか?</b><br>番号が 8.2.35、8.3.36、8.4.27、8.5.12 以上なら、入っています。それより前の番号では、番号だけではどちらとも言えません。番号を変えずに修正を入れるサーバー会社が多いためです(サポート中の 8.2 以上でも同じです)。サーバー会社のお知らせを読むか、問い合わせて確かめます。</p>
   </div>
 
   <h2>自分のお店がどれに当たるかを、プラグインで確かめる</h2>
