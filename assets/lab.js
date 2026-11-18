@@ -343,7 +343,7 @@
     const { w, h, dpr } = it.size, o = it.opts;
     it.ctx.setTransform(1, 0, 0, 1, 0, 0);
     it.ctx.clearRect(0, 0, it.cv.width, it.cv.height);
-    const a = drawSlug(it.ctx, it.spec, time + it.spec.no * 3.1, { cx: w * (o.x || 0.5), cy: h * (o.y || 0.5), L: w * o.len * (it.spec.type !== 'dorid' ? 0.92 : it.spec.slim > 0.22 && !o.glow ? 0.84 : 1), rot: o.rot || 0, bend: it.bend, dark: isDark(), dpr, N: o.N, glow: o.glow });
+    const a = drawSlug(it.ctx, it.spec, time + it.spec.no * 3.1, { cx: w * (o.x || 0.5), cy: h * (o.y || 0.5), L: w * o.len * (o.exact ? 1 : it.spec.type !== 'dorid' ? 0.92 : it.spec.slim > 0.22 && !o.glow ? 0.84 : 1), rot: o.rot || 0, bend: it.bend, dark: isDark(), dpr, N: o.N, glow: o.glow });
     if (it.after) it.after(a, w, h);
   }
 
@@ -447,17 +447,27 @@
     cv.className = 'mini'; cv.setAttribute('aria-hidden', 'true'); cv.title = en ? sp.sci : sp.ja;
     card.appendChild(cv);
     add(cv, sp, { len: 0.74, N: 36, x: 0.48 });
-    // 図鑑の札: 個体の名前。押すと世界のウミウシのその種のページ(.zukan のページだけ)
-    if (document.documentElement.classList.contains('zukan')) {
-      const a = document.createElement('a');
-      a.className = 'tagname';
-      a.href = (en ? 'https://en.seaslug.world/species/' : 'https://seaslug.world/species/') + sp.sci.toLowerCase().replace(/ /g, '_');
-      const i = document.createElement('i'); i.textContent = sp.sci;
-      if (en) a.append(i); else a.append(sp.ja + ' ', i);
-      a.setAttribute('aria-label', en ? `${sp.sci} in the SEASLUG.WORLD field guide` : `${sp.ja}(${sp.sci})を世界のウミウシの図鑑で見る`);
-      card.appendChild(a);
-    }
   });
+
+  // --- 図版: 5 種を実物の大きさの比で並べる(.plate5)。幅は CSS の --mm × --u で決まる ---
+  const PLATE = { len: 1 / 1.16, N: 48, exact: true };
+  document.querySelectorAll('.plate5 .fig[data-sp]').forEach((f) => {
+    const sp = SPECIES[f.dataset.sp], cv = f.querySelector('canvas'); if (!sp || !cv) return;
+    add(cv, sp, PLATE);
+  });
+  // ラボで架空の個体をつくる(押すたびに 1 匹、目盛りのとなりに出る)
+  const fake = document.querySelector('.bench .fake'), makeBtn = document.querySelector('.bench .make');
+  if (fake && makeBtn) {
+    makeBtn.hidden = false;
+    let it = null;
+    makeBtn.addEventListener('click', () => {
+      const sp = makeFake(1 + Math.floor(Math.random() * 9999));
+      fake.style.setProperty('--mm', sp.mm); fake.querySelector('.mm').textContent = sp.mm; fake.hidden = false;
+      const cv = fake.querySelector('canvas');
+      if (it) { it.spec = sp; it.size = fit(cv); } else { it = add(cv, sp, PLATE); it.vis = true; }
+      if (reduce) paint(it, 0);
+    });
+  }
 
   // --- フッターの線の上を這う個体 ---
   const crawl = document.querySelector('.crawl');
