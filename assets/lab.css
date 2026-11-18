@@ -153,11 +153,12 @@
 .home .fig a { display: block; }
 .home .fig figcaption { margin-top: 8px; text-align: center; white-space: nowrap; font-size: 12px; line-height: 1.5; color: var(--mute); }
 .home .fig figcaption a { display: inline; color: var(--ink); font-weight: 700; text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 4px; }
+.home .pan .sci:lang(ja) { font-family: var(--font); font-style: normal; font-size: 15px; }
 .home .fig figcaption i, .home .sci { font-family: var(--latin); font-style: italic; font-weight: 500; font-size: 1.18em; }
 
 /* 最初の画面: 言葉 1 つと、1 匹 */
 .home .top { position: relative; padding: 96px 0 104px; }
-.home .top h1 { margin: 0; max-width: 14.5em; font-size: clamp(30px, 4.1vw, 52px); font-weight: 900; line-height: 1.4; letter-spacing: .01em; word-break: auto-phrase; }
+.home .top h1 { margin: 0; max-width: min(14.5em, 64%); font-size: clamp(30px, 4.1vw, 52px); font-weight: 900; line-height: 1.4; letter-spacing: .01em; word-break: auto-phrase; }
 /* 歩くアオウミウシ。動かないとき(動きを減らす設定、スクリプトなし)は見出しの横にいる */
 .home .wander { --mm: 30; --u: clamp(5px, .8vw, 9px); position: absolute; right: 2%; top: 50%; translate: 0 -50%; pointer-events: none; }
 .home .wander canvas { width: calc(var(--mm) * var(--u) * 1.5); aspect-ratio: 1; }
@@ -167,7 +168,7 @@
 @keyframes home-pop { 0% { scale: .7; } 100% { scale: 1; } }
 
 /* 箱 */
-.home .pans { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 72px 32px; }
+.home .pans { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px 32px; }
 .home .pan { position: relative; display: grid; grid-template-rows: auto 1fr; background: var(--pan); border-radius: var(--radius); padding: 52px 48px 0; min-height: 520px; }
 .home .pan.wide { grid-column: 1 / -1; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); grid-template-rows: auto; column-gap: 48px; align-items: center; padding: 64px 56px; min-height: 420px; }
 .home .pan.slim { min-height: 0; padding: 44px 56px; align-items: start; }
@@ -190,7 +191,7 @@
 .home .pan .shot img { display: block; }
 .home .pan .shot.tall { align-self: end; justify-self: center; margin: 36px 0 52px; width: 210px; overflow: hidden; border-radius: 22px; box-shadow: 0 0 0 1px var(--glass-line); }
 .home .pan .shot.tall img { width: 100%; height: auto; }
-.home .pan.wide .shot.tall { align-self: center; margin: 0; width: 220px; }
+.home .pan.wide .shot.tall { align-self: center; justify-self: center; margin: -8px 0; width: 210px; }
 .home .pan .shot.flat { align-self: end; margin: 36px 0 48px; }
 .home .pan .shot.flat img { width: 100%; height: auto; border-radius: 14px; }
 .home .pan .shot.flat img[src*="seaslug-web"] { box-shadow: 0 0 0 1px var(--glass-line); }
@@ -217,6 +218,7 @@
 @media (max-width: 900px) {
   .home .top { padding: 48px 0 150px; }
   .home .top:has(.wander.go) { padding-bottom: 64px; }
+  .home .top h1 { max-width: none; }
   .home .wander { top: auto; bottom: 0; translate: none; --u: 5px; }
   .home .pans { grid-template-columns: minmax(0, 1fr); gap: 48px; }
   /* タブレットの幅: 箱の中は、言葉と絵を横に並べる */

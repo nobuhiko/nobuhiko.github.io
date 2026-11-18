@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="lab">
+<html lang="en" class="lab home light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,6 +17,9 @@
 <link rel="alternate" hreflang="en" href="https://umiushi-lab.com/en/">
 <link rel="alternate" hreflang="x-default" href="https://umiushi-lab.com/en/">
 <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Umiushi Lab LLC","alternateName":["Umiushi Lab","合同会社うみうしラボ"],"url":"https://umiushi-lab.com/en/","email":"info@umiushi-lab.com","foundingDate":"2026-11-06","founder":{"@type":"Person","name":"Nobuhiko Kimoto"},"address":{"@type":"PostalAddress","postalCode":"160-0022","addressRegion":"Tokyo","addressLocality":"Shinjuku-ku","streetAddress":"3F Shinjuku Dai-7 Hayama Bldg., 1-36-2 Shinjuku","addressCountry":"JP"}}
+</script>
+<script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Nobuhiko Kimoto","description":"An independent developer in Tokyo who makes apps and web services: the sea slug photo encyclopedia SEASLUG.WORLD (for about ten years), the photo diary with the weather Kasane, the price comparison site Kirerumae, and plugins for EC-CUBE.","url":"https://umiushi-lab.com/en/","sameAs":["https://umiushi1.substack.com/","https://zenn.dev/nobuhiko","https://en.seaslug.world/"],"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"SoftwareApplication","name":"Kasane: One Photo a Day Diary","url":"https://umiushi-lab.com/en/kasane-diary/"}},{"@type":"Offer","itemOffered":{"@type":"WebSite","name":"SEASLUG.WORLD","url":"https://en.seaslug.world/"}}]}
 </script>
 <script>
@@ -32,90 +35,97 @@
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;700;800&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;700;800&display=swap"><style>.reveal{opacity:1;transform:none}</style></noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,500&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,500&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap"><style>.reveal{opacity:1;transform:none}</style></noscript>
 <link rel="stylesheet" href="../assets/site.css?v=20261110">
-<link rel="stylesheet" href="../assets/lab.css?v=20261110c">
+<link rel="stylesheet" href="../assets/lab.css?v=20261118z2">
 </head>
 <body>
 <header class="nav">
   <div class="nav-in">
     <a class="brand" href="./"><img src="../apple-touch-icon.png" alt="" width="28" height="28">Umiushi Lab</a>
-    <nav class="pill"><a href="#products">Products</a><a class="opt" href="#maker">About</a><a href="../" hreflang="ja" lang="ja">日本語</a><button class="theme" type="button" aria-label="Switch between light and dark">◐</button></nav>
+    <nav class="pill"><a href="#products">Products</a><a href="#company">Company</a><a href="../" hreflang="ja" lang="ja">日本語</a></nav>
   </div>
 </header>
 
 <main class="wrap">
-  <section class="hero">
-    <div class="bubbles" aria-hidden="true"><i style="--x:6%;--s:10px;--d:19s;--w:-3s"></i><i style="--x:18%;--s:6px;--d:15s;--w:-9s"></i><i style="--x:34%;--s:14px;--d:23s;--w:-14s"></i><i style="--x:52%;--s:7px;--d:17s;--w:-1s"></i><i style="--x:71%;--s:11px;--d:21s;--w:-11s"></i><i style="--x:88%;--s:8px;--d:16s;--w:-6s"></i><i style="--x:95%;--s:16px;--d:26s;--w:-18s"></i></div>
-    <div>
-      <p class="eyebrow">Independent maker in Japan</p>
-      <h1 class="display">A sea slug field guide and everyday apps, <span class="soft">from a small lab in Japan.</span></h1>
-      <p class="lead">Less time spent wondering.</p>
-      <div class="cta"><a class="btn" href="#products">See the products</a><a class="btn ghost" href="https://umiushi1.substack.com/">Read the notes on Substack</a></div>
-    </div>
-    <div class="specimen">
-      <div class="scope">
-        <svg class="ring" viewBox="0 0 200 200" aria-hidden="true"><circle class="lens" cx="100" cy="100" r="91"/><circle class="dash" cx="100" cy="100" r="68"/><g class="ticks"><circle cx="100" cy="100" r="95.5" stroke-width="3" stroke-dasharray="0.4 7.933" opacity=".7"/><circle cx="100" cy="100" r="94.5" stroke-width="5" stroke-dasharray="0.7 48.78"/></g></svg>
-        <canvas role="img" aria-label="Stylized drawing of a sea slug seen from above"></canvas>
-        <svg class="callouts" aria-hidden="true"></svg>
+  <section class="top">
+    <h1>We make a sea slug field guide, everyday apps, and plugins that keep online stores safe.</h1>
+    <div class="wander fig" aria-hidden="true"><canvas></canvas></div>
+  </section>
+
+  <section id="products" class="pans">
+    <h2 class="sr">Products</h2>
+
+    <article class="pan wide" id="seaslug">
+      <div class="body">
+        <h3><a href="https://en.seaslug.world/">SEASLUG.WORLD<span class="go" aria-hidden="true"></span></a></h3>
+        <p class="sci" lang="ja">世界のウミウシ</p>
+        <p>A sea slug field guide made by divers. Photos from divers around the world, sorted by species. Contributors can keep their own field guide on the site.</p>
+        <p class="links"><a href="https://apps.apple.com/app/id6785337563">App Store</a><a href="https://play.google.com/store/apps/details?id=world.seaslug.app&amp;hl=en">Google Play</a></p>
       </div>
-      <p class="plate" hidden><span>Specimen No. <b class="n">01</b></span><a class="sp" href="https://en.seaslug.world/species/hypselodoris_festiva"><i class="sci">Hypselodoris festiva</i></a><span class="fake" hidden>imaginary</span><span>Length <b class="mm">30</b> mm</span><button class="again" type="button">Show another species</button><button class="again make" type="button" hidden>Make an imaginary one</button></p>
-      <p class="plate-note" hidden>Stylized drawings of real species. Tap a name to open it in the SEASLUG.WORLD field guide.</p>
-    </div>
-  </section>
-  <hr class="ruler">
+      <div class="shot flat"><img src="../assets/seaslug-web.webp" srcset="../assets/seaslug-web-640.webp 700w, ../assets/seaslug-web.webp 1400w" sizes="(max-width: 640px) 90vw, (max-width: 900px) 280px, 520px" width="1400" height="872" alt="The SEASLUG.WORLD home page (Japanese version): contributed photos and a list for browsing sea slugs by color" fetchpriority="high"></div>
+    </article>
 
-  <section id="products" class="block">
-    <p class="over reveal">No. 01 – 05</p>
-    <h2 class="reveal">Products</h2>
-    <div class="products">
-      <article data-slug="festiva" class="glass product" style="--accent:#1E7FA8">
-        <div class="shot"><img src="../assets/seaslug-zukan.webp" srcset="../assets/seaslug-zukan-440.webp 440w, ../assets/seaslug-zukan.webp 640w" sizes="(max-width: 560px) 240px, 200px" width="640" height="1422" alt="The SEASLUG.WORLD field guide" fetchpriority="high"></div>
-        <div>
-          <span class="no">No. 01</span><span class="kind" style="color:#4FB3DD">Field guide</span>
-          <h3>SEASLUG.WORLD</h3>
-          <p>A sea slug field guide made by divers. Photos from divers around the world, sorted by species. Contributors can keep their own field guide on the site.</p>
-          <div class="row"><a class="btn" href="https://en.seaslug.world/">en.seaslug.world</a><a class="link" href="https://apps.apple.com/app/id6785337563">App Store</a><a class="link" href="https://play.google.com/store/apps/details?id=world.seaslug.app&amp;hl=en">Google Play</a></div>
-        </div>
-      </article>
-      <article data-slug="babai" class="glass product reveal" style="--accent:#D96C3D">
-        <div class="shot"><img src="../assets/kasane-07.webp" srcset="../assets/kasane-07-440.webp 440w, ../assets/kasane-07.webp 640w" sizes="(max-width: 560px) 240px, 200px" width="640" height="1390" alt="Kasane showing today's temperature and photos from days that were about as warm" loading="lazy"></div>
-        <div>
-          <span class="no">No. 02</span><span class="kind" style="color:#F08A5D">Photo diary</span>
-          <h3>Kasane</h3>
-          <p>What did I wear the last time it was this warm? One photo a day, with the temperature and weather added for you. See it next to the same day last year and the year before.</p>
-          <div class="row"><a class="btn" href="./kasane-diary/">About Kasane</a><a class="link" href="https://apps.apple.com/app/id6811230663">App Store</a><a class="link" href="https://play.google.com/store/apps/details?id=com.kasanediary.app&amp;hl=en">Google Play</a></div>
-        </div>
-      </article>
-      <article data-slug="cruenta" class="glass tagged reveal" style="--accent:#EF8A3C">
-        <h3><span class="no">No. 03</span>Kirerumae <span style="font-weight:400;color:var(--mute)">(Japan only, in Japanese)</span></h3>
-        <p>Find the cheapest place to restock household items. Stick a QR code on your washing machine or shelf, scan it when you're about to run out, and it compares Rakuten, Amazon and Yahoo! Shopping, including shipping and points. <a href="https://kirerumae.com/" hreflang="ja">kirerumae.com</a></p>
-      </article>
-      <article data-slug="orientalis" class="glass tagged reveal" style="--accent:#2F8F83">
-        <h3><span class="no">No. 04</span>AI Security Check &amp; Fix</h3>
-        <p>For sites that can&rsquo;t update because of custom code. AI reads the site, including the code built just for it, and fixes the weak spots it finds after the owner approves each change. If the site doesn&rsquo;t open after a fix, it rolls back on the spot. For WordPress and EC-CUBE, a store system used in Japan. Starts with a free check. <a href="./shisa/">Read more</a> · <a href="https://www.youtube.com/watch?v=korG8HoW_mg">Explainer video (2 min, Japanese)</a></p>
-      </article>
-      <article data-slug="apolegma" class="glass tagged reveal" style="--accent:#4A6FA5">
-        <h3><span class="no">No. 05</span>Data migration plugin <span style="font-weight:400;color:var(--mute)">(in Japanese)</span></h3>
-        <p>Moves members, products, categories and orders from older EC-CUBE (2.x / 3.x / 4.0 / 4.1) to 4.2 / 4.3. <a href="https://www.ec-cube.net/products/detail.php?product_id=3189" hreflang="ja">Owners Store</a> · <a href="https://www.ec-cube.net/products/list.php?mode=&amp;category_id=0&amp;maker_id=0&amp;keywords=&amp;ecversion_id=0&amp;partner_id=690&amp;orderby=dl&amp;ecversion=all&amp;protype=all&amp;disp_number=30&amp;price_type=&amp;product_type=&amp;price_max=&amp;price_min=&amp;pageno=1&amp;product_id=&amp;classcategory_id1=&amp;classcategory_id2=&amp;product_class_id=&amp;quantity=" hreflang="ja">other plugins</a></p>
-      </article>
-    </div>
+    <article class="pan wide" id="kasane">
+      <div class="body">
+        <h3><a href="./kasane-diary/">Kasane<span class="go" aria-hidden="true"></span></a></h3>
+        <p class="sci" lang="ja">かさね日記</p>
+        <p>What did I wear the last time it was this warm? One photo a day, with the temperature and weather added for you. See it next to the same day last year and the year before. Your photos stay on your phone.</p>
+        <p class="links"><a href="https://apps.apple.com/app/id6811230663">App Store</a><a href="https://play.google.com/store/apps/details?id=com.kasanediary.app&amp;hl=en">Google Play</a></p>
+      </div>
+      <div class="shot tall"><img src="../assets/kasane-07.webp" srcset="../assets/kasane-07-440.webp 440w, ../assets/kasane-07.webp 640w" sizes="210px" width="640" height="1390" alt="Kasane showing today's temperature and photos from days that were about as warm" loading="lazy"></div>
+    </article>
+
+    <article class="pan wide" id="kirerumae">
+      <div class="body">
+        <h3><a href="https://kirerumae.com/" hreflang="ja">Kirerumae<span class="go" aria-hidden="true"></span></a></h3>
+        <p class="sci" lang="ja">きれるまえ</p>
+        <p>Find the cheapest place to restock household items. Stick a QR code on your washing machine or shelf, scan it when you're about to run out, and it compares Rakuten, Amazon and Yahoo! Shopping, including shipping and points. Japan only, in Japanese.</p>
+      </div>
+      <div class="shot flat"><img src="../assets/kirerumae-og.webp" width="1200" height="630" alt="Kirerumae (in Japanese): find the cheapest way to buy detergent before it runs out" loading="lazy"></div>
+    </article>
+
+    <article class="pan wide" id="security">
+      <div class="body">
+        <h3><a href="./shisa/">AI Security Check &amp; Fix<span class="go" aria-hidden="true"></span></a></h3>
+        <p class="sci" lang="ja">脆弱性を AI で診断・修正するプラグイン</p>
+        <p>For sites that can&rsquo;t update because of custom code. AI reads the site, including the code built just for it, and fixes the weak spots it finds after the owner approves each change. If the site doesn&rsquo;t open after a fix, it rolls back on the spot. It does not read your database or access logs. For WordPress and EC-CUBE, a store system used in Japan. Starts with a free check.</p>
+        <p class="links"><a href="https://www.youtube.com/watch?v=korG8HoW_mg">Explainer video (2 min, Japanese)</a></p>
+      </div>
+      <div class="shot flat"><a href="https://www.youtube.com/watch?v=korG8HoW_mg" aria-label="Watch the explainer video (2 min, Japanese)"><img src="../shisa/explain-thumb.jpg" width="1280" height="720" alt="A frame from the explainer video (in Japanese)" loading="lazy"></a></div>
+    </article>
+
+    <article class="pan wide slim" id="migration">
+      <div class="body">
+        <h3><a href="https://www.ec-cube.net/products/detail.php?product_id=3189" hreflang="ja">Data migration plugin<span class="go" aria-hidden="true"></span></a></h3>
+        <p class="sci" lang="ja">データ移行プラグイン</p>
+      </div>
+      <div class="body">
+        <p>Moves members, products, categories and orders from older EC-CUBE (2.x / 3.x / 4.0 / 4.1) to 4.2 / 4.3. The store page is in Japanese.</p>
+        <p class="links"><a href="https://www.ec-cube.net/products/list.php?mode=&amp;category_id=0&amp;maker_id=0&amp;keywords=&amp;ecversion_id=0&amp;partner_id=690&amp;orderby=dl&amp;ecversion=all&amp;protype=all&amp;disp_number=30&amp;price_type=&amp;product_type=&amp;price_max=&amp;price_min=&amp;pageno=1&amp;product_id=&amp;classcategory_id1=&amp;classcategory_id2=&amp;product_class_id=&amp;quantity=" hreflang="ja">Other EC-CUBE plugins</a></p>
+      </div>
+    </article>
   </section>
 
-  <hr class="ruler">
-  <section id="maker" class="block">
-    <div class="glass reveal">
-      <h3>About</h3>
-      <p>Umiushi Lab is a small app studio in Japan run by Nobuhiko Kimoto. "Umiushi" means sea slug in Japanese. I write about why I make things, what I tried and the numbers on <a href="https://umiushi1.substack.com/">Substack</a>.</p>
-      <p>Contact: <a href="mailto:info@umiushi-lab.com">info@umiushi-lab.com</a> (English or Japanese)</p>
-    </div>
+  <section id="company" class="company">
+    <h2>Company</h2>
+    <dl>
+      <div><dt>Name</dt><dd>Umiushi Lab LLC <span lang="ja">(合同会社うみうしラボ)</span><small>&ldquo;Umiushi&rdquo; means sea slug in Japanese.</small></dd></div>
+      <div><dt>Representative</dt><dd>Nobuhiko Kimoto<small>Nobuhiko makes the products on this page.</small></dd></div>
+      <div><dt>Address</dt><dd>3F Shinjuku Dai-7 Hayama Bldg., 1-36-2 Shinjuku, Shinjuku-ku, Tokyo 160-0022, Japan</dd></div>
+      <div><dt>Founded</dt><dd>November 6, 2026</dd></div>
+      <div><dt>Corporate number</dt><dd>8011103018219</dd></div>
+      <div><dt>Business</dt><dd>Apps, web services, and plugins for EC-CUBE and WordPress</dd></div>
+      <div><dt>Contact</dt><dd><a href="mailto:info@umiushi-lab.com">info@umiushi-lab.com</a> (English or Japanese)</dd></div>
+      <div><dt>Writing</dt><dd><a href="https://umiushi1.substack.com/">Substack</a></dd></div>
+    </dl>
   </section>
 </main>
 
-<footer class="site"><div class="crawl" aria-hidden="true"></div><div class="wrap"><span>© 2026 Umiushi Lab · <a href="../tokushoho.html" hreflang="ja" lang="ja">特定商取引法に基づく表記</a></span><span><a href="./kasane-diary/">Kasane</a> · <a href="https://en.seaslug.world/">SEASLUG.WORLD</a> · <a href="../" hreflang="ja" lang="ja">日本語</a></span></div></footer>
+<footer class="site"><div class="wrap"><span>© 2026 Umiushi Lab LLC</span><span><a href="../tokushoho.html" hreflang="ja" lang="ja">特定商取引法に基づく表記</a></span></div></footer>
 <script src="../assets/site.js?v=20261110"></script>
-<script src="../assets/lab.js?v=20261110b" defer></script>
+<script src="../assets/lab.js?v=20261118y1" defer></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YYZQDTEPR0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YYZQDTEPR0');</script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8e368a03b62f48a98ec3d3205e06c11d"}'></script><!-- End Cloudflare Web Analytics -->
