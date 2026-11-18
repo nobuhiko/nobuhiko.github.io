@@ -199,7 +199,7 @@
 .home .company { padding: 136px 0 0; }
 .home .company h2 { margin: 0 0 32px; font-size: clamp(26px, 2.9vw, 38px); font-weight: 900; }
 .home .company a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 4px; }
-.home .company dl { margin: 0 0 40px; display: grid; gap: 12px; }
+.home .company dl { margin: 0; display: grid; gap: 12px; }
 .home .company dl div { display: grid; grid-template-columns: 9em minmax(0, 1fr); column-gap: 32px; }
 .home .company dt { color: var(--mute); }
 .home .company dd { margin: 0; }
