@@ -193,6 +193,7 @@
 .home .pan.wide .shot.tall { align-self: center; margin: 0; width: 220px; }
 .home .pan .shot.flat { align-self: end; margin: 36px 0 48px; }
 .home .pan .shot.flat img { width: 100%; height: auto; border-radius: 14px; }
+.home .pan .shot.flat img[src*="seaslug-web"] { box-shadow: 0 0 0 1px var(--glass-line); }
 .home .pan.wide .shot.flat { align-self: center; margin: 0; }
 /* 会社 */
 .home .company { padding: 136px 0 0; }
