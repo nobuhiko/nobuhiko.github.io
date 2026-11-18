@@ -469,6 +469,29 @@
     });
   }
 
+  // --- アオウミウシが 1 匹、画面の中を気ままに歩く(.wander)。動きを減らす設定のときは、見出しの横で止まっている ---
+  const wander = document.querySelector('.wander');
+  if (wander) {
+    const it = add(wander.querySelector('canvas'), SPECIES.festiva, { len: 1 / 1.5, N: 48, exact: true, rot: 0 });
+    it.vis = true;
+    if (!reduce) {
+      wander.classList.add('go');
+      let x = innerWidth * 0.78, y = Math.min(innerHeight * 0.42, 360), th = Math.PI * 0.94, turn = 0, last = performance.now();
+      it.tick = () => {
+        it.vis = true;
+        const now = performance.now(), dt = Math.min(0.05, (now - last) / 1000); last = now;
+        turn += (Math.random() - 0.5) * dt * 1.6; turn *= 0.985; th += turn * dt;
+        const W = innerWidth, H = innerHeight, m = Math.min(90, W * 0.14);
+        if (x < m || x > W - m || y < m + 70 || y > H - m) { // ふちに近づいたら、まん中のほうへ向きを変える
+          let d = Math.atan2(H / 2 - y, W / 2 - x) - th; d = Math.atan2(Math.sin(d), Math.cos(d)); th += d * dt * 1.4;
+        }
+        const v = 15; x += Math.cos(th) * v * dt; y += Math.sin(th) * v * dt;
+        wander.style.transform = `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px) translate(-50%, -50%)`;
+        it.opts.rot = th + Math.PI; it.bend = turn * 0.6;
+      };
+    }
+  }
+
   // --- フッターの線の上を這う個体 ---
   const crawl = document.querySelector('.crawl');
   if (crawl) {

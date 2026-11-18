@@ -138,7 +138,7 @@
 /* ===== 会社のトップ(/ と /en/)。<html class="lab home light"> =====
    計画と経緯: corp/tasks/2026-11-18-umiushi-lab-top-design.md
    手本: 株式会社ポケモンの会社サイト。白い地に、大きい見出しと、大きくて数の少ない箱。
-   色を持つのはウミウシと画面の写しだけ。遊びは「ウミウシがそこにいる」こと(箱のふちを、スクロールに合わせて這う)。
+   色を持つのはウミウシと画面の写しだけ。遊びは、アオウミウシが 1 匹、画面の中を気ままに歩いていること。
    箱はどれも同じ形: 名前(大きい) + 斜体の英名 + 説明 + 入口。番号・小さい英字のラベル・光・方眼は使わない。 */
 .lab.home { --bg: #FFFFFF; --bg-glow-1: transparent; --bg-glow-2: transparent; --pan: #F0F4F7; --ink: #17304D; --mute: #4D6278; --faint: #5F7284; --glass: rgba(255, 255, 255, .8); --glass-line: rgba(23, 48, 77, .14); --nav: rgba(255, 255, 255, .88); --accent: #F2884B; --radius: 32px;
   --font: "Zen Kaku Gothic New", "Hiragino Sans", "Noto Sans JP", -apple-system, sans-serif; --latin: "EB Garamond", "Times New Roman", serif; --u: 4px; }
@@ -156,9 +156,12 @@
 .home .fig figcaption i, .home .sci { font-family: var(--latin); font-style: italic; font-weight: 500; font-size: 1.18em; }
 
 /* 最初の画面: 言葉 1 つと、1 匹 */
-.home .top { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 24px; align-items: center; padding: 96px 0 104px; }
+.home .top { position: relative; padding: 96px 0 104px; }
 .home .top h1 { margin: 0; max-width: 14.5em; font-size: clamp(30px, 4.1vw, 52px); font-weight: 900; line-height: 1.4; letter-spacing: .01em; word-break: auto-phrase; }
-.home .hero-slug { --u: clamp(6px, .86vw, 10px); transform: rotate(-8deg); margin-right: 28px; }
+/* 歩くアオウミウシ。動かないとき(動きを減らす設定、スクリプトなし)は見出しの横にいる */
+.home .wander { --mm: 30; --u: clamp(5px, .8vw, 9px); position: absolute; right: 2%; top: 50%; translate: 0 -50%; pointer-events: none; }
+.home .wander canvas { width: calc(var(--mm) * var(--u) * 1.5); aspect-ratio: 1; }
+.home .wander.go { position: fixed; left: 0; top: 0; right: auto; translate: none; z-index: 5; will-change: transform; }
 
 /* 箱 */
 .home .pans { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 72px 32px; }
@@ -188,15 +191,6 @@
 .home .pan .shot.flat { align-self: end; margin: 36px 0 48px; }
 .home .pan .shot.flat img { width: 100%; height: auto; border-radius: 14px; }
 .home .pan.wide .shot.flat { align-self: center; margin: 0; }
-/* 箱のふちにいる個体。スクロールに合わせて少し這う */
-.home .crit { position: absolute; right: 9%; top: 0; translate: 0 -50%; --u: 3.4px; pointer-events: none; }
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .home .crit { animation: home-creep linear both; animation-timeline: view(); animation-range: entry 10% exit 90%; }
-    @keyframes home-creep { from { transform: translateX(70px); } to { transform: translateX(-190px); } }
-  }
-}
-
 /* 会社 */
 .home .company { padding: 136px 0 0; }
 .home .company h2 { margin: 0 0 32px; font-size: clamp(26px, 2.9vw, 38px); font-weight: 900; }
@@ -216,15 +210,14 @@
 .home footer.site { margin-top: 112px; }
 
 @media (max-width: 900px) {
-  .home .top { grid-template-columns: minmax(0, 1fr); padding: 48px 0 72px; row-gap: 28px; }
-  .home .hero-slug { justify-self: end; --u: 7px; }
+  .home .top { padding: 48px 0 150px; }
+  .home .wander { top: auto; bottom: 0; translate: none; --u: 6px; }
   .home .pans { grid-template-columns: minmax(0, 1fr); gap: 56px; }
   .home .pan, .home .pan.wide { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto; padding: 44px 24px 0; min-height: 0; }
   .home .pan.slim { padding: 36px 24px; row-gap: 0; }
   .home .pan.wide .shot.tall { margin: 36px 0 0; height: 300px; width: 240px; }
   .home .pan.wide .shot.flat { margin: 32px 0 36px; }
   .home .pan .shot.flat { margin: 32px 0 36px; }
-  .home .crit { --u: 3px; right: 6%; }
   .home .company { padding-top: 96px; }
   .home .company dl div { grid-template-columns: 5.5em minmax(0, 1fr); column-gap: 16px; }
 }
