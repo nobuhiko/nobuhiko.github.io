@@ -479,32 +479,46 @@
     if (!reduce) {
       wander.classList.add('go');
       let x = innerWidth * 0.78, y = Math.min(innerHeight * 0.42, 360), th = Math.PI * 0.94, turn = 0, boost = 0, last = performance.now();
-      let px = -9999, py = -9999, n = 0;
-      // マウスが近づくと、向きを変えて少し急いで離れる。つかまえる(押す・タップする)と、べつの種に変わる
+      let px = -9999, py = -9999, n = 0, tx = innerWidth * 0.3, ty = innerHeight * 0.6, tAt = 0;
+      // マウスが近づくと、向きを変えて少し急いで離れる
       addEventListener('pointermove', (e) => { if (e.pointerType === 'mouse') { px = e.clientX; py = e.clientY; } }, { passive: true });
       document.documentElement.addEventListener('pointerleave', () => { px = py = -9999; });
-      const hit = document.createElement('div'); hit.className = 'hit'; wander.appendChild(hit);
-      hit.addEventListener('click', () => {
-        // べつの種へ。4 回に 1 回くらい、図鑑にいない架空の個体が出る
+      const hit = document.createElement('div'); hit.className = 'hit'; wander.appendChild(hit); // パソコンで、指の形のカーソルを出すためだけの面
+      // つかまえる(押す・タップする)と、べつの種に変わる。4 回に 1 回くらい、図鑑にいない架空の個体が出る。
+      // 画面のどこを押したかと個体の位置を比べて決める(スマホで、個体の上の面がタップを受け取らないことがあったため)
+      const swapSpecies = () => {
         if (Math.random() < 0.25) it.spec = makeFake(1 + Math.floor(Math.random() * 9999));
         else { n = (n + 1) % ORDER.length; it.spec = SPECIES[ORDER[n]]; }
         boost = 1; turn += (Math.random() < 0.5 ? -1 : 1) * 2.4;
         wander.classList.remove('pop'); void wander.offsetWidth; wander.classList.add('pop');
-      });
+      };
+      let down = null, eat = 0;
+      addEventListener('pointerdown', (e) => { down = { x: e.clientX, y: e.clientY, t: performance.now() }; }, { passive: true, capture: true });
+      addEventListener('pointerup', (e) => {
+        const d = down; down = null; if (!d) return;
+        if (Math.hypot(e.clientX - d.x, e.clientY - d.y) > 12 || performance.now() - d.t > 600) return; // なぞった・長押しは数えない
+        const r = Math.max(it.size.w / 3 * 0.85, e.pointerType === 'mouse' ? 0 : 46);
+        if (Math.hypot(e.clientX - x, e.clientY - y) > r) return;
+        eat = performance.now(); swapSpecies();
+      }, { capture: true });
+      // つかまえたときは、下にあるリンクを開かない
+      addEventListener('click', (e) => { if (performance.now() - eat < 500) { e.preventDefault(); e.stopPropagation(); } }, { capture: true });
       it.tick = () => {
         it.vis = true;
         const now = performance.now(), dt = Math.min(0.05, (now - last) / 1000); last = now;
-        turn += (Math.random() - 0.5) * dt * 1.6; turn *= 0.985; th += turn * dt;
-        const W = innerWidth, H = innerHeight, m = Math.min(90, W * 0.14);
-        const half = it.size.w / 3, top = 64 + half * 0.6, R = Math.min(150, W * 0.3); // 体の半分の長さ、上の帯の下、逃げはじめる距離
-        const away = (ax, ay, k) => { let d = Math.atan2(ay, ax) - th; d = Math.atan2(Math.sin(d), Math.cos(d)); th += d * dt * k; };
-        const dist = Math.hypot(x - px, y - py);
-        if (dist < R) { away(x - px, y - py, 2.6); boost = Math.max(boost, (R - dist) / R * 0.7); }
-        if (x < m + half || x > W - m - half || y < top + m * 0.5 || y > H - m - half * 0.5) away(W / 2 - x, H / 2 - y, 1.6 + boost * 3); // ふちに近づいたら、まん中のほうへ
+        const W = innerWidth, H = innerHeight, half = it.size.w / 3;
+        // 歩いてよい範囲(体の半分くらいは、画面のふちからはみ出してよい。上の帯の下にはもぐらない)
+        const x0 = half * 0.6, x1 = W - half * 0.6, y0 = 64 + half * 0.5, y1 = H - half * 0.5;
+        // 行き先を気ままに決めて、ゆっくりそちらへ向く。着いたら、次の行き先
+        if (now > tAt || Math.hypot(tx - x, ty - y) < 50) { tx = x0 + Math.random() * (x1 - x0); ty = y0 + Math.random() * (y1 - y0); tAt = now + 30000; }
+        const steer = (ax, ay, k) => { let d = Math.atan2(ay, ax) - th; d = Math.atan2(Math.sin(d), Math.cos(d)); th += Math.max(-1, Math.min(1, d)) * dt * k; };
+        turn += (Math.random() - 0.5) * dt * 1.2; turn *= 0.985; th += turn * dt;
+        const R = Math.min(150, W * 0.3), dist = Math.hypot(x - px, y - py);
+        if (dist < R) { steer(x - px, y - py, 2.6); boost = Math.max(boost, (R - dist) / R * 0.7); }
+        else steer(tx - x, ty - y, 0.55);
         boost *= 0.97;
         const v = 15 + boost * 85; x += Math.cos(th) * v * dt; y += Math.sin(th) * v * dt;
-        // 追われても、画面の外には出ない(体の半分より外へは行かせない)
-        x = Math.max(half * 0.8, Math.min(W - half * 0.8, x)); y = Math.max(top, Math.min(H - half * 0.6, y));
+        x = Math.max(x0, Math.min(x1, x)); y = Math.max(y0, Math.min(y1, y));
         wander.style.transform = `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px) translate(-50%, -50%)`;
         it.opts.rot = th + Math.PI; it.bend = turn * 0.6;
       };
