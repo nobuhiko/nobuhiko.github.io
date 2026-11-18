@@ -222,7 +222,12 @@
 .home .legal h1 { font-weight: 900; letter-spacing: .01em; line-height: 1.35; }
 .home .legal h2 { font-weight: 900; letter-spacing: 0; }
 .home .legal .glass { background: var(--pan); border: 0; border-radius: 20px; backdrop-filter: none; -webkit-backdrop-filter: none; }
-.home .legal a, .home .legal td a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 4px; }
+.lab.home .legal a:not(.btn) { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 4px; }
+.home .legal .btn { box-shadow: none; background: var(--ink); color: #fff; }
+/* 上の階層へのリンク(パンくず)。小さい英字のラベルにはしない */
+.lab.home .legal .eyebrow { display: block; font-family: var(--font); font-size: 14px; font-weight: 500; letter-spacing: 0; text-transform: none; color: var(--mute); margin: 0 0 14px; }
+.lab.home .legal .eyebrow::before { content: none; }
+.home .legal pre { background: #fff; }
 .home .legal th { font-weight: 500; }
 
 @media (max-width: 900px) {
