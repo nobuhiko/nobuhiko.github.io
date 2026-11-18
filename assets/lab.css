@@ -153,6 +153,17 @@
 .zukan .product, .zukan .glass.tagged { border-color: color-mix(in srgb, var(--accent) 42%, var(--glass-line)); }
 .zukan .product h3 { margin: 0; font-size: 28px; line-height: 1.35; }
 .zukan .product .sci { margin: 2px 0 12px; font: italic 600 15px/1.4 var(--serif); color: color-mix(in srgb, var(--accent) 55%, var(--ink)); }
+/* 札の中身は上にそろえる。名前は語の途中で折らない */
+.zukan .product { align-items: start; }
+.zukan .product > .shot + div { align-self: center; }
+.zukan .product h3 { word-break: auto-phrase; text-wrap: balance; }
+/* 入口は 1 行の文字のリンクにそろえる(塗りのボタンと文字のリンクを混ぜない) */
+.zukan .product .row { gap: 6px 0; margin-top: 18px; font-size: 14px; }
+.zukan .product .row > * { padding: 0; background: none; border-radius: 0; font-size: inherit; font-weight: 400; color: var(--mute); text-decoration: underline; text-decoration-color: var(--glass-line); text-underline-offset: 4px; transform: none; }
+.zukan .product .row > *:hover { color: var(--ink); text-decoration-color: var(--accent); transform: none; }
+.zukan .product .row > .btn { font-weight: 700; color: var(--ink); text-decoration-color: var(--accent); }
+.zukan .product .row > .btn::after { content: "→"; text-decoration: none; display: inline-block; margin-left: 4px; color: var(--accent); }
+.zukan .product .row > * + *::before { content: "·"; display: inline-block; margin: 0 10px; color: var(--faint); text-decoration: none; }
 /* 個体の名前の札: 札の上の線に、個体の左どなりへ */
 .zukan .tagname { position: absolute; right: 166px; top: -12px; white-space: nowrap; font: 11px/1.3 var(--mono); color: var(--mute); text-decoration: none; padding: 3px 9px; border: 1px solid var(--glass-line); border-radius: 3px; background: var(--bg); }
 .zukan .tagname i { font-family: var(--serif); font-size: 12px; }
