@@ -214,18 +214,29 @@
 
 @media (max-width: 900px) {
   .home .top { padding: 48px 0 150px; }
-  .home .wander { top: auto; bottom: 0; translate: none; --u: 6px; }
-  .home .pans { grid-template-columns: minmax(0, 1fr); gap: 56px; }
-  .home .pan, .home .pan.wide { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto; padding: 44px 24px 0; min-height: 0; }
-  .home .pan.slim { padding: 36px 24px; row-gap: 0; }
-  .home .pan.wide .shot.tall { margin: 36px 0 44px; width: 210px; }
-  .home .pan.wide .shot.flat { margin: 32px 0 36px; }
-  .home .pan .shot.flat { margin: 32px 0 36px; }
+  .home .top:has(.wander.go) { padding-bottom: 64px; }
+  .home .wander { top: auto; bottom: 0; translate: none; --u: 5px; }
+  .home .pans { grid-template-columns: minmax(0, 1fr); gap: 48px; }
+  /* タブレットの幅: 箱の中は、言葉と絵を横に並べる */
+  .home .pan, .home .pan.wide { grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: auto; column-gap: 32px; align-items: center; padding: 48px 40px; min-height: 0; }
+  .home .pan .shot.tall, .home .pan.wide .shot.tall { align-self: center; margin: 0; width: 190px; }
+  .home .pan .shot.flat, .home .pan.wide .shot.flat { align-self: center; margin: 0; width: 280px; }
+  .home .pan.slim { grid-template-columns: minmax(0, 1fr); padding: 40px; }
   .home .company { padding-top: 96px; }
   .home .company dl div { grid-template-columns: 5.5em minmax(0, 1fr); column-gap: 16px; }
 }
-@media (max-width: 560px) {
-  .home { --u: 3px; --radius: 24px; }
+@media (max-width: 640px) {
+  .lab.home { --u: 3px; --radius: 24px; }
+  .home .top { padding-top: 40px; }
+  .home .top h1 { font-size: clamp(27px, 7.6vw, 32px); }
+  .home .wander { --u: 4.2px; }
+  /* スマホの幅: 言葉の下に絵 */
+  .home .pan, .home .pan.wide { grid-template-columns: minmax(0, 1fr); padding: 40px 24px 0; }
+  .home .pan .shot.tall, .home .pan.wide .shot.tall { justify-self: center; margin: 32px 0 40px; width: min(210px, 62%); }
+  .home .pan .shot.flat, .home .pan.wide .shot.flat { margin: 28px 0 32px; width: 100%; }
+  .home .pan.slim { padding: 36px 24px; }
+  .home .pan .body p:not(.sci) { font-size: 15.5px; }
   .home .plate5 { gap: 28px 20px; }
   .home .bench { flex-wrap: wrap; }
+  .home footer.site .wrap { flex-direction: column; }
 }
