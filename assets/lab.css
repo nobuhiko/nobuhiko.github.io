@@ -137,7 +137,7 @@
 
 /* ===== トップ(/ と /en/)。<html class="lab zukan"> =====
    計画: corp/tasks/2026-11-18-umiushi-lab-top-design.md
-   最初の画面は図鑑の図版 1 枚(5 種を実物の大きさの比で)。番号で下の解説と結ぶ。
+   最初の画面は図鑑の図版 1 枚(5 種を実物の大きさの比で)。番号は振らない(順番でも対応でもないので)。
    大胆にするのは図版だけ。箱・光・方眼・泡は使わない。動くのは個体だけ。
    和名と本文はゴシック、斜体のセリフは学名の位置にだけ。 */
 .zukan { --font: "Zen Kaku Gothic New", "Hiragino Sans", "Noto Sans JP", -apple-system, sans-serif; --latin: "EB Garamond", "Times New Roman", serif; --u: min(4.9px, calc((100vw - 48px - 200px) / 195)); }
@@ -155,7 +155,6 @@
 .zukan .fig canvas { display: block; width: 116%; margin-left: -8%; aspect-ratio: 2 / 1; }
 .zukan .fig .to { display: block; }
 .zukan .fig figcaption { margin: 10px -60px 0; text-align: center; white-space: nowrap; font-size: 13px; line-height: 1.5; color: var(--mute); }
-.zukan .fig figcaption b { color: var(--ink); font-weight: 900; font-size: 15px; margin-right: 2px; }
 .zukan .fig figcaption a { color: var(--ink); font-weight: 700; }
 .zukan .fig figcaption i, .zukan .sci { font-family: var(--latin); font-style: italic; font-weight: 500; font-size: 1.15em; }
 .zukan .bench { display: flex; align-items: flex-end; gap: 28px; margin-top: 28px; min-height: 72px; }
@@ -168,14 +167,13 @@
 
 /* 解説(プロダクト) */
 .zukan .entries { padding: 56px 0 24px; display: grid; gap: 72px; }
-.zukan .entry { display: grid; grid-template-columns: 2.4em minmax(0, 19em) 220px minmax(0, 1fr); column-gap: 32px; align-items: start; scroll-margin-top: 96px; }
-.zukan .entry .num { margin: 0; font-size: 28px; font-weight: 900; line-height: 1.35; }
+.zukan .entry { display: grid; grid-template-columns: minmax(0, 19em) 220px minmax(0, 1fr); column-gap: 32px; align-items: start; scroll-margin-top: 96px; }
 .zukan .entry h3 { margin: 0; font-size: 28px; font-weight: 900; line-height: 1.35; word-break: auto-phrase; text-wrap: balance; }
 .zukan .entry .sci { margin: 4px 0 0; color: var(--mute); font-size: 19px; }
 .zukan .entry .shot img { width: auto; height: 320px; border-radius: 10px; }
 .zukan .entry .shot.wide img { width: 100%; height: auto; border-radius: 6px; }
 .zukan .entry .text { max-width: 36em; }
-.zukan .entry:not(:has(.shot)) .text { grid-column: 3 / 5; }
+.zukan .entry:not(:has(.shot)) .text { grid-column: 2 / 4; }
 .zukan .entry .text p { margin: 0; color: var(--mute); font-size: 16px; line-height: 1.9; }
 .zukan .entry .text .links { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 18px; font-size: 15px; }
 .zukan .entry .links a { color: var(--mute); text-decoration-color: var(--glass-line); }
@@ -183,7 +181,7 @@
 .zukan .entry .links .main { color: var(--ink); font-weight: 700; text-decoration-color: var(--accent); }
 
 /* 作っている人 */
-.zukan .maker { padding: 96px 0 0; max-width: 36em; margin-left: calc(2.4em + 32px); }
+.zukan .maker { padding: 96px 0 0; max-width: 36em; }
 .zukan .maker h2 { margin: 0 0 14px; font-size: 22px; font-weight: 900; }
 .zukan .maker p { margin: 0 0 8px; color: var(--mute); }
 
@@ -194,13 +192,10 @@
   .zukan .plate5 { column-gap: 32px; }
   .zukan .fig figcaption { margin-inline: 0 -60px; text-align: left; font-size: 11px; }
   .zukan .fig figcaption br, .zukan .fig figcaption i { display: none; }
-  .zukan .fig figcaption b { font-size: 12px; }
-  .zukan .entry { grid-template-columns: 2em minmax(0, 1fr); column-gap: 12px; row-gap: 18px; }
-  .zukan .entry > :not(.num) { grid-column: 2; }
-  .zukan .entry:not(:has(.shot)) .text { grid-column: 2; }
-  .zukan .entry .num, .zukan .entry h3 { font-size: 24px; }
+  .zukan .entry { grid-template-columns: minmax(0, 1fr); row-gap: 18px; }
+  .zukan .entry:not(:has(.shot)) .text { grid-column: 1; }
+  .zukan .entry h3 { font-size: 24px; }
   .zukan .entry .shot img { height: 280px; }
-  .zukan .maker { margin-left: 0; }
 }
 @media (max-width: 560px) {
   .zukan { --u: calc((100vw - 32px - 64px) / 100); }
