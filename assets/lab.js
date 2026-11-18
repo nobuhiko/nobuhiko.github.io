@@ -476,16 +476,29 @@
     it.vis = true;
     if (!reduce) {
       wander.classList.add('go');
-      let x = innerWidth * 0.78, y = Math.min(innerHeight * 0.42, 360), th = Math.PI * 0.94, turn = 0, last = performance.now();
+      let x = innerWidth * 0.78, y = Math.min(innerHeight * 0.42, 360), th = Math.PI * 0.94, turn = 0, boost = 0, last = performance.now();
+      let px = -9999, py = -9999, n = 0;
+      // マウスが近づくと、向きを変えて少し急いで離れる。つかまえる(押す・タップする)と、べつの種に変わる
+      addEventListener('pointermove', (e) => { if (e.pointerType === 'mouse') { px = e.clientX; py = e.clientY; } }, { passive: true });
+      document.documentElement.addEventListener('pointerleave', () => { px = py = -9999; });
+      const hit = document.createElement('div'); hit.className = 'hit'; wander.appendChild(hit);
+      hit.addEventListener('click', () => {
+        n = (n + 1) % ORDER.length; it.spec = SPECIES[ORDER[n]];
+        boost = 1; turn += (Math.random() < 0.5 ? -1 : 1) * 2.4;
+        wander.classList.remove('pop'); void wander.offsetWidth; wander.classList.add('pop');
+      });
       it.tick = () => {
         it.vis = true;
         const now = performance.now(), dt = Math.min(0.05, (now - last) / 1000); last = now;
         turn += (Math.random() - 0.5) * dt * 1.6; turn *= 0.985; th += turn * dt;
         const W = innerWidth, H = innerHeight, m = Math.min(90, W * 0.14);
-        if (x < m || x > W - m || y < m + 70 || y > H - m) { // ふちに近づいたら、まん中のほうへ向きを変える
-          let d = Math.atan2(H / 2 - y, W / 2 - x) - th; d = Math.atan2(Math.sin(d), Math.cos(d)); th += d * dt * 1.4;
-        }
-        const v = 15; x += Math.cos(th) * v * dt; y += Math.sin(th) * v * dt;
+        const away = (ax, ay, k) => { let d = Math.atan2(ay, ax) - th; d = Math.atan2(Math.sin(d), Math.cos(d)); th += d * dt * k; };
+        const dist = Math.hypot(x - px, y - py);
+        if (dist < 150) { away(x - px, y - py, 2.6); boost = Math.max(boost, (150 - dist) / 150 * 0.7); }
+        if (x < m || x > W - m || y < m + 70 || y > H - m) away(W / 2 - x, H / 2 - y, 1.6); // ふちに近づいたら、まん中のほうへ
+        boost *= 0.97;
+        const v = 15 + boost * 85; x += Math.cos(th) * v * dt; y += Math.sin(th) * v * dt;
+        x = Math.max(-40, Math.min(W + 40, x)); y = Math.max(-40, Math.min(H + 40, y));
         wander.style.transform = `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px) translate(-50%, -50%)`;
         it.opts.rot = th + Math.PI; it.bend = turn * 0.6;
       };
