@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ja" class="lab home">
+<html lang="ja" class="lab home light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -42,67 +42,76 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,500&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,500&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap"><style>.reveal{opacity:1;transform:none}</style></noscript>
 <link rel="stylesheet" href="./assets/site.css?v=20261110">
-<link rel="stylesheet" href="./assets/lab.css?v=20261118h1">
+<link rel="stylesheet" href="./assets/lab.css?v=20261118w3">
 </head>
 <body>
 <header class="nav">
   <div class="nav-in">
     <a class="brand" href="./"><img src="./apple-touch-icon.png" alt="" width="28" height="28">うみうしラボ</a>
-    <nav class="pill"><a href="#products">プロダクト</a><a href="#company">会社</a><a href="./en/" hreflang="en" lang="en">English</a><button class="theme" type="button" aria-label="明るい表示と暗い表示を切り替える">◐</button></nav>
+    <nav class="pill"><a href="#products">プロダクト</a><a href="#company">会社</a><a href="./en/" hreflang="en" lang="en">English</a></nav>
   </div>
 </header>
 
 <main class="wrap">
   <section class="top">
     <h1>図鑑と、暮らしのアプリと、お店を守るプラグインをつくっています。</h1>
-    <div class="mark fig" data-sp="festiva" style="--mm:30" aria-hidden="true"><canvas></canvas></div>
-    <ul class="index">
-      <li><a href="#seaslug"><b>世界のウミウシ</b><span>ウミウシの図鑑</span></a></li>
-      <li><a href="#kasane"><b>かさね日記</b><span>気温つきの写真日記</span></a></li>
-      <li><a href="#kirerumae"><b>きれるまえ</b><span>消耗品の最安さがし</span></a></li>
-      <li><a href="#security"><b>脆弱性を AI で診断・修正するプラグイン</b><span>EC-CUBE・WordPress のセキュリティ</span></a></li>
-      <li><a href="#migration"><b>データ移行プラグイン</b><span>古い EC-CUBE からの引っ越し</span></a></li>
-    </ul>
+    <div class="hero-slug fig" data-sp="festiva" style="--mm:30" aria-hidden="true"><canvas></canvas></div>
   </section>
 
-  <section id="products" class="entries">
+  <section id="products" class="pans">
     <h2 class="sr">プロダクト</h2>
-    <article class="entry" id="seaslug">
-      <div class="name"><h3>世界のウミウシ</h3><p class="sci" lang="en">seaslug.world</p></div>
-      <div class="shot"><img src="./assets/seaslug-zukan.webp" srcset="./assets/seaslug-zukan-440.webp 440w, ./assets/seaslug-zukan.webp 640w" sizes="150px" width="640" height="1422" alt="世界のウミウシの図鑑の画面" fetchpriority="high"></div>
-      <div class="text">
+
+    <article class="pan wide" id="seaslug">
+      <div class="crit fig" data-sp="apolegma" style="--mm:80" aria-hidden="true"><canvas></canvas></div>
+      <div class="body">
+        <h3><a href="https://seaslug.world/">世界のウミウシ<span class="go" aria-hidden="true"></span></a></h3>
+        <p class="sci" lang="en">seaslug.world</p>
         <p>みんなで作る、投稿型のウミウシ図鑑。世界中のダイバーが撮ったウミウシの写真を、種ごとにまとめています。投稿者はサイト内でマイ図鑑を作れます。</p>
-        <p class="links"><a class="main" href="https://seaslug.world/">図鑑をひらく</a><a href="https://apps.apple.com/jp/app/id6785337563">App Store</a><a href="https://play.google.com/store/apps/details?id=world.seaslug.app">Google Play</a></p>
+        <p class="links"><a href="https://apps.apple.com/jp/app/id6785337563">App Store</a><a href="https://play.google.com/store/apps/details?id=world.seaslug.app">Google Play</a></p>
       </div>
+      <div class="shot tall"><img src="./assets/seaslug-zukan.webp" srcset="./assets/seaslug-zukan-440.webp 440w, ./assets/seaslug-zukan.webp 640w" sizes="260px" width="640" height="1422" alt="世界のウミウシの図鑑の画面" fetchpriority="high"></div>
     </article>
-    <article class="entry" id="kasane">
-      <div class="name"><h3>かさね日記</h3><p class="sci" lang="en">Kasane Diary</p></div>
-      <div class="shot"><img src="./assets/kasane-07.webp" srcset="./assets/kasane-07-440.webp 440w, ./assets/kasane-07.webp 640w" sizes="150px" width="640" height="1390" alt="かさね日記の、きょうの気温と似た日の写真が並ぶ画面" loading="lazy"></div>
-      <div class="text">
+
+    <article class="pan" id="kasane">
+      <div class="crit fig" data-sp="babai" style="--mm:25" aria-hidden="true"><canvas></canvas></div>
+      <div class="body">
+        <h3><a href="./kasane-diary/">かさね日記<span class="go" aria-hidden="true"></span></a></h3>
+        <p class="sci" lang="en">Kasane Diary</p>
         <p>この気温の日、なに着てた? 1 日 1 枚の写真に気温と天気が自動で付き、去年・2 年前の同じ日と重ねて見られる 3 年日記。写真は端末の中だけに保存します。</p>
-        <p class="links"><a class="main" href="./kasane-diary/">紹介ページを見る</a><a href="https://apps.apple.com/jp/app/id6811230663">App Store</a><a href="https://play.google.com/store/apps/details?id=com.kasanediary.app">Google Play</a><a href="./en/kasane-diary/" hreflang="en" lang="en">English</a><a href="./kasane-diary/privacy.html">プライバシーポリシー</a></p>
+        <p class="links"><a href="https://apps.apple.com/jp/app/id6811230663">App Store</a><a href="https://play.google.com/store/apps/details?id=com.kasanediary.app">Google Play</a><a href="./en/kasane-diary/" hreflang="en" lang="en">English</a><a href="./kasane-diary/privacy.html">プライバシーポリシー</a></p>
       </div>
+      <div class="shot tall"><img src="./assets/kasane-07.webp" srcset="./assets/kasane-07-440.webp 440w, ./assets/kasane-07.webp 640w" sizes="260px" width="640" height="1390" alt="かさね日記の、きょうの気温と似た日の写真が並ぶ画面" loading="lazy"></div>
     </article>
-    <article class="entry" id="kirerumae">
-      <div class="name"><h3>きれるまえ</h3><p class="sci" lang="en">kirerumae.com</p></div>
-      <div class="shot wide"><img src="./assets/kirerumae-og.webp" width="1200" height="630" alt="きれるまえ: 洗剤が切れる前に、いちばん安い買い方を" loading="lazy"></div>
-      <div class="text">
+
+    <article class="pan" id="kirerumae">
+      <div class="crit fig" data-sp="cruenta" style="--mm:40" aria-hidden="true"><canvas></canvas></div>
+      <div class="body">
+        <h3><a href="https://kirerumae.com/">きれるまえ<span class="go" aria-hidden="true"></span></a></h3>
+        <p class="sci" lang="en">kirerumae.com</p>
         <p>切れそうな消耗品を、いちばん安い所で。QR を洗濯機や棚に貼っておき、切れる前に読むと、楽天・Amazon・Yahoo! を横断して送料とポイントを引いた実質の最安が出ます。</p>
-        <p class="links"><a class="main" href="https://kirerumae.com/">きれるまえをひらく</a></p>
       </div>
+      <div class="shot flat"><img src="./assets/kirerumae-og.webp" width="1200" height="630" alt="きれるまえ: 洗剤が切れる前に、いちばん安い買い方を" loading="lazy"></div>
     </article>
-    <article class="entry" id="security">
-      <div class="name"><h3>脆弱性を AI で診断・修正するプラグイン</h3><p class="sci" lang="en">AI Security Check &amp; Fix</p></div>
-      <div class="text">
+
+    <article class="pan wide" id="security">
+      <div class="crit fig" data-sp="orientalis" style="--mm:20" aria-hidden="true"><canvas></canvas></div>
+      <div class="body">
+        <h3><a href="./shisa/">脆弱性を AI で診断・修正するプラグイン<span class="go" aria-hidden="true"></span></a></h3>
+        <p class="sci" lang="en">AI Security Check &amp; Fix</p>
         <p>カスタマイズが入っていて、更新できずにいるお店とサイトのためのプラグインです。AI が中まで調べ、見つけた弱点(脆弱性)を持ち主の承認で直します。直したあとに開かなければ、その場で元に戻します。データベースの中身とアクセスのログは読みません。EC-CUBE 4.2・4.3 と WordPress に対応。無料の点検から始められます。</p>
-        <p class="links"><a class="main" href="./shisa/">くわしく見る</a><a href="https://ec-cube-demo43.umiushi-lab.com/admin/shisa/diagnosis">デモのお店で試す</a><a href="https://www.youtube.com/watch?v=korG8HoW_mg">説明の動画(2 分)</a></p>
+        <p class="links"><a href="https://ec-cube-demo43.umiushi-lab.com/admin/shisa/diagnosis">デモのお店で試す</a><a href="https://www.youtube.com/watch?v=korG8HoW_mg">説明の動画(2 分)</a></p>
       </div>
+      <div class="shot flat"><a href="https://www.youtube.com/watch?v=korG8HoW_mg" aria-label="説明の動画を見る(2 分)"><img src="./shisa/explain-thumb.jpg" width="1280" height="720" alt="説明の動画の 1 こま: なぜ最新にできないのか" loading="lazy"></a></div>
     </article>
-    <article class="entry" id="migration">
-      <div class="name"><h3>データ移行プラグイン</h3><p class="sci" lang="en">Data Migration for EC-CUBE</p></div>
-      <div class="text">
+
+    <article class="pan wide slim" id="migration">
+      <div class="body">
+        <h3><a href="https://www.ec-cube.net/products/detail.php?product_id=3189">データ移行プラグイン<span class="go" aria-hidden="true"></span></a></h3>
+        <p class="sci" lang="en">Data Migration for EC-CUBE</p>
+      </div>
+      <div class="body">
         <p>古い EC-CUBE(2.x / 3.x / 4.0 / 4.1)から 4.2 / 4.3 へ、会員・商品・カテゴリ・受注のデータを移すプラグイン。2 系は標準のバックアップ(.tar.gz)をそのまま上げるだけです。</p>
-        <p class="links"><a class="main" href="https://www.ec-cube.net/products/detail.php?product_id=3189">オーナーズストアで見る</a><a href="https://www.ec-cube.net/products/list.php?mode=&amp;category_id=0&amp;maker_id=0&amp;keywords=&amp;ecversion_id=0&amp;partner_id=690&amp;orderby=dl&amp;ecversion=all&amp;protype=all&amp;disp_number=30&amp;price_type=&amp;product_type=&amp;price_max=&amp;price_min=&amp;pageno=1&amp;product_id=&amp;classcategory_id1=&amp;classcategory_id2=&amp;product_class_id=&amp;quantity=">ほかの EC-CUBE プラグイン</a><a href="https://ec-cube-demo43.umiushi-lab.com/">デモのお店で試す</a></p>
+        <p class="links"><a href="https://www.ec-cube.net/products/list.php?mode=&amp;category_id=0&amp;maker_id=0&amp;keywords=&amp;ecversion_id=0&amp;partner_id=690&amp;orderby=dl&amp;ecversion=all&amp;protype=all&amp;disp_number=30&amp;price_type=&amp;product_type=&amp;price_max=&amp;price_min=&amp;pageno=1&amp;product_id=&amp;classcategory_id1=&amp;classcategory_id2=&amp;product_class_id=&amp;quantity=">ほかの EC-CUBE プラグイン</a><a href="https://ec-cube-demo43.umiushi-lab.com/">デモのお店で試す</a></p>
       </div>
     </article>
   </section>
