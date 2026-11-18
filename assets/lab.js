@@ -447,6 +447,16 @@
     cv.className = 'mini'; cv.setAttribute('aria-hidden', 'true'); cv.title = en ? sp.sci : sp.ja;
     card.appendChild(cv);
     add(cv, sp, { len: 0.74, N: 36, x: 0.48 });
+    // 図鑑の札: 個体の名前。押すと世界のウミウシのその種のページ(.zukan のページだけ)
+    if (document.documentElement.classList.contains('zukan')) {
+      const a = document.createElement('a');
+      a.className = 'tagname';
+      a.href = (en ? 'https://en.seaslug.world/species/' : 'https://seaslug.world/species/') + sp.sci.toLowerCase().replace(/ /g, '_');
+      const i = document.createElement('i'); i.textContent = sp.sci;
+      if (en) a.append(i); else a.append(sp.ja + ' ', i);
+      a.setAttribute('aria-label', en ? `${sp.sci} in the SEASLUG.WORLD field guide` : `${sp.ja}(${sp.sci})を世界のウミウシの図鑑で見る`);
+      card.appendChild(a);
+    }
   });
 
   // --- フッターの線の上を這う個体 ---

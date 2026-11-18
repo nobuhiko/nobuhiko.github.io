@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ja" class="lab">
+<html lang="ja" class="lab zukan">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,10 +36,10 @@
 <link rel="apple-touch-icon" href="./apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;700;800&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;700;800&display=swap"><style>.reveal{opacity:1;transform:none}</style></noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Shippori+Mincho:wght@600;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Shippori+Mincho:wght@600;800&display=swap"><style>.reveal{opacity:1;transform:none}</style></noscript>
 <link rel="stylesheet" href="./assets/site.css?v=20261110">
-<link rel="stylesheet" href="./assets/lab.css?v=20261110c">
+<link rel="stylesheet" href="./assets/lab.css?v=20261118z">
 </head>
 <body>
 <header class="nav">
@@ -53,7 +53,6 @@
   <section class="hero">
     <div class="bubbles" aria-hidden="true"><i style="--x:6%;--s:10px;--d:19s;--w:-3s"></i><i style="--x:18%;--s:6px;--d:15s;--w:-9s"></i><i style="--x:34%;--s:14px;--d:23s;--w:-14s"></i><i style="--x:52%;--s:7px;--d:17s;--w:-1s"></i><i style="--x:71%;--s:11px;--d:21s;--w:-11s"></i><i style="--x:88%;--s:8px;--d:16s;--w:-6s"></i><i style="--x:95%;--s:16px;--d:26s;--w:-18s"></i></div>
     <div>
-      <p class="eyebrow">Independent maker</p>
       <h1 class="display">ウミウシの図鑑と、<br>暮らしのアプリを<br><span class="soft">つくるラボ。</span></h1>
       <p class="lead">迷う時間を、すこし短く。</p>
       <div class="cta"><a class="btn" href="#products">プロダクトを見る</a><a class="btn ghost" href="https://umiushi1.substack.com/">Substack(英語)</a></div>
@@ -71,49 +70,59 @@
   <hr class="ruler">
 
   <section id="products" class="block">
-    <p class="over reveal">No. 01 – 05</p>
     <h2 class="reveal">プロダクト</h2>
+    <p class="legend reveal">5 つのプロダクトに、ウミウシを 1 種ずつ添えています。札の名前を押すと、世界のウミウシの図鑑でその種が開きます。</p>
     <div class="products">
       <article data-slug="festiva" class="glass product" style="--accent:#1E7FA8">
         <div class="shot"><img src="./assets/seaslug-zukan.webp" srcset="./assets/seaslug-zukan-440.webp 440w, ./assets/seaslug-zukan.webp 640w" sizes="(max-width: 560px) 240px, 200px" width="640" height="1422" alt="世界のウミウシの図鑑の画面" fetchpriority="high"></div>
         <div>
-          <span class="no">No. 01</span><span class="kind" style="color:#4FB3DD">Field guide</span>
+          <p class="no">No. 01</p>
           <h3>世界のウミウシ</h3>
+          <p class="sci" lang="en">seaslug.world</p>
           <p>みんなで作る、投稿型のウミウシ図鑑。世界中のダイバーが撮ったウミウシの写真を、種ごとにまとめています。投稿者はサイト内でマイ図鑑を作れます。</p>
+          <dl class="rec"><div><dt>分類</dt><dd>投稿型の図鑑</dd></div><div><dt>分布</dt><dd>Web・iPhone・Android</dd></div></dl>
           <div class="row"><a class="btn" href="https://seaslug.world/">seaslug.world</a><a class="link" href="https://apps.apple.com/jp/app/id6785337563">App Store</a><a class="link" href="https://play.google.com/store/apps/details?id=world.seaslug.app">Google Play</a></div>
         </div>
       </article>
       <article data-slug="babai" class="glass product reveal" style="--accent:#D96C3D">
         <div class="shot"><img src="./assets/kasane-07.webp" srcset="./assets/kasane-07-440.webp 440w, ./assets/kasane-07.webp 640w" sizes="(max-width: 560px) 240px, 200px" width="640" height="1390" alt="かさね日記の、きょうの気温と似た日の写真が並ぶ画面" loading="lazy"></div>
         <div>
-          <span class="no">No. 02</span><span class="kind" style="color:#F08A5D">Photo diary</span>
+          <p class="no">No. 02</p>
           <h3>かさね日記</h3>
+          <p class="sci" lang="en">Kasane Diary</p>
           <p>この気温の日、なに着てた? 1 日 1 枚の写真に気温と天気が自動で付き、去年・2 年前の同じ日と重ねて見られる 3 年日記。</p>
+          <dl class="rec"><div><dt>分類</dt><dd>写真日記のアプリ</dd></div><div><dt>分布</dt><dd>iPhone・Android</dd></div></dl>
           <div class="row"><a class="btn" href="./kasane-diary/">紹介ページ</a><a class="link" href="./en/kasane-diary/" hreflang="en" lang="en">English</a><a class="link" href="https://apps.apple.com/jp/app/id6811230663">App Store</a><a class="link" href="https://play.google.com/store/apps/details?id=com.kasanediary.app">Google Play</a><a class="link" href="./kasane-diary/privacy.html">プライバシーポリシー</a></div>
         </div>
       </article>
       <article data-slug="cruenta" class="glass product wide reveal" style="--accent:#EF8A3C">
         <div class="shot wide" style="aspect-ratio:1200/630"><img src="./assets/kirerumae-og.webp" alt="きれるまえ: 洗剤が切れる前に、いちばん安い買い方を" loading="lazy" style="object-position:center"></div>
         <div>
-          <span class="no">No. 03</span><span class="kind" style="color:#F5A25E">Web service</span>
+          <p class="no">No. 03</p>
           <h3>きれるまえ</h3>
+          <p class="sci" lang="en">kirerumae.com</p>
           <p>切れそうな消耗品を、いちばん安い所で。QR を洗濯機や棚に貼っておき、切れる前に読むと、楽天・Amazon・Yahoo! を横断して送料とポイントを引いた実質の最安が出ます。</p>
+          <dl class="rec"><div><dt>分類</dt><dd>価格比較の Web サービス</dd></div><div><dt>分布</dt><dd>Web(日本)</dd></div></dl>
           <div class="row"><a class="btn" href="https://kirerumae.com/">kirerumae.com</a></div>
         </div>
       </article>
       <article data-slug="orientalis" class="glass product reveal" style="grid-template-columns:1fr;--accent:#2F8F83">
         <div>
-        <span class="no">No. 04</span><span class="kind" style="color:#3FB5A5">EC-CUBE · WordPress</span>
+        <p class="no">No. 04</p>
         <h3>脆弱性を AI で診断・修正するプラグイン</h3>
+        <p class="sci" lang="en">AI Security Check &amp; Fix</p>
         <p>カスタマイズが入っていて、更新できずにいるお店とサイトのためのプラグインです。AI が中まで調べ、見つけた弱点(脆弱性)を持ち主の承認で直します。直したあとに開かなければ、その場で元に戻します。EC-CUBE 4.2・4.3 と WordPress に対応。無料の点検から始められます。</p>
+        <dl class="rec"><div><dt>分類</dt><dd>セキュリティのプラグイン</dd></div><div><dt>分布</dt><dd>EC-CUBE 4.2・4.3、WordPress</dd></div></dl>
         <div class="row"><a class="btn" href="./shisa/">くわしく見る</a><a class="link" href="https://ec-cube-demo43.umiushi-lab.com/admin/shisa/diagnosis">デモのお店で試す</a><a class="link" href="https://www.youtube.com/watch?v=korG8HoW_mg">説明の動画(2 分)</a></div>
         </div>
       </article>
       <article data-slug="apolegma" class="glass product reveal" style="grid-template-columns:1fr;--accent:#4A6FA5">
         <div>
-        <span class="no">No. 05</span><span class="kind" style="color:#6F95CF">EC-CUBE plugin</span>
+        <p class="no">No. 05</p>
         <h3>データ移行プラグイン</h3>
+        <p class="sci" lang="en">Data Migration for EC-CUBE</p>
         <p>古い EC-CUBE(2.x / 3.x / 4.0 / 4.1)から 4.2 / 4.3 へ、会員・商品・カテゴリ・受注のデータを移すプラグイン。2 系は標準のバックアップ(.tar.gz)をそのまま上げるだけです。</p>
+        <dl class="rec"><div><dt>分類</dt><dd>データ移行のプラグイン</dd></div><div><dt>分布</dt><dd>EC-CUBE 4.2・4.3(移行元は 2.x〜4.1)</dd></div></dl>
         <div class="row"><a class="btn" href="https://www.ec-cube.net/products/detail.php?product_id=3189">オーナーズストア</a></div>
         </div>
       </article>
@@ -135,7 +144,7 @@
 
 <footer class="site"><div class="crawl" aria-hidden="true"></div><div class="wrap"><span>© 2026 うみうしラボ · <a href="./tokushoho.html">特定商取引法に基づく表記</a></span><span><a href="./kasane-diary/">かさね日記</a> · <a href="https://seaslug.world/">世界のウミウシ</a> · <a href="https://kirerumae.com/">きれるまえ</a></span></div></footer>
 <script src="./assets/site.js?v=20261110"></script>
-<script src="./assets/lab.js?v=20261110b" defer></script>
+<script src="./assets/lab.js?v=20261118z" defer></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YYZQDTEPR0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YYZQDTEPR0');</script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8e368a03b62f48a98ec3d3205e06c11d"}'></script><!-- End Cloudflare Web Analytics -->
