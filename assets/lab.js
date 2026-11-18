@@ -485,7 +485,9 @@
       document.documentElement.addEventListener('pointerleave', () => { px = py = -9999; });
       const hit = document.createElement('div'); hit.className = 'hit'; wander.appendChild(hit);
       hit.addEventListener('click', () => {
-        n = (n + 1) % ORDER.length; it.spec = SPECIES[ORDER[n]];
+        // べつの種へ。4 回に 1 回くらい、図鑑にいない架空の個体が出る
+        if (Math.random() < 0.25) it.spec = makeFake(1 + Math.floor(Math.random() * 9999));
+        else { n = (n + 1) % ORDER.length; it.spec = SPECIES[ORDER[n]]; }
         boost = 1; turn += (Math.random() < 0.5 ? -1 : 1) * 2.4;
         wander.classList.remove('pop'); void wander.offsetWidth; wander.classList.add('pop');
       });
