@@ -169,7 +169,7 @@
 /* 箱 */
 .home .pans { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 72px 32px; }
 .home .pan { position: relative; display: grid; grid-template-rows: auto 1fr; background: var(--pan); border-radius: var(--radius); padding: 52px 48px 0; min-height: 520px; }
-.home .pan.wide { grid-column: 1 / -1; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: auto; column-gap: 48px; align-items: center; padding: 64px 56px; min-height: 420px; }
+.home .pan.wide { grid-column: 1 / -1; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); grid-template-rows: auto; column-gap: 48px; align-items: center; padding: 64px 56px; min-height: 420px; }
 .home .pan.slim { min-height: 0; padding: 44px 56px; align-items: start; }
 .home .pan h3 { margin: 0; font-size: clamp(26px, 2.9vw, 38px); font-weight: 900; line-height: 1.35; word-break: auto-phrase; }
 .home .pan h3 a { color: inherit; text-decoration: none; display: inline; }
