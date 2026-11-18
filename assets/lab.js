@@ -451,7 +451,7 @@
 
   // --- 図版: 5 種を実物の大きさの比で並べる(.plate5)。幅は CSS の --mm × --u で決まる ---
   const PLATE = { len: 1 / 1.16, N: 48, exact: true };
-  document.querySelectorAll('.plate5 .fig[data-sp]').forEach((f) => {
+  document.querySelectorAll('.fig[data-sp]').forEach((f) => {
     const sp = SPECIES[f.dataset.sp], cv = f.querySelector('canvas'); if (!sp || !cv) return;
     add(cv, sp, PLATE);
   });
