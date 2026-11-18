@@ -162,7 +162,7 @@
 /* 歩くアオウミウシ。動かないとき(動きを減らす設定、スクリプトなし)は見出しの横にいる */
 .home .wander { --mm: 30; --u: clamp(5px, .8vw, 9px); position: absolute; right: 2%; top: 50%; translate: 0 -50%; pointer-events: none; }
 .home .wander canvas { width: calc(var(--mm) * var(--u) * 1.5); aspect-ratio: 1; }
-.home .wander.go { position: fixed; left: 0; top: 0; right: auto; translate: none; z-index: 5; will-change: transform; }
+.lab.home .wander.go { position: fixed; left: 0; top: 0; right: auto; bottom: auto; translate: none; z-index: 5; will-change: transform; }
 .home .wander .hit { position: absolute; left: 50%; top: 50%; width: 46%; height: 46%; translate: -50% -50%; border-radius: 50%; pointer-events: auto; cursor: pointer; touch-action: manipulation; }
 .home .wander.pop canvas { animation: home-pop .45s cubic-bezier(.3, 1.6, .5, 1); }
 @keyframes home-pop { 0% { scale: .7; } 100% { scale: 1; } }

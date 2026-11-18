@@ -492,15 +492,25 @@
         boost = 1; turn += (Math.random() < 0.5 ? -1 : 1) * 2.4;
         wander.classList.remove('pop'); void wander.offsetWidth; wander.classList.add('pop');
       };
-      let down = null, eat = 0;
-      addEventListener('pointerdown', (e) => { down = { x: e.clientX, y: e.clientY, t: performance.now() }; }, { passive: true, capture: true });
-      addEventListener('pointerup', (e) => {
+      // 上の帯(ナビ)の下端。体がもぐらないよう、ここより下を歩く
+      const nav = document.querySelector('.nav'); let navB = 72;
+      const measure = () => { navB = nav ? nav.getBoundingClientRect().bottom : 0; };
+      measure(); addEventListener('resize', measure);
+      let down = null, eat = 0, lastTap = 0;
+      const start = (cx, cy) => { down = { x: cx, y: cy, t: performance.now() }; };
+      const end = (cx, cy, touch) => {
         const d = down; down = null; if (!d) return;
-        if (Math.hypot(e.clientX - d.x, e.clientY - d.y) > 12 || performance.now() - d.t > 600) return; // なぞった・長押しは数えない
-        const r = Math.max(it.size.w / 3 * 0.85, e.pointerType === 'mouse' ? 0 : 46);
-        if (Math.hypot(e.clientX - x, e.clientY - y) > r) return;
-        eat = performance.now(); swapSpecies();
-      }, { capture: true });
+        const now = performance.now();
+        if (now - lastTap < 350) return; // pointer と touch の両方が来たときは 1 回だけ
+        if (Math.hypot(cx - d.x, cy - d.y) > 16 || now - d.t > 700) return; // なぞった・長押しは数えない
+        const r = Math.max(it.size.w / 3 * 0.9, touch ? 56 : 0);
+        if (Math.hypot(cx - x, cy - y) > r) return;
+        lastTap = eat = now; swapSpecies();
+      };
+      addEventListener('pointerdown', (e) => start(e.clientX, e.clientY), { passive: true, capture: true });
+      addEventListener('pointerup', (e) => end(e.clientX, e.clientY, e.pointerType !== 'mouse'), { passive: true, capture: true });
+      addEventListener('touchstart', (e) => { const t = e.changedTouches[0]; if (t) start(t.clientX, t.clientY); }, { passive: true, capture: true });
+      addEventListener('touchend', (e) => { const t = e.changedTouches[0]; if (t) end(t.clientX, t.clientY, true); }, { passive: true, capture: true });
       // つかまえたときは、下にあるリンクを開かない
       addEventListener('click', (e) => { if (performance.now() - eat < 500) { e.preventDefault(); e.stopPropagation(); } }, { capture: true });
       it.tick = () => {
@@ -508,7 +518,7 @@
         const now = performance.now(), dt = Math.min(0.05, (now - last) / 1000); last = now;
         const W = innerWidth, H = innerHeight, half = it.size.w / 3;
         // 歩いてよい範囲(体の半分くらいは、画面のふちからはみ出してよい。上の帯の下にはもぐらない)
-        const x0 = half * 0.6, x1 = W - half * 0.6, y0 = 64 + half * 0.5, y1 = H - half * 0.5;
+        const x0 = half * 0.6, x1 = W - half * 0.6, y0 = navB + half * 0.95, y1 = H - half * 0.6;
         // 行き先を気ままに決めて、ゆっくりそちらへ向く。着いたら、次の行き先
         if (now > tAt || Math.hypot(tx - x, ty - y) < 50) { tx = x0 + Math.random() * (x1 - x0); ty = y0 + Math.random() * (y1 - y0); tAt = now + 30000; }
         const steer = (ax, ay, k) => { let d = Math.atan2(ay, ax) - th; d = Math.atan2(Math.sin(d), Math.cos(d)); th += Math.max(-1, Math.min(1, d)) * dt * k; };
