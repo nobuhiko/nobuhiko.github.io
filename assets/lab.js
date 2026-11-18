@@ -473,6 +473,8 @@
   const wander = document.querySelector('.wander');
   if (wander) {
     const it = add(wander.querySelector('canvas'), SPECIES.festiva, { len: 1 / 1.5, N: 48, exact: true, rot: 0 });
+    // 歩く個体は、画面に入っているかの見張りから外す(外に出た瞬間に「見えていない」とされて、動きごと止まってしまうため)
+    if (io) io.unobserve(it.cv);
     it.vis = true;
     if (!reduce) {
       wander.classList.add('go');
@@ -492,13 +494,15 @@
         const now = performance.now(), dt = Math.min(0.05, (now - last) / 1000); last = now;
         turn += (Math.random() - 0.5) * dt * 1.6; turn *= 0.985; th += turn * dt;
         const W = innerWidth, H = innerHeight, m = Math.min(90, W * 0.14);
+        const half = it.size.w / 3, top = 64 + half * 0.6, R = Math.min(150, W * 0.3); // 体の半分の長さ、上の帯の下、逃げはじめる距離
         const away = (ax, ay, k) => { let d = Math.atan2(ay, ax) - th; d = Math.atan2(Math.sin(d), Math.cos(d)); th += d * dt * k; };
         const dist = Math.hypot(x - px, y - py);
-        if (dist < 150) { away(x - px, y - py, 2.6); boost = Math.max(boost, (150 - dist) / 150 * 0.7); }
-        if (x < m || x > W - m || y < m + 70 || y > H - m) away(W / 2 - x, H / 2 - y, 1.6); // ふちに近づいたら、まん中のほうへ
+        if (dist < R) { away(x - px, y - py, 2.6); boost = Math.max(boost, (R - dist) / R * 0.7); }
+        if (x < m + half || x > W - m - half || y < top + m * 0.5 || y > H - m - half * 0.5) away(W / 2 - x, H / 2 - y, 1.6 + boost * 3); // ふちに近づいたら、まん中のほうへ
         boost *= 0.97;
         const v = 15 + boost * 85; x += Math.cos(th) * v * dt; y += Math.sin(th) * v * dt;
-        x = Math.max(-40, Math.min(W + 40, x)); y = Math.max(-40, Math.min(H + 40, y));
+        // 追われても、画面の外には出ない(体の半分より外へは行かせない)
+        x = Math.max(half * 0.8, Math.min(W - half * 0.8, x)); y = Math.max(top, Math.min(H - half * 0.6, y));
         wander.style.transform = `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px) translate(-50%, -50%)`;
         it.opts.rot = th + Math.PI; it.bend = turn * 0.6;
       };
