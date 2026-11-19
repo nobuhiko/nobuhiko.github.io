@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI Security Check & Fix for custom code | WordPress, EC-CUBE | Umiushi Lab</title>
-<meta name="description" content="You know the site needs updating, but it was built just for you and changing the wrong thing could take it down. This service uses AI to read the code on your WordPress site, checks it against official releases and published vulnerabilities, and repairs weaknesses only after you approve each change. If the site stops loading, the change is rolled back.">
-<meta property="og:title" content="AI Security Check &amp; Fix for custom code | WordPress, EC-CUBE">
-<meta property="og:description" content="You know the site needs updating, but it was built just for you and changing the wrong thing could take it down. This service uses AI to read the code on your WordPress site, checks it against official releases and published vulnerabilities, and repairs weaknesses only after you approve each change. If the site stops loading, the change is rolled back.">
+<title>Find the code updates don't reach | Free WordPress plugin | Umiushi Lab</title>
+<meta name="description" content="A free WordPress plugin that maps the code updates never reach: closed plugins, updates held back by an old WordPress, and themes and plugins built for one site. Nothing leaves the site. A paid service reads that code and repairs it after you approve each change.">
+<meta property="og:title" content="Find the code updates don't reach">
+<meta property="og:description" content="A free WordPress plugin that maps the code updates never reach: closed plugins, updates held back by an old WordPress, and themes and plugins built for one site. Nothing leaves the site. A paid service reads that code and repairs it after you approve each change.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://umiushi-lab.com/en/shisa/">
 <meta property="og:site_name" content="Umiushi Lab">
@@ -14,245 +14,92 @@
 <meta property="og:image" content="https://umiushi-lab.com/en/shisa/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="You know it needs fixing. You can't risk breaking the site. AI Security Check &amp; Fix for WP">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://umiushi-lab.com/en/shisa/og.png">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"AI Security Check & Fix for WP","description":"You know the site needs updating, but it was built just for you and changing the wrong thing could take it down. This service uses AI to read the code on your WordPress site, checks it against official releases and published vulnerabilities, and repairs weaknesses only after you approve each change. If the site stops loading, the change is rolled back.","applicationCategory":"SecurityApplication","operatingSystem":"WordPress 6.2+","inLanguage":"en","url":"https://umiushi-lab.com/en/shisa/","image":"https://umiushi-lab.com/en/shisa/og.png","publisher":{"@type":"Organization","name":"Umiushi Lab LLC","url":"https://umiushi-lab.com/"},"offers":[{"@type":"Offer","name":"Plugin","price":"0","priceCurrency":"JPY","availability":"https://schema.org/InStock","url":"https://umiushi-lab.com/en/shisa/#price","seller":{"@type":"Organization","name":"Umiushi Lab LLC","url":"https://umiushi-lab.com/"}},{"@type":"Offer","name":"One inspection and repair (first time; regular price 100,000)","price":"50000","priceCurrency":"JPY","availability":"https://schema.org/InStock","url":"https://umiushi-lab.com/en/shisa/#price","seller":{"@type":"Organization","name":"Umiushi Lab LLC","url":"https://umiushi-lab.com/"}},{"@type":"Offer","name":"One inspection and repair (from the second)","price":"30000","priceCurrency":"JPY","availability":"https://schema.org/InStock","url":"https://umiushi-lab.com/en/shisa/#price","seller":{"@type":"Organization","name":"Umiushi Lab LLC","url":"https://umiushi-lab.com/"}},{"@type":"Offer","name":"Daily watch (monthly)","price":"50000","priceCurrency":"JPY","availability":"https://schema.org/InStock","url":"https://umiushi-lab.com/en/shisa/#price","seller":{"@type":"Organization","name":"Umiushi Lab LLC","url":"https://umiushi-lab.com/"},"priceSpecification":{"@type":"UnitPriceSpecification","price":"50000","priceCurrency":"JPY","billingDuration":"P1M"}}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"My site is customized and I have not been able to update it. Can I use this?","acceptedAnswer":{"@type":"Answer","text":"That is who it is for. The free plugin first shows which code updates do not reach. The paid inspection reads that code. Before each repair it takes a backup; afterwards it opens the site, and if the site does not load, the change is rolled back on the spot."}},{"@type":"Question","name":"How much does it cost?","acceptedAnswer":{"@type":"Answer","text":"Installing the plugin is free. One inspection and repair is ¥50,000 for the first one (launch price; regular price ¥100,000) and ¥30,000 from the second. The daily watch is ¥50,000 per month and is available after the first inspection. Prices are in Japanese yen."}},{"@type":"Question","name":"Does the free WordPress plugin send my code anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. It reads files on your server and stores the counts in your database. The only outside request is optional: when an administrator presses a button, it asks api.wordpress.org whether the installed WordPress.org plugins were closed or abandoned, sending only their slugs."}},{"@type":"Question","name":"Does the free plugin install the paid service?","acceptedAnswer":{"@type":"Answer","text":"No. The free plugin works by itself and downloads nothing. The paid service is a separate plugin, downloaded from this page."}},{"@type":"Question","name":"The map marks a page. Is it vulnerable?","acceptedAnswer":{"@type":"Answer","text":"Not necessarily. The map marks pages and handlers that take outside input where no login or permission check is visible in the same file. The check may be in another file. Someone has to read the code to know."}},{"@type":"Question","name":"Who runs this service?","acceptedAnswer":{"@type":"Answer","text":"Umiushi Lab LLC, a small software company in Tokyo. Legal notice (Japanese)"}}]}]}
-</script>
 <link rel="canonical" href="https://umiushi-lab.com/en/shisa/">
 <link rel="alternate" hreflang="ja" href="https://umiushi-lab.com/shisa/wordpress/">
 <link rel="alternate" hreflang="en" href="https://umiushi-lab.com/en/shisa/">
 <link rel="alternate" hreflang="x-default" href="https://umiushi-lab.com/en/shisa/">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "SoftwareApplication", "name": "Umiushi Lab – Find Code That Updates Don't Reach", "description": "A free WordPress plugin that maps the code updates never reach: closed plugins, updates held back by an old WordPress, and themes and plugins built for one site. Nothing leaves the site. A paid service reads that code and repairs it after you approve each change.", "applicationCategory": "SecurityApplication", "operatingSystem": "WordPress 6.2 or later", "inLanguage": "en", "url": "https://umiushi-lab.com/en/shisa/", "image": "https://umiushi-lab.com/en/shisa/og.png", "installUrl": "https://wordpress.org/plugins/umiushi-unreached-updates/", "license": "https://www.gnu.org/licenses/gpl-2.0.html", "publisher": {"@type": "Organization", "name": "Umiushi Lab LLC", "url": "https://umiushi-lab.com/en/"}, "author": {"@type": "Person", "name": "Nobuhiko Kimoto", "jobTitle": "Founder, Umiushi Lab LLC"}, "offers": [{"@type": "Offer", "name": "Free plugin", "price": "0", "priceCurrency": "JPY", "availability": "https://schema.org/InStock", "url": "https://umiushi-lab.com/en/shisa/#price", "seller": {"@type": "Organization", "name": "Umiushi Lab LLC", "url": "https://umiushi-lab.com/en/"}}, {"@type": "Offer", "name": "One inspection and repair (first time; regular price ¥100,000)", "price": "50000", "priceCurrency": "JPY", "availability": "https://schema.org/InStock", "url": "https://umiushi-lab.com/en/shisa/#price", "seller": {"@type": "Organization", "name": "Umiushi Lab LLC", "url": "https://umiushi-lab.com/en/"}}, {"@type": "Offer", "name": "One inspection and repair (from the second)", "price": "30000", "priceCurrency": "JPY", "availability": "https://schema.org/InStock", "url": "https://umiushi-lab.com/en/shisa/#price", "seller": {"@type": "Organization", "name": "Umiushi Lab LLC", "url": "https://umiushi-lab.com/en/"}}, {"@type": "Offer", "name": "Daily watch (per month)", "price": "50000", "priceCurrency": "JPY", "availability": "https://schema.org/InStock", "url": "https://umiushi-lab.com/en/shisa/#price", "seller": {"@type": "Organization", "name": "Umiushi Lab LLC", "url": "https://umiushi-lab.com/en/"}}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does the free plugin send my code anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "No. It reads files on your own server and stores the counts in your database. When an administrator presses \"Map this site\", it sends the folder names of the installed plugins to api.wordpress.org, the same service WordPress itself asks for updates. Nothing else is sent."}}, {"@type": "Question", "name": "An entry says \"Not seen in this file\". Is it vulnerable?", "acceptedAnswer": {"@type": "Answer", "text": "Not necessarily. The check may live in another file. The map cannot follow that, so a person, or the paid service, has to read the code."}}, {"@type": "Question", "name": "It lists a plugin I bought. Is that a problem?", "acceptedAnswer": {"@type": "Answer", "text": "Not by itself. Purchased plugins are listed because WordPress.org does not review them and does not send them updates; their own vendor does. The map shows which code depends on someone other than WordPress.org."}}, {"@type": "Question", "name": "What does the paid service change on my site?", "acceptedAnswer": {"@type": "Answer", "text": "Nothing until you approve. Each repair is shown before and after. It takes a backup, applies the change and opens the site. If the site does not open, it restores the backup."}}, {"@type": "Question", "name": "Which languages are supported?", "acceptedAnswer": {"@type": "Answer", "text": "The free plugin is in English and Japanese. The paid plugin's screens, its reports and support are in Japanese for now."}}]}]}
+</script>
 <link rel="icon" href="../../favicon.ico" sizes="any">
 <link rel="icon" href="../../favicon-32.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"><style>.reveal{opacity:1;transform:none}</style></noscript>
-<link rel="stylesheet" href="../../assets/site.css?v=20261110">
-<style>
-/* このページだけの部品(家の絵・番号の並び・流れ・対応・値段) */
-.hero .house { background: linear-gradient(180deg, #eaf5fb 0%, #fdf8f1 100%); border: 1px solid var(--glass-line); border-radius: var(--radius); padding: 24px 16px 0; }
-.hero .house svg { width: 100%; height: auto; display: block; }
-.display.sm { font-size: clamp(30px, 4.6vw, 58px); line-height: 1.16; }
-.parts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-.parts li { background: var(--glass); border: 1px solid var(--glass-line); border-left: 6px solid #9e9e9e; border-radius: 16px; padding: 16px 18px; }
-.parts li.main { grid-column: 1 / -1; border-left-color: #d39b2a; background: #fffaf0; padding: 22px 24px; }
-.parts .n { display: inline-block; width: 24px; height: 24px; line-height: 24px; border-radius: 50%; background: #607d8b; color: #fff; text-align: center; font-size: 13px; font-weight: 700; margin-right: 8px; }
-.parts li.main .n { background: #d39b2a; }
-.parts .h { font-weight: 800; font-size: 17px; }
-.parts li.main .h { font-size: 21px; }
-.parts .w { color: var(--faint); font-size: 13px; margin-left: 6px; }
-.parts p { margin: 6px 0 0; color: var(--mute); font-size: 15px; }
-.parts li.main p { font-size: 16px; }
-.flow { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; counter-reset: f; }
-.flow li { counter-increment: f; background: var(--glass); border: 1px solid var(--glass-line); border-radius: 20px; padding: 20px; }
-.flow li::before { content: counter(f); display: block; width: 32px; height: 32px; line-height: 32px; border-radius: 50%; background: color-mix(in srgb, var(--accent) 70%, #000); color: #fff; text-align: center; font-weight: 800; margin-bottom: 10px; }
-.flow b { display: block; font-size: 18px; }
-.flow span { color: var(--mute); font-size: 15px; }
-.case { border-left: 6px solid var(--accent); }
-.case p { font-size: 16px; }
-.state { display: inline-block; font-size: 12px; font-weight: 700; padding: 3px 12px; border-radius: 999px; margin-bottom: 10px; }
-.state.soon { background: #e6f4ea; color: #1b5e20; }
-.state.prep { background: #fff1e0; color: #8a4b00; }
-.plat h3 { font-size: 24px; }
-.plat ul, .plan ul { margin: 12px 0 0; padding-left: 1.3em; color: var(--mute); font-size: 15px; }
-.plat li, .plan li { margin-bottom: 6px; }
-.plan .kind { font-size: 13px; color: var(--faint); }
-.plan h3 { font-size: 20px; }
-.plan .price { font-size: 38px; font-weight: 800; letter-spacing: -.02em; line-height: 1.2; margin: 8px 0 2px; }
-.plan .price small { font-size: 14px; font-weight: 400; color: var(--faint); margin-left: 6px; }
-.plan .pn { font-size: 14px; color: #8a4b00; min-height: 1.75em; }
-.cando { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.cando ul { margin: 8px 0 0; padding-left: 1.3em; color: var(--mute); font-size: 15px; }
-.cando li { margin-bottom: 6px; }
-table.terms { width: 100%; border-collapse: collapse; font-size: 15px; }
-table.terms th, table.terms td { text-align: left; vertical-align: top; padding: 12px 8px; border-bottom: 1px solid var(--glass-line); }
-table.terms th { width: 9.5em; color: var(--mute); font-weight: 700; }
-@media (max-width: 900px) { .flow, .parts { grid-template-columns: 1fr 1fr; } .cando { grid-template-columns: 1fr; } }
-@media (max-width: 560px) { .flow, .parts { grid-template-columns: 1fr; } table.terms th { width: 6.5em; } .plan .price { font-size: 32px; } }
-.display.sm { font-size: clamp(30px, 4.2vw, 54px); }
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;600&display=swap">
+<link rel="stylesheet" href="en.css?v=20261119c">
 </head>
-<body class="light" style="--accent:#C9502A">
-<header class="nav">
-  <div class="nav-in">
-    <a class="brand" href="./"><span class="dot"></span>AI Security Check &amp; Fix</a>
-    <nav class="pill"><a class="opt" href="#where">What it checks</a><a class="opt" href="#platforms">Platforms</a><a class="opt" href="#price">Pricing</a><a class="opt" href="#faq">FAQ</a><a href="../../shisa/" hreflang="ja" lang="ja">日本語</a><a href="../">Umiushi Lab</a></nav>
-  </div>
-</header>
-<main class="wrap">
-  <section class="hero">
-    <div>
-      <p class="eyebrow">WordPress · EC-CUBE</p>
-      <h1 class="display sm">You know it needs fixing.<br>You can't risk<br><span class="soft">breaking the site.</span></h1>
-      <p class="lead">The theme was built by a contractor who has moved on. Some plugins stopped getting updates long ago. Change the wrong thing and the site goes down, so it stays as it is. This service uses AI to read the code on your site, checks WordPress and every plugin against official releases and published vulnerabilities, and repairs weaknesses only after you approve each change. If the site stops loading after a repair, the change is rolled back.</p>
-      <div class="cta"><a class="btn" href="#platforms">See what is available</a><a class="btn ghost" href="mailto:info@umiushi-lab.com?subject=AI%20Security%20Check%20%26%20Fix">Contact</a></div>
-    </div>
-    <div class="house">
-      <svg viewBox="0 0 460 262" role="img" aria-label="A site drawn as a house: PHP is the foundation, the core is the building, bundled libraries are the fittings, and custom code is the extension. Two guardian figures sit on the roof.">
-        <defs>
-          <g id="shhMane"><circle cx="0" cy="-78" r="22"/><circle cx="40" cy="-68" r="22"/><circle cx="-40" cy="-68" r="22"/><circle cx="68" cy="-40" r="22"/><circle cx="-68" cy="-40" r="22"/><circle cx="78" cy="0" r="22"/><circle cx="-78" cy="0" r="22"/><circle cx="68" cy="40" r="22"/><circle cx="-68" cy="40" r="22"/><circle cx="40" cy="66" r="22"/><circle cx="-40" cy="66" r="22"/><circle cx="0" cy="76" r="22"/></g>
-          <g id="shhFace"><use href="#shhMane" fill="#b5532f"/><circle r="66" fill="#d9774a"/><path d="M-44,-30 q14,-16 30,-4" stroke="#7a2f17" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M44,-30 q-14,-16 -30,-4" stroke="#7a2f17" stroke-width="7" fill="none" stroke-linecap="round"/><circle cx="-26" cy="-12" r="13" fill="#fff8ec"/><circle cx="26" cy="-12" r="13" fill="#fff8ec"/><circle cx="-24" cy="-11" r="6" fill="#2b1a12"/><circle cx="24" cy="-11" r="6" fill="#2b1a12"/><ellipse cx="0" cy="12" rx="20" ry="13" fill="#9b3f20"/><circle cx="-8" cy="13" r="4" fill="#5a2210"/><circle cx="8" cy="13" r="4" fill="#5a2210"/></g>
-          <linearGradient id="shhRoof" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9532b"/><stop offset="1" stop-color="#b63d1c"/></linearGradient>
-        </defs>
-        <circle cx="424" cy="30" r="14" fill="#ffd36b"/>
-        <rect x="52" y="228" width="346" height="22" rx="2" fill="#b9b2a6" stroke="#8f887c" stroke-width="2"/>
-        <rect x="72" y="140" width="208" height="88" fill="#fffaf2" stroke="#d8c7ae" stroke-width="2"/>
-        <path d="M54 140 L176 96 L298 140 Z" fill="url(#shhRoof)"/>
-        <g stroke="#ffffff" stroke-width="2" opacity=".85" fill="none"><path d="M85 129 L267 129"/><path d="M115 118 L237 118"/><path d="M146 107 L206 107"/></g>
-        <path d="M54 140 L176 96 L298 140" fill="none" stroke="#8c2c12" stroke-width="3" stroke-linejoin="round"/>
-        <rect x="88" y="164" width="50" height="42" fill="#bfe3f2" stroke="#8ab9cf" stroke-width="2"/>
-        <path d="M113 164 V206 M88 185 H138" stroke="#8ab9cf" stroke-width="2"/>
-        <rect x="154" y="172" width="38" height="50" rx="4" fill="#e3e8eb" stroke="#9aa4ab" stroke-width="2"/>
-        <circle cx="173" cy="188" r="8" fill="#fff" stroke="#9aa4ab" stroke-width="2"/><path d="M173 188 L178 184" stroke="#c0392b" stroke-width="2" stroke-linecap="round"/>
-        <path d="M162 206 H184 M162 213 H184" stroke="#9aa4ab" stroke-width="2"/>
-        <rect x="212" y="164" width="48" height="64" fill="#a46a3d" stroke="#7d4d28" stroke-width="2"/>
-        <circle cx="250" cy="198" r="3.5" fill="#f3d27a"/><rect x="246" y="204" width="8" height="9" rx="1.5" fill="#f3d27a"/>
-        <rect x="280" y="170" width="104" height="58" fill="#fff3d6" stroke="#d39b2a" stroke-width="2.5" stroke-dasharray="7 4"/>
-        <path d="M276 170 L390 170 L382 154 L280 148 Z" fill="#e0a94a" stroke="#b97f1c" stroke-width="2" stroke-linejoin="round"/>
-        <rect x="312" y="186" width="40" height="28" fill="#bfe3f2" stroke="#8ab9cf" stroke-width="2"/>
-        <g fill="#8d8d8d" stroke="none"><ellipse cx="412" cy="240" rx="7" ry="4" transform="rotate(-20 412 240)"/><ellipse cx="432" cy="250" rx="7" ry="4" transform="rotate(-20 432 250)"/><ellipse cx="448" cy="238" rx="6" ry="3.5" transform="rotate(-20 448 238)"/></g>
-        <g transform="translate(146 79) scale(.28)"><use href="#shhFace"/><path d="M-36,30 q36,44 72,0 z" fill="#5a1d10"/><path d="M-26,31 l6,10 l6,-10 M14,31 l6,10 l6,-10" fill="#fff8ec"/><ellipse cx="0" cy="48" rx="14" ry="6" fill="#e0675a"/></g>
-        <g transform="translate(208 79) scale(.28)"><use href="#shhFace"/><path d="M-32,36 q32,14 64,0" stroke="#5a1d10" stroke-width="7" fill="none" stroke-linecap="round"/></g>
-        <g font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="#fff">
-          <circle cx="372" cy="182" r="10" fill="#d39b2a"/><text x="372" y="182">1</text>
-          <circle cx="66" cy="239" r="10" fill="#607d8b"/><text x="66" y="239">2</text>
-          <circle cx="84" cy="150" r="10" fill="#607d8b"/><text x="84" y="150">3</text>
-          <circle cx="192" cy="172" r="10" fill="#607d8b"/><text x="192" y="172">4</text>
-          <circle cx="430" cy="226" r="10" fill="#607d8b"/><text x="430" y="226">5</text>
-          <circle cx="138" cy="164" r="10" fill="#607d8b"/><text x="138" y="164">6</text>
-          <circle cx="260" cy="164" r="10" fill="#607d8b"/><text x="260" y="164">7</text>
-        </g>
-      </svg>
-    </div>
-  </section>
+<body>
+<header class="bar"><div class="in"><a class="brand" href="../">Umiushi Lab</a><nav><a href="#fix">Paid repair</a><a href="../../shisa/wordpress/" hreflang="ja" lang="ja">日本語</a></nav></div></header>
+<main>
+<section class="hero"><div class="in">
+<h1>Updates don't reach the code built for your site.</h1>
+<p class="lede">The Updates screen can say everything is current and still leave code behind. This free plugin draws a map of it, inside your own WordPress.</p>
+<p class="acts"><a class="go" href="https://wordpress.org/plugins/umiushi-unreached-updates/">Get the free plugin on WordPress.org</a><a class="quiet" href="#fix">Or have the code read and repaired</a></p>
+<img class="shot" src="map.jpg" width="1120" height="1100" alt="The plugin's result screen: one piece of code on this site does not come from WordPress.org and has four ways in from outside. Below it, the site drawn as a house with seven numbered parts.">
+</div></section>
 
-  <section class="block" id="where">
-    <h2 class="reveal">What it checks</h2>
-    <ul class="parts reveal">
-      <li class="main"><span class="n">1</span><span class="h">The extension</span><span class="w">= custom code built for this site</span>
-        <p><b>No vendor inspects this part.</b> Update notices and version scanners do not cover it. The inspection reads it and looks for pages and handlers that skip a login check or an ownership check. When it finds one, it shows you the change and waits for your approval.</p></li>
-      <li><span class="n">2</span><span class="h">PHP</span><span class="w">(foundation)</span><p>Checks whether the PHP version is still supported. Replacing PHP is the hosting company's job.</p></li>
-      <li><span class="n">3</span><span class="h">Core and plugins</span><span class="w">(building)</span><p>If an official fix is out, it is installed after you approve.</p></li>
-      <li><span class="n">4</span><span class="h">Bundled libraries</span><span class="w">(fittings)</span><p>Third-party libraries that ship with the core. Replaced after you approve, when a fix is out.</p></li>
-      <li><span class="n">5</span><span class="h">Signs of tampering</span><span class="w">(footprints)</span><p>Looks for files that should not be there.</p></li>
-      <li><span class="n">6</span><span class="h">Exposed information</span><span class="w">(windows)</span><p>Closes files that should not open from outside.</p></li>
-      <li><span class="n">7</span><span class="h">Weak settings</span><span class="w">(locks)</span><p>Checks settings that amount to an unlocked door.</p></li>
-    </ul>
-  </section>
+<section><div class="in">
+<h2>Three kinds of code no update will ever fix</h2>
+<dl class="kinds">
+<div><dt>Plugins closed on WordPress.org</dt><dd>Removed from the directory, still running on your site. No notice appears.</dd></div>
+<div><dt>Updates held back by an old WordPress</dt><dd>The newer version needs a newer WordPress than yours, so the Updates screen never shows it.</dd></div>
+<div><dt>Themes and plugins built for one site</dt><dd>Custom-made or bought elsewhere. WordPress.org does not review them and has no version to compare.</dd></div>
+</dl>
+</div></section>
 
-  <section class="block">
-    <h2 class="reveal">From finding to fixing</h2>
-    <ol class="flow reveal">
-      <li><b>Find</b><span>The AI reads the custom code.</span></li>
-      <li><b>Show</b><span>You see the change, before and after.</span></li>
-      <li><b>Approve</b><span>You press the button. Until then, nothing changes.</span></li>
-      <li><b>Fix and verify</b><span>It takes a backup, applies the change and opens the site. If the site does not open, it restores the backup.</span></li>
-    </ol>
-  </section>
+<section class="tint"><div class="in two">
+<div>
+<h2>A map, not a verdict</h2>
+<p>For each piece of that code, the plugin lists every way in from outside: REST routes, background requests, shortcodes, page templates, files that run when opened directly. It marks the ones that take outside input where no login or permission check is visible in the same file.</p>
+<p>It never says "safe". The check may live in another file, and telling which takes reading the code.</p>
+</div>
+<img class="shot" src="entries.jpg" width="1120" height="780" loading="lazy" alt="Two tables from the plugin. One lists settings that hold updates back. The other lists four ways into a sample custom plugin; a REST route open to everyone is marked, with no login or permission check seen in its file.">
+</div></section>
 
-  <section class="block" id="platforms">
-    <h2 class="reveal">Platforms</h2>
-    <div class="grid">
-      <div class="glass plat reveal">
-        <h3>WordPress</h3>
-        <p>For sites with a theme built by a contractor, plugins written only for that site, or plugins that no longer receive updates.</p>
-        <ul>
-          <li>Free plugin, <a href="https://wordpress.org/plugins/umiushi-unreached-updates/" target="_blank" rel="noopener">"Umiushi Lab – Find Code That Updates Don't Reach"</a> (on WordPress.org): finds the themes and plugins that updates do not reach, and counts the pages and handlers that can be called from outside. It runs inside your site and sends no code or site data anywhere.</li>
-          <li>Paid plugin, "AI Security Check &amp; Fix for WP": reads the code of themes and plugins, including plugins closed on WordPress.org, and repairs weaknesses with your approval. Its screens are in Japanese for now.</li>
-          <li>Compares WordPress core and plugins with the official packages and with published vulnerability records.</li>
-        </ul>
-        <div class="cta"><a class="btn" href="https://wp-demo.umiushi-lab.com/wp-admin/admin.php?page=umiushi-fix-sample">Watch a recorded inspection (1 min, Japanese)</a><a class="btn ghost" href="https://wp-demo.umiushi-lab.com/wp-admin/">See the screens on the demo site</a></div>
-        <div class="cta"><a class="btn" href="https://api.shisa.umiushi-lab.com/dl/wp" rel="nofollow">Download the paid plugin (zip)</a></div>
-        <p class="note">To install: Plugins → Add New Plugin → Upload Plugin, then choose the zip. Later updates arrive on the Updates screen.</p>
-        <p class="note">The plugin's screens, its reports and support are in Japanese for now.</p>
-      </div>
-      <div class="glass plat reveal">
-        <h3>EC-CUBE</h3>
-        <p>EC-CUBE is an open-source store system used in Japan. Versions 4.2 and 4.3 are supported with a plugin.</p>
-        <ul>
-          <li>Free quick check: compares the store with official information and lists what is out of date</li>
-          <li>Paid inspection and repair: reads the custom code and fixes it with the owner's approval</li>
-        </ul>
-        <p class="note">The EC-CUBE service and its support are in Japanese. <a href="../../shisa/" hreflang="ja">Japanese page</a></p>
-      </div>
-    </div>
-  </section>
+<section><div class="in">
+<h2>What leaves your site</h2>
+<div class="leaves">
+<div class="sent"><h3>Sent, when you press the button</h3><p>The folder names of your installed plugins, to <code>api.wordpress.org</code>. It is the service WordPress itself asks for updates.</p></div>
+<div class="kept"><h3>Never sent</h3><p>Your code and your site data stay where they are. The map is made on your own server and changes nothing on it.</p></div>
+</div>
+<p class="acts"><a class="go" href="https://wordpress.org/plugins/umiushi-unreached-updates/">Get the free plugin on WordPress.org</a><span class="note">GPLv2 or later. WordPress 6.2+, PHP 7.4+.</span></p>
+</div></section>
 
-  <section class="block" id="price">
-    <h2 class="reveal">Pricing</h2>
-    <div class="grid">
-      <div class="glass plan reveal">
-        <div class="kind">One time</div>
-        <h3>One inspection and repair</h3>
-        <div class="price">¥50,000<small>/ first time</small></div>
-        <div class="pn">Launch price for the first inspection (regular price ¥100,000). ¥30,000 from the second.</div>
-        <ul>
-          <li>Reads the code of your theme, your site-specific plugins and plugins closed on WordPress.org, looking for pages and handlers that skip a login check or an ownership check</li>
-          <li>Compares WordPress core and plugins with the official packages and with published vulnerability records</li>
-          <li>Shows each repair before and after, and applies it only when you approve</li>
-          <li>Approvals are not counted; approve as many as you need</li>
-          <li>What is left over is finished with "Continue the inspection" at no extra charge, for 7 days from the first run</li>
-          <li>A report of what was read, what was found, what was fixed and what remains</li>
-        </ul>
-      </div>
-      <div class="glass plan reveal">
-        <div class="kind">Ongoing</div>
-        <h3>Daily watch</h3>
-        <div class="price">¥50,000<small>/ month</small></div>
-        <div class="pn">Available to sites that have had their first inspection and repair</div>
-        <ul>
-          <li>Starts an inspection every day at a set time</li>
-          <li>Checks new vulnerability notices the same day</li>
-          <li>Cancel at any time from the plugin; it stays active until the end of the paid period</li>
-        </ul>
-      </div>
-    </div>
-    <p class="note reveal">Installing the plugin is free. Prices are in Japanese yen. Payment is by card, through Stripe; the amount shown on the payment screen is the total. Once the service has started there are no refunds, but an inspection that does not reach its report is not counted. <a href="../../shisa/terms.html">Terms of service (Japanese)</a></p>
-  </section>
+<section class="ink" id="fix"><div class="in">
+<h2>When you want that code read and repaired</h2>
+<p class="lede">A separate, paid plugin reads your theme, your site-specific plugins and plugins closed on WordPress.org, and repairs weaknesses one approved change at a time.</p>
+<ol class="steps">
+<li><b>Find</b>The AI reads the custom code and checks core and plugins against official packages and published vulnerabilities.</li>
+<li><b>Show</b>You see each change, before and after.</li>
+<li><b>Approve</b>You press the button. Until then, nothing changes.</li>
+<li><b>Fix and verify</b>It takes a backup, applies the change and opens the site. If the site does not open, it restores the backup.</li>
+</ol>
+<div class="price" id="price">
+<div><h3>One inspection and repair</h3><p class="yen">¥50,000 <span>first time</span></p><p>Regular price ¥100,000. ¥30,000 from the second. Approve as many repairs as you need.</p></div>
+<div><h3>Daily watch</h3><p class="yen">¥50,000 <span>per month</span></p><p>Available after the first inspection. New vulnerability notices are checked the same day. Cancel at any time.</p></div>
+</div>
+<p class="note">Prices are in Japanese yen, paid by card through Stripe. The paid plugin's screens, its reports and support are in Japanese for now. It uses AI, and AI makes mistakes; that is why every change waits for your approval.</p>
+<p class="acts"><a class="go alt" href="https://wp-demo.umiushi-lab.com/wp-admin/admin.php?page=umiushi-fix-sample">Watch a recorded inspection (1 min, Japanese)</a><a class="quiet" href="https://api.shisa.umiushi-lab.com/dl/wp" rel="nofollow">Download the paid plugin (zip)</a></p>
+</div></section>
 
-  <section class="block">
-    <h2 class="reveal">What it can and cannot do</h2>
-    <div class="cando">
-      <div class="glass reveal"><h3>It can</h3>
-        <ul>
-          <li>Confirm whether PHP, the core and the plugins are at a version that includes the official fixes</li>
-          <li>Read custom code and look for pages and handlers that skip a login check or an ownership check</li>
-          <li>Fix or block what it finds, after you approve</li>
-          <li>Report how many pages and handlers it read, what it checked and what it did not look at</li>
-        </ul></div>
-      <div class="glass reveal"><h3>It cannot</h3>
-        <ul>
-          <li>Say that custom code has no weakness. A human reviewer cannot say that either.</li>
-          <li>Prevent weaknesses that nobody knows about yet</li>
-          <li>Update PHP on the server, or rewrite large parts of custom code</li>
-        </ul>
-        <p>The service uses AI to inspect and to propose changes, and AI makes mistakes. That is why it shows each change first and waits for your approval.</p></div>
-    </div>
-  </section>
+<section><div class="in narrow">
+<h2>Questions</h2>
+<details><summary>Does the free plugin send my code anywhere?</summary><p>No. It reads files on your own server and stores the counts in your database. When an administrator presses "Map this site", it sends the folder names of the installed plugins to api.wordpress.org, the same service WordPress itself asks for updates. Nothing else is sent.</p></details>
+<details><summary>An entry says "Not seen in this file". Is it vulnerable?</summary><p>Not necessarily. The check may live in another file. The map cannot follow that, so a person, or the paid service, has to read the code.</p></details>
+<details><summary>It lists a plugin I bought. Is that a problem?</summary><p>Not by itself. Purchased plugins are listed because WordPress.org does not review them and does not send them updates; their own vendor does. The map shows which code depends on someone other than WordPress.org.</p></details>
+<details><summary>What does the paid service change on my site?</summary><p>Nothing until you approve. Each repair is shown before and after. It takes a backup, applies the change and opens the site. If the site does not open, it restores the backup.</p></details>
+<details><summary>Which languages are supported?</summary><p>The free plugin is in English and Japanese. The paid plugin's screens, its reports and support are in Japanese for now.</p></details>
+</div></section>
 
-  <section class="block faq" id="faq">
-    <h2 class="reveal">FAQ</h2>
-    <details><summary>My site is customized and I have not been able to update it. Can I use this?</summary><p>That is who it is for. The free plugin first shows which code updates do not reach. The paid inspection reads that code. Before each repair it takes a backup; afterwards it opens the site, and if the site does not load, the change is rolled back on the spot.</p></details>
-    <details><summary>How much does it cost?</summary><p>Installing the plugin is free. One inspection and repair is ¥50,000 for the first one (launch price; regular price ¥100,000) and ¥30,000 from the second. The daily watch is ¥50,000 per month and is available after the first inspection. Prices are in Japanese yen.</p></details>
-    <details><summary>Does the free WordPress plugin send my code anywhere?</summary><p>No. It reads files on your server and stores the counts in your database. The only outside request is optional: when an administrator presses a button, it asks api.wordpress.org whether the installed WordPress.org plugins were closed or abandoned, sending only their slugs.</p></details>
-    <details><summary>Does the free plugin install the paid service?</summary><p>No. The free plugin works by itself and downloads nothing. The paid service is a separate plugin, downloaded from this page.</p></details>
-    <details><summary>The map marks a page. Is it vulnerable?</summary><p>Not necessarily. The map marks pages and handlers that take outside input where no login or permission check is visible in the same file. The check may be in another file. Someone has to read the code to know.</p></details>
-    <details><summary>Who runs this service?</summary><p>Umiushi Lab LLC, a small software company in Tokyo. <a href="../../tokushoho.html" hreflang="ja">Legal notice (Japanese)</a></p></details>
-  </section>
-
-  <section class="statement reveal" id="contact">
-    <h2>Questions?<br>Write to us.</h2>
-    <p>Not sure whether it fits your site, or want to use it on several sites? Email us, in English or Japanese.</p>
-    <div class="cta" style="justify-content:center"><a class="btn" href="mailto:info@umiushi-lab.com?subject=AI%20Security%20Check%20%26%20Fix">info@umiushi-lab.com</a></div>
-  </section>
+<section class="tint"><div class="in narrow">
+<h2>Who makes this</h2>
+<p>Umiushi Lab LLC, Tokyo. The plugins are written by Nobuhiko Kimoto, a committer to <a href="https://github.com/EC-CUBE/ec-cube">EC-CUBE</a>, the open-source store system widely used in Japan. The same inspection is available for EC-CUBE stores; that page is <a href="../../shisa/" hreflang="ja">in Japanese</a>.</p>
+<p><a href="mailto:info@umiushi-lab.com">info@umiushi-lab.com</a></p>
+</div></section>
 </main>
-<footer class="site"><div class="wrap"><span>© 2026 Umiushi Lab</span><span><a href="../../shisa/" hreflang="ja" lang="ja">日本語</a> · <a href="../">Umiushi Lab</a></span></div></footer>
-<script src="../../assets/site.js?v=20261110"></script>
+<footer class="foot"><div class="in"><span>© 2026 <a href="../">Umiushi Lab LLC</a></span><span><a href="../../shisa/terms.html" hreflang="ja">Terms of service (Japanese)</a></span></div></footer>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YYZQDTEPR0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YYZQDTEPR0');</script>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8e368a03b62f48a98ec3d3205e06c11d"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
