@@ -16,7 +16,7 @@ SRC = ROOT / "shisa" / "_src"
 BASE = "https://umiushi-lab.com/shisa/"
 HUB_NAME = "脆弱性を AI で診断・修正するプラグイン"
 ORG = {"@type": "Organization", "name": "合同会社うみうしラボ", "url": "https://umiushi-lab.com/"}
-CSS_VER = "20261119m"
+CSS_VER = "20261119n"
 # お知らせの帯(1 行)。時事の話(PHP の脆弱性など)は、ここと専用のページにだけ書く。
 # 商品のページの本文には書かない(どのページにも同じ説明が並ぶため。2026-11-19)。空にすると帯は出ない
 NOTICE = None  # 例: ("PHP2Shell に当たるかを見分けて、対策を入れます", "ec-cube-php/")。2026-11-19: 形を決めるまで出さない
@@ -82,7 +82,7 @@ def build(src: Path) -> Path:
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap">
 <link rel="stylesheet" href="{up}shisa.css?v={CSS_VER}">
 </head>
-<body class="{meta["type"]}{(" " + meta["theme"]) if meta.get("theme") else ""}">
+<body class="page-{meta["type"]}{(" " + meta["theme"]) if meta.get("theme") else ""}">
 <header class="top"><div class="wrap">{brand}<a class="lab" href="{root}">うみうしラボ</a></div></header>
 {notice}{crumb}{main_open}
 {body.strip()}

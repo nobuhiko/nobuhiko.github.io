@@ -119,7 +119,7 @@ header.top a{color:#fff;text-decoration:none}header.top .name{color:var(--ya)}
 .foot{background:var(--k);color:#fff;font-size:12px;padding:16px 0}
 .foot .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px 16px}
 .foot a{color:#fff}.foot span a + a{margin-left:14px}
-body.lp .foot{padding-bottom:76px}
+body.page-lp .foot{padding-bottom:76px}
 /* ---- 商品を並べるページ ---- */
 .hero.hub{padding:34px 0 40px}
 .doors{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px}
@@ -129,7 +129,7 @@ body.lp .foot{padding-bottom:76px}
 .door:hover{background:var(--pale)}
 @media(max-width:760px){.doors{grid-template-columns:1fr}}
 /* ---- 調べもののページ(doc) ---- */
-.doc{padding:28px 0 56px}
+main.doc{padding:28px 0 56px}
 .doc h1{font-size:clamp(26px,4.2vw,40px);font-weight:900;line-height:1.35;margin:0 0 14px}
 .doc h2{font-size:clamp(20px,2.8vw,27px);font-weight:900;line-height:1.45;margin:44px 0 12px;padding-left:12px;border-left:10px solid var(--y)}
 .doc p,.doc li{max-width:46em}.doc .lead{font-size:17px}
