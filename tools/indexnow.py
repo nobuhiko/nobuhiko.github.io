@@ -9,6 +9,11 @@ push して公開されたあとに、手元から動かす(公開の前に送�
 鍵は、サイトの一番上の <鍵>.txt(中身は鍵だけ。公開してよいもの。IndexNow の決まり)。
 このサイトは GitHub Pages に直接向いていて Cloudflare を通っていないので、Cloudflare の Crawler Hints は効かない(2026-11-19)。
 前回送った lastmod は .indexnow-sent.json に残す(git には入れない)。
+
+送る前に、公開されているサイトを 2 つ確かめる。どちらかが合わなければ、送らずに止まる(記録も付けない)。
+  1. 鍵のファイルが読める(読めないと、送り先は 200 を返すのに検索エンジンは捨てる)
+  2. 公開中の sitemap.xml の lastmod が、手元と同じ(push がまだ反映されていないと、古いページを読まれる)
+2026-11-19: 鍵のファイルを足した直後に 14 ページ送ったら、記録は「送った」なのに Bing には 1 件も入っていなかった。
 """
 import json
 import re
@@ -33,6 +38,30 @@ def pages() -> dict[str, str]:
     return {m.group(1): m.group(2) for m in re.finditer(r"<loc>([^<]+)</loc>\s*<lastmod>([^<]+)</lastmod>", xml)}
 
 
+def fetch(url: str) -> str:
+    req = urllib.request.Request(url, headers={"Cache-Control": "no-cache", "User-Agent": "umiushi-lab-indexnow"})
+    with urllib.request.urlopen(req, timeout=30) as res:
+        return res.read().decode()
+
+
+def check_published(k: str, urls: list[str], now: dict[str, str]) -> None:
+    """公開されているサイトが、鍵と手元の sitemap に追いついているか。追いついていなければ止まる。"""
+    try:
+        live_key = fetch(f"https://{HOST}/{k}.txt").strip()
+    except Exception as e:  # 404 など
+        sys.exit(f"鍵のファイル https://{HOST}/{k}.txt が読めません({e})。push して 1〜2 分待ってから、もう一度")
+    if live_key != k:
+        sys.exit(f"鍵のファイル https://{HOST}/{k}.txt の中身が鍵と違います。送りません")
+    try:
+        xml = fetch(f"https://{HOST}/sitemap.xml")
+    except Exception as e:
+        sys.exit(f"公開中の sitemap.xml が読めません({e})。送りません")
+    live = {m.group(1): m.group(2) for m in re.finditer(r"<loc>([^<]+)</loc>\s*<lastmod>([^<]+)</lastmod>", xml)}
+    late = [u for u in urls if live.get(u) != now[u]]
+    if late:
+        sys.exit("まだ公開されていないページがあります(公開中の sitemap.xml の lastmod が手元と違う)。push して 1〜2 分待ってから、もう一度:\n  " + "\n  ".join(late))
+
+
 def main() -> None:
     now = pages()
     before = json.loads(SENT.read_text()) if SENT.exists() else {}
@@ -44,6 +73,7 @@ def main() -> None:
     if "--dry" in sys.argv:
         return
     k = key()
+    check_published(k, urls, now)
     body = json.dumps({"host": HOST, "key": k, "keyLocation": f"https://{HOST}/{k}.txt", "urlList": urls}).encode()
     req = urllib.request.Request("https://api.indexnow.org/indexnow", data=body, headers={"Content-Type": "application/json; charset=utf-8"})
     with urllib.request.urlopen(req, timeout=30) as res:
