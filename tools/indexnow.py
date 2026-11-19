@@ -1,0 +1,56 @@
+#!/usr/bin/env python3
+"""ページが変わったことを、IndexNow で検索エンジン(Bing ほか)に知らせる。
+
+  python3 tools/indexnow.py            前回送ったあとに lastmod が変わったページだけ送る
+  python3 tools/indexnow.py --all      sitemap.xml の全部を送る
+  python3 tools/indexnow.py --dry      送らずに、送る URL を出す
+
+push して公開されたあとに、手元から動かす(公開の前に送ると、検索エンジンが古いページを読む)。
+鍵は、サイトの一番上の <鍵>.txt(中身は鍵だけ。公開してよいもの。IndexNow の決まり)。
+このサイトは GitHub Pages に直接向いていて Cloudflare を通っていないので、Cloudflare の Crawler Hints は効かない(2026-11-19)。
+前回送った lastmod は .indexnow-sent.json に残す(git には入れない)。
+"""
+import json
+import re
+import sys
+import urllib.request
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+HOST = "umiushi-lab.com"
+SENT = ROOT / ".indexnow-sent.json"
+
+
+def key() -> str:
+    for f in ROOT.glob("*.txt"):
+        if re.fullmatch(r"[0-9a-f]{32}", f.stem) and f.read_text().strip() == f.stem:
+            return f.stem
+    sys.exit("鍵のファイル(<32 桁の 16 進>.txt)が見つかりません")
+
+
+def pages() -> dict[str, str]:
+    xml = (ROOT / "sitemap.xml").read_text()
+    return {m.group(1): m.group(2) for m in re.finditer(r"<loc>([^<]+)</loc>\s*<lastmod>([^<]+)</lastmod>", xml)}
+
+
+def main() -> None:
+    now = pages()
+    before = json.loads(SENT.read_text()) if SENT.exists() else {}
+    urls = sorted(now) if "--all" in sys.argv else sorted(u for u, d in now.items() if before.get(u) != d)
+    if not urls:
+        print("変わったページはありません")
+        return
+    print("\n".join(urls))
+    if "--dry" in sys.argv:
+        return
+    k = key()
+    body = json.dumps({"host": HOST, "key": k, "keyLocation": f"https://{HOST}/{k}.txt", "urlList": urls}).encode()
+    req = urllib.request.Request("https://api.indexnow.org/indexnow", data=body, headers={"Content-Type": "application/json; charset=utf-8"})
+    with urllib.request.urlopen(req, timeout=30) as res:
+        print(f"IndexNow: HTTP {res.status}({len(urls)} 件)")
+    before.update({u: now[u] for u in urls})
+    SENT.write_text(json.dumps(before, indent=1))
+
+
+if __name__ == "__main__":
+    main()
