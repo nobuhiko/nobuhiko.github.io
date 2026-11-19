@@ -476,6 +476,23 @@
     // 歩く個体は、画面に入っているかの見張りから外す(外に出た瞬間に「見えていない」とされて、動きごと止まってしまうため)
     if (io) io.unobserve(it.cv);
     it.vis = true;
+    // 日替わりのきぶん(日本時間の日付で決まる。前の日と同じにはしない。?mood=のんびり のように名前で試せる)
+    //  v: ふだんの速さ / noise: 気まぐれに向きを変える強さ / bias: いつも同じ側へ曲がる / flee: マウスから逃げる強さ(負なら寄ってくる)
+    //  edge: 行き先を画面のふちに選ぶ / zig: 左右に振れながら進む / aim: 行き先へ向かう強さ(無ければ 0.55。弱いと、曲がるくせが勝って輪を描く)
+    const MOODS = [
+      { ja: 'ふつう', en: 'as usual', v: 15, noise: 1.2, bias: 0, flee: 1, edge: false, zig: 0 },
+      { ja: 'のんびり', en: 'taking it slow', v: 7, noise: 0.6, bias: 0, flee: 0.6, edge: false, zig: 0 },
+      { ja: 'せっかち', en: 'in a hurry', v: 30, noise: 2.4, bias: 0, flee: 1.2, edge: false, zig: 0 },
+      { ja: 'くるくる', en: 'going in circles', v: 14, noise: 0.6, bias: 0.22, aim: 0.08, flee: 1, edge: false, zig: 0 },
+      { ja: 'すみっこ好き', en: 'hugging the edges', v: 16, noise: 0.9, bias: 0, flee: 1, edge: true, zig: 0 },
+      { ja: '人なつこい', en: 'friendly', v: 15, noise: 1.2, bias: 0, flee: -0.6, edge: false, zig: 0 },
+      { ja: 'ジグザグ', en: 'zigzagging', v: 16, noise: 0.6, bias: 0, flee: 1, edge: false, zig: 1.8 },
+    ];
+    const pick = (d) => Math.floor(rng(d * 7919)() * MOODS.length);
+    const today = Math.floor((Date.now() + 9 * 3600e3) / 86400e3);
+    let mi = pick(today); if (mi === pick(today - 1)) mi = (mi + 1) % MOODS.length;
+    const want = new URLSearchParams(location.search).get('mood');
+    const mood = MOODS.find((m) => m.ja === want || m.en === want) || MOODS[mi];
     if (!reduce) {
       wander.classList.add('go');
       let x = innerWidth * 0.78, y = Math.min(innerHeight * 0.42, 360), th = Math.PI * 0.94, turn = 0, boost = 0, last = performance.now();
@@ -484,6 +501,7 @@
       addEventListener('pointermove', (e) => { if (e.pointerType === 'mouse') { px = e.clientX; py = e.clientY; } }, { passive: true });
       document.documentElement.addEventListener('pointerleave', () => { px = py = -9999; });
       const hit = document.createElement('div'); hit.className = 'hit'; wander.appendChild(hit); // パソコンで、指の形のカーソルを出すためだけの面
+      hit.title = en ? `Today's mood: ${mood.en}` : `今日のきぶん: ${mood.ja}`;
       // つかまえる(押す・タップする)と、べつの種に変わる。4 回に 1 回くらい、図鑑にいない架空の個体が出る。
       // 画面のどこを押したかと個体の位置を比べて決める(スマホで、個体の上の面がタップを受け取らないことがあったため)
       const swapSpecies = () => {
@@ -520,17 +538,24 @@
         // 歩いてよい範囲(体の半分くらいは、画面のふちからはみ出してよい。上の帯の下にはもぐらない)
         const x0 = half * 0.6, x1 = W - half * 0.6, y0 = navB + half * 0.95, y1 = H - half * 0.6;
         // 行き先を気ままに決めて、ゆっくりそちらへ向く。着いたら、次の行き先
-        if (now > tAt || Math.hypot(tx - x, ty - y) < 50) { tx = x0 + Math.random() * (x1 - x0); ty = y0 + Math.random() * (y1 - y0); tAt = now + 30000; }
+        if (now > tAt || Math.hypot(tx - x, ty - y) < 50) {
+          tx = x0 + Math.random() * (x1 - x0); ty = y0 + Math.random() * (y1 - y0); tAt = now + 30000;
+          // すみっこ好き: 行き先を、上下左右どれかのふちに寄せる
+          if (mood.edge) { const e = Math.floor(Math.random() * 4); if (e === 0) tx = x0; else if (e === 1) tx = x1; else if (e === 2) ty = y0; else ty = y1; }
+        }
         const steer = (ax, ay, k) => { let d = Math.atan2(ay, ax) - th; d = Math.atan2(Math.sin(d), Math.cos(d)); th += Math.max(-1, Math.min(1, d)) * dt * k; };
-        turn += (Math.random() - 0.5) * dt * 1.2; turn *= 0.985; th += turn * dt;
+        turn += (Math.random() - 0.5) * dt * mood.noise; turn *= 0.985; th += (turn + mood.bias) * dt;
+        if (mood.zig) th += Math.sin(now / 1000 * 1.6) * mood.zig * dt;
         const R = Math.min(150, W * 0.3), dist = Math.hypot(x - px, y - py);
-        if (dist < R) { steer(x - px, y - py, 2.6); boost = Math.max(boost, (R - dist) / R * 0.7); }
-        else steer(tx - x, ty - y, 0.55);
+        let slow = 1;
+        if (dist < R && mood.flee > 0) { steer(x - px, y - py, 2.6 * mood.flee); boost = Math.max(boost, (R - dist) / R * 0.7 * mood.flee); }
+        else if (dist < R * 1.6 && mood.flee < 0) { steer(px - x, py - y, -mood.flee * 2); slow = Math.min(1, Math.max(0.15, (dist - 40) / 120)); } // 人なつこい: 寄ってきて、そばでは足をゆるめる
+        else steer(tx - x, ty - y, mood.aim ?? 0.55);
         boost *= 0.97;
-        const v = 15 + boost * 85; x += Math.cos(th) * v * dt; y += Math.sin(th) * v * dt;
+        const v = (mood.v + boost * 85) * slow; x += Math.cos(th) * v * dt; y += Math.sin(th) * v * dt;
         x = Math.max(x0, Math.min(x1, x)); y = Math.max(y0, Math.min(y1, y));
         wander.style.transform = `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px) translate(-50%, -50%)`;
-        it.opts.rot = th + Math.PI; it.bend = turn * 0.6;
+        it.opts.rot = th + Math.PI; it.bend = (turn + mood.bias) * 0.6;
       };
     }
   }
