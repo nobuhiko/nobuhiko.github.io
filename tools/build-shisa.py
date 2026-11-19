@@ -16,7 +16,7 @@ SRC = ROOT / "shisa" / "_src"
 BASE = "https://umiushi-lab.com/shisa/"
 HUB_NAME = "脆弱性を AI で診断・修正するプラグイン"
 ORG = {"@type": "Organization", "name": "合同会社うみうしラボ", "url": "https://umiushi-lab.com/"}
-CSS_VER = "20261119r"
+CSS_VER = "20261119s"
 # お知らせの帯(1 行)。時事の話(PHP の脆弱性など)は、ここと専用のページにだけ書く。
 # 商品のページの本文には書かない(どのページにも同じ説明が並ぶため。2026-11-19)。空にすると帯は出ない
 NOTICE = None  # 例: ("PHP2Shell に当たるかを見分けて、対策を入れます", "ec-cube-php/")。2026-11-19: 形を決めるまで出さない
@@ -36,8 +36,7 @@ def build(src: Path) -> Path:
     crumb = ""
     if meta["type"] == "doc":
         # パンくずは、うみうしラボ → 商品を並べるページ → このページ
-        crumb = (f'<nav class="crumb" aria-label="パンくず"><div class="wrap"><a href="{root}">うみうしラボ</a>'
-                 f'<a href="{up or "./"}">{HUB_NAME}</a></div></nav>\n')  # いまのページの名前は、すぐ下の見出しが言う(検索向けのデータには入れる)
+        # 見えるパンくずは置かない(上の帯と同じ名前が並ぶだけだった。検索向けのデータにだけ入れる。2026-11-19)
         graph.append({"@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "うみうしラボ", "item": "https://umiushi-lab.com/"},
             {"@type": "ListItem", "position": 2, "name": HUB_NAME, "item": BASE},
@@ -54,8 +53,7 @@ def build(src: Path) -> Path:
     main_close = "</div></main>" if meta["type"] == "doc" else "</main>"
     brand = (f'<span class="name">{HUB_NAME}</span>' if not path
              else f'<a class="name" href="{up}">{HUB_NAME}</a>')
-    # 調べもののページは、パンくずが上の帯を兼ねる(帯とパンくずに同じ 2 つの名前が並んでいた。2026-11-19)
-    top = "" if meta["type"] == "doc" else f'<header class="top"><div class="wrap">{brand}<a class="lab" href="{root}">うみうしラボ</a></div></header>\n'
+    top = f'<header class="top"><div class="wrap">{brand}<a class="lab" href="{root}">うみうしラボ</a></div></header>\n'
     out = f"""<!doctype html>
 <html lang="ja">
 <head>

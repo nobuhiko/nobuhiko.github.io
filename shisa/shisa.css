@@ -188,3 +188,4 @@ body.theme-wp .hero .cta,body.theme-wp .end .cta{border-bottom-color:#111}
 .sheet td:first-child{font-weight:700;white-space:nowrap}
 .hero .video img{aspect-ratio:16/10;object-fit:cover;object-position:top}
 .doc pre{white-space:pre-wrap;overflow-wrap:anywhere}
+@media(max-width:380px){.doc thead th{white-space:normal}.doc th,.doc td{padding:7px 5px;font-size:12px}.sheet td:first-child{white-space:normal}.sheet{padding:10px}}
