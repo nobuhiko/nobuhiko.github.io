@@ -2,7 +2,7 @@
 """shisa/ の日本語のページを、共通の枠(head・上の帯・パンくず・フッター)に入れて作る。
 
 使い方: python3 tools/build-shisa.py
-- 元は shisa/_src/*.html。先頭の <!--meta {...} --> に、置き場所(path)・種類(type)・題・説明・構造化データを書く
+- 元は shisa/_src/*.tpl(中身は HTML の断片。.html にすると、断片がそのままページとして公開されて検索に重なる)。先頭の <!--meta {...} --> に、置き場所(path)・種類(type)・題・説明・構造化データを書く
 - 種類: lp(商品のページ。パンくずなし)/ hub(商品を並べるページ)/ doc(調べもののページ。パンくずあり)
 - 出すのは shisa/<path>index.html。作られたファイルは手で直さない(直すのは _src と、このファイルと shisa.css)
 - 見た目は shisa/shisa.css の 1 枚。決まり: 不要なラベルや説明を避け、レイアウトに説明させる
@@ -98,5 +98,5 @@ def build(src: Path) -> Path:
 
 
 if __name__ == "__main__":
-    for f in sorted(SRC.glob("*.html")):
+    for f in sorted(SRC.glob("*.tpl")):
         print(build(f).relative_to(ROOT))

@@ -2,7 +2,7 @@
 
 `shisa/index.html`・`shisa/wordpress/index.html`・`shisa/ec-cube-php/index.html` は、ここにある原稿から道具が作る。**作られた index.html は手で直さない。**
 
-1. 原稿を直す: `shisa/_src/index.html`(EC-CUBE の LP)、`wordpress.html`(WordPress の LP)、`ec-cube-php.html`(対応表)。先頭の `<!--meta ... -->` に、題・説明・構造化データが入っている
+1. 原稿を直す: `shisa/_src/index.tpl`(EC-CUBE の LP)、`wordpress.tpl`(WordPress の LP)、`ec-cube-php.tpl`(対応表)。中身は HTML の断片。先頭の `<!--meta ... -->` に、題・説明・構造化データが入っている
 2. ページを作り直す: `python3 tools/build-shisa.py`
 3. `git add shisa tools && git commit`(sitemap.xml の日付は、コミットのときに自動で変わる)。main に push すると公開される
 
