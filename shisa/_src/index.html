@@ -206,16 +206,16 @@
 
 <section><div class="wrap">
 <h2 class="t">点検すると、この結果が出ます</h2>
-<div class="sheet" aria-label="点検の結果の記入例">
-<div class="meta"><span>記入例(見本のお店)</span><span>EC-CUBE 4.3</span></div>
-<table><thead><tr><th></th><th>調べる所</th><th>結果</th><th>判定</th></tr></thead><tbody>
-<tr class="top"><td class="no">1</td><td>カスタマイズ</td><td>持ち主本人かを確かめていないページ</td><td class="j ng">要対応</td></tr>
-<tr><td class="no">2</td><td>PHP</td><td>PHP2Shell の修正が入っていない。対策を入れた</td><td class="j ok">対策済み</td></tr>
-<tr><td class="no">3</td><td>本体とプラグイン</td><td>公式の修正が出ている</td><td class="j ng">承認待ち</td></tr>
-<tr><td class="no">4</td><td>中の部品</td><td>修正が出ている部品がある</td><td class="j ng">承認待ち</td></tr>
-<tr><td class="no">5</td><td>書き換えられた跡</td><td>公式の配布物と照らして、なし</td><td class="j ok">問題なし</td></tr>
-<tr><td class="no">6</td><td>外から見える情報</td><td>開けてしまうファイルを閉じた</td><td class="j ok">対策済み</td></tr>
-<tr><td class="no">7</td><td>設定</td><td>鍵のかけ忘れに当たる設定はなし</td><td class="j ok">問題なし</td></tr>
+<div class="sheet" aria-label="見本の点検の結果">
+<div class="meta"><span>見本の点検の結果</span><span>EC-CUBE 4.2.0 / PHP 8.1</span></div>
+<table><thead><tr><th>調べた所</th><th>結果</th><th>いまの状態</th></tr></thead><tbody>
+<tr class="main-row"><td>カスタマイズ</td><td>注文状況のページで、だれでも他のお客さまの注文と個人情報を見られます</td><td class="j ng">承認待ち</td></tr>
+<tr><td>書き換えられた跡</td><td>画像フォルダに置かれていた不正なファイルを隔離しました</td><td class="j ok">対策済み</td></tr>
+<tr><td>PHP</td><td>攻撃に使われている PHP の重大な弱点に、公式の応急設定を入れました</td><td class="j ok">対策済み</td></tr>
+<tr><td>PHP</td><td>PHP そのものの修正は、サーバー会社に頼みます(そのまま送れる文つき)</td><td class="j">依頼の文</td></tr>
+<tr><td>本体</td><td>EC-CUBE 4.2.0 → 公式の最新 4.2.3-p2 への更新</td><td class="j ng">承認待ち</td></tr>
+<tr><td>中の部品</td><td>Twig・Symfony などの部品の弱点(更新のあとに、まとめて入れ替えます)</td><td class="j">次の点検で</td></tr>
+<tr><td>設定</td><td>フォルダの中身の一覧を出さない、PHP のバージョンを見せない</td><td class="j ok">対策済み</td></tr>
 </tbody></table>
 </div>
 <a class="demo" href="https://ec-cube-demo43.umiushi-lab.com/admin/shisa/sample">見本の点検を見る(1 分)</a>

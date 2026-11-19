@@ -46,7 +46,7 @@ h2.t mark{background:linear-gradient(transparent 62%,var(--y) 62%);color:inherit
 /* sheet */
 .sheetbox{display:grid;grid-template-columns:1fr 1.25fr;gap:28px;align-items:start;margin-top:20px}
 .sheet{background:#fff;border:4px solid var(--k);padding:14px;margin-top:18px}
-.sheet tr.top td{background:var(--pale);font-weight:900}
+.sheet tr.main-row td{background:var(--pale);font-weight:900}
 .demo{display:block;width:fit-content;margin:16px auto 0;font-weight:900;color:var(--k);border:3px solid var(--k);border-radius:6px;padding:12px 22px;text-decoration:none;background:#fff}
 .sheet h3{margin:0 0 2px;text-align:center;font-weight:900;font-size:22px;letter-spacing:.4em}
 .sheet .meta{display:flex;justify-content:space-between;font-size:12px;font-weight:700;margin-bottom:6px}
@@ -179,7 +179,9 @@ body.theme-wp .hero .cta,body.theme-wp .end .cta{border-bottom-color:#111}
 /* ---- スマホ幅の直し ---- */
 @media(max-width:760px){
  .sheet th,.sheet td{font-size:13px;padding:8px 6px}
- .sheet td:nth-child(2){white-space:nowrap}
+ .sheet td:first-child{white-space:nowrap}
  .sheet td.j{width:5.2em}
  .doc table{min-width:560px}
 }
+.sheet td:first-child{font-weight:700;white-space:nowrap}
+.hero .video img{aspect-ratio:16/10;object-fit:cover;object-position:top}
