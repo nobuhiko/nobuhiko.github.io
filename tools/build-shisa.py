@@ -16,7 +16,7 @@ SRC = ROOT / "shisa" / "_src"
 BASE = "https://umiushi-lab.com/shisa/"
 HUB_NAME = "脆弱性を AI で診断・修正するプラグイン"
 ORG = {"@type": "Organization", "name": "合同会社うみうしラボ", "url": "https://umiushi-lab.com/"}
-CSS_VER = "20261119p"
+CSS_VER = "20261119r"
 # お知らせの帯(1 行)。時事の話(PHP の脆弱性など)は、ここと専用のページにだけ書く。
 # 商品のページの本文には書かない(どのページにも同じ説明が並ぶため。2026-11-19)。空にすると帯は出ない
 NOTICE = None  # 例: ("PHP2Shell に当たるかを見分けて、対策を入れます", "ec-cube-php/")。2026-11-19: 形を決めるまで出さない
@@ -37,7 +37,7 @@ def build(src: Path) -> Path:
     if meta["type"] == "doc":
         # パンくずは、うみうしラボ → 商品を並べるページ → このページ
         crumb = (f'<nav class="crumb" aria-label="パンくず"><div class="wrap"><a href="{root}">うみうしラボ</a>'
-                 f'<a href="{up or "./"}">{HUB_NAME}</a><span aria-current="page">{meta["crumb"]}</span></div></nav>\n')
+                 f'<a href="{up or "./"}">{HUB_NAME}</a></div></nav>\n')  # いまのページの名前は、すぐ下の見出しが言う(検索向けのデータには入れる)
         graph.append({"@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "うみうしラボ", "item": "https://umiushi-lab.com/"},
             {"@type": "ListItem", "position": 2, "name": HUB_NAME, "item": BASE},
@@ -54,6 +54,8 @@ def build(src: Path) -> Path:
     main_close = "</div></main>" if meta["type"] == "doc" else "</main>"
     brand = (f'<span class="name">{HUB_NAME}</span>' if not path
              else f'<a class="name" href="{up}">{HUB_NAME}</a>')
+    # 調べもののページは、パンくずが上の帯を兼ねる(帯とパンくずに同じ 2 つの名前が並んでいた。2026-11-19)
+    top = "" if meta["type"] == "doc" else f'<header class="top"><div class="wrap">{brand}<a class="lab" href="{root}">うみうしラボ</a></div></header>\n'
     out = f"""<!doctype html>
 <html lang="ja">
 <head>
@@ -83,8 +85,7 @@ def build(src: Path) -> Path:
 <link rel="stylesheet" href="{up}shisa.css?v={CSS_VER}">
 </head>
 <body class="page-{meta["type"]}{(" " + meta["theme"]) if meta.get("theme") else ""}">
-<header class="top"><div class="wrap">{brand}<a class="lab" href="{root}">うみうしラボ</a></div></header>
-{notice}{crumb}{main_open}
+{top}{notice}{crumb}{main_open}
 {body.strip()}
 {main_close}
 <footer class="foot"><div class="wrap"><span>© 2026 <a href="{root}">合同会社うみうしラボ</a></span><span><a href="{up}terms.html">利用規約</a><a href="{root}tokushoho.html">特定商取引法に基づく表記</a></span></div></footer>
