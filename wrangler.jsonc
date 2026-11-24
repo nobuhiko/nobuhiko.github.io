@@ -1,9 +1,14 @@
 {
-  // umiushi-lab.com (会社のサイト)。静的なファイルをそのまま出す。2026-11-24 に GitHub Pages から移す準備。
+  // umiushi-lab.com (会社のサイト)。静的なファイルをそのまま出す。2026-11-24 に GitHub Pages から移した。
   // main に入ると Cloudflare の自動ビルドが本番へ出す。手で出すなら: npx wrangler deploy
   "name": "umiushi-lab-site",
   "main": "worker/index.js",
   "compatibility_date": "2026-11-01",
+  // 本番のドメイン (2026-11-24 に GitHub Pages から切り替えた)。www は Worker の中で www なしへ 301
+  "routes": [
+    { "pattern": "umiushi-lab.com", "custom_domain": true },
+    { "pattern": "www.umiushi-lab.com", "custom_domain": true }
+  ],
   "assets": {
     "directory": ".",
     "binding": "ASSETS",
