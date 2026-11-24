@@ -11,3 +11,7 @@ worker
 node_modules
 CLAUDE.md
 README.md
+# サイトの中身ではないもの (道具のスクリプトと、ページのもとになるひな形)。2026-11-24 本人「見えないようにしといて」
+tools
+shisa/_src
+__pycache__
