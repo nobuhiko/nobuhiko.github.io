@@ -1,0 +1,13 @@
+# サイトとして出さないもの (リポジトリの道具と設定)
+.git
+.githooks
+.gitignore
+.nojekyll
+.assetsignore
+.wrangler
+CNAME
+wrangler.jsonc
+worker
+node_modules
+CLAUDE.md
+README.md

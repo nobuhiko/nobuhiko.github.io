@@ -1,0 +1,18 @@
+{
+  // umiushi-lab.com (会社のサイト)。静的なファイルをそのまま出す。2026-11-24 に GitHub Pages から移す準備。
+  // main に入ると Cloudflare の自動ビルドが本番へ出す。手で出すなら: npx wrangler deploy
+  "name": "umiushi-lab-site",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS",
+    "html_handling": "none",
+    "not_found_handling": "none",
+    "run_worker_first": true
+  },
+  "d1_databases": [
+    { "binding": "DB", "database_name": "umiushi-lab-site", "database_id": "7c8e34b5-e4f6-4785-8d09-d2e93d5f0c79" }
+  ],
+  "observability": { "enabled": true }
+}
