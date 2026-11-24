@@ -2,12 +2,14 @@
 
 静的なファイルをそのまま出す。組み立ては無い(`shisa/` だけ `tools/build-shisa.py` で作る)。
 
-## 出し方(2026-11-24〜、Cloudflare Workers へ移す途中)
+## 出し方(2026-11-24〜、Cloudflare Workers)
 
 - 置き場は Cloudflare Workers `umiushi-lab-site`(`wrangler.jsonc`、`worker/index.js`)。ファイルはリポジトリの直下をそのまま出す。出さないものは `.assetsignore`
-- **DNS を切り替えるまでは、本番はまだ GitHub Pages**(main に push すると出る)。切り替えたら、この行を消して「main に入ると Cloudflare の自動ビルドが出す」に書き換える
+- **main に入ると、Cloudflare の自動ビルドが本番へ出す**(`npx wrangler deploy`。1 分ほど)。main へは PR で入れる
+- 2026-11-24 に GitHub Pages から切り替えた。GitHub Pages の設定は残してあり、古い `nobuhiko.github.io/…` の URL を umiushi-lab.com へ転送する役だけをしている(`CNAME` のファイルはそのために置いてある。消さない)
 - 仮の URL: https://umiushi-lab-site.redsnow-kissmark.workers.dev (検索に載らないよう noindex を付けてある)
 - URL の形は GitHub Pages のときと同じ(`/shisa` → `/shisa/` へ 301、`/tokushoho.html` も `/tokushoho` も 200、無ければ `404.html`)。`worker/index.js` の `serve` がやっている。ストアの審査に出した URL(プライバシーポリシー、特商法)を変えないため、ここは崩さない
+- 戻すとき: `wrangler.jsonc` の `routes` を消して出し、DNS に A を 4 つ(185.199.108.153〜111.153)と、www の CNAME(nobuhiko.github.io)を戻す
 
 ## 外に貼った画像を数える
 
