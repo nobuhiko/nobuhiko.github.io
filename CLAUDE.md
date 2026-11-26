@@ -20,6 +20,8 @@
   - `/shisa/lift-thumb.jpg` = 診断プラグイン 4.0/4.1 系のページ(product_id=3706)
   - `/os/data-migration.png` = データ移行プラグイン 4.2/4.3 のページ(product_id=3189。貼るのは本人)
   - `/os/shisa-flow.jpg` = 診断プラグイン 4.2/4.3 系のページ(product_id=3703)の「入れたあと、すること」の縦長の絵(2026-11-26〜。元は self-harden の docs/submit/os-page)
+  - `/os/shisa-flow-41.jpg` = 同じ絵の 4.0/4.1 系のページ(product_id=3706)用。中身は shisa-flow.jpg と同じで、数えるために名前を分けた(2026-11-26〜)
+  - `/os/shisa-flow-3.jpg` = 3.0 系のページ(product_id=3715)の「入れたあと、すること」の絵。3.0 のお店の画面(2026-11-26〜)
 - この 2 枚の jpg は、ストアのページごとに 1 枚ずつしか使わない(同じ絵を 2 つのページに貼ると、どちらが見られたか分からなくなる)
 - 数える画像は `worker/index.js` の `COUNTED`(と `/os/` の下ぜんぶ)。プラグインごとに別の画像を貼る(ストアからは「どのページから来たか」が届かないので、画像のパスで見分ける)
 - 数えるのは、参照元が ec-cube.net か wordpress.org のときだけ。ロボットは外す
